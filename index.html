@@ -1,0 +1,3354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Felice | Premium Cotton Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg-cream: #f5efe4;
+      --bg-champagne: #e9dbc1;
+      --felice-green: #8bc53f;
+      --felice-green-deep: #5f9a21;
+      --felice-gold: #ffb31a;
+      --text-ink: #1d1d1b;
+      --text-soft: #5b5b53;
+      --white: #ffffff;
+      --shadow-soft: 0 12px 38px rgba(29, 29, 27, 0.12);
+      --shadow-card: 0 22px 42px rgba(29, 29, 27, 0.15);
+      --radius-xl: 28px;
+      --radius-md: 16px;
+      --container: min(1560px, 94vw);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--text-ink);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(139, 197, 63, 0.2), transparent 32%),
+        radial-gradient(circle at 85% 22%, rgba(255, 179, 26, 0.2), transparent 38%),
+        linear-gradient(135deg, var(--bg-cream), #f8f4ec 55%, var(--bg-champagne));
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .shape {
+      position: fixed;
+      z-index: -1;
+      border-radius: 50%;
+      filter: blur(0.4px);
+      animation: float 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .shape.one {
+      width: 280px;
+      aspect-ratio: 1;
+      left: -80px;
+      top: 100px;
+      background: radial-gradient(circle at 30% 30%, #d6f3ac, #8bc53f);
+      opacity: 0.25;
+    }
+
+    .shape.two {
+      width: 360px;
+      aspect-ratio: 1;
+      right: -120px;
+      top: 320px;
+      background: radial-gradient(circle at 35% 35%, #ffe6ad, #ffb31a);
+      opacity: 0.2;
+      animation-delay: 1.8s;
+    }
+
+    .shape.three {
+      width: 210px;
+      aspect-ratio: 1;
+      right: 20%;
+      bottom: 80px;
+      background: radial-gradient(circle at 35% 35%, #dbf5b5, #8bc53f);
+      opacity: 0.18;
+      animation-delay: 3s;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: rgba(250, 247, 240, 0.78);
+      border-bottom: 1px solid rgba(29, 29, 27, 0.08);
+    }
+
+    .header-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      min-height: 52px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand {
+      justify-self: start;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand img {
+      width: 120px;
+      display: block;
+      filter: drop-shadow(0 8px 20px rgba(139, 197, 63, 0.2));
+    }
+
+    .menu {
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .menu a {
+      color: var(--text-ink);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 6px 12px;
+      border-radius: 999px;
+      transition: transform 0.26s ease, color 0.26s ease, background 0.26s ease;
+    }
+
+    .menu a:hover {
+      color: var(--felice-green-deep);
+      background: rgba(139, 197, 63, 0.14);
+      transform: translateY(-2px);
+    }
+
+    .header-right {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-quote {
+      background: linear-gradient(135deg, var(--felice-green) 0%, var(--felice-green-deep) 100%);
+      color: var(--white);
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(139, 197, 63, 0.3);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-quote:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 197, 63, 0.45);
+      filter: brightness(1.05);
+    }
+
+    .btn-quote:active {
+      transform: translateY(0);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: rgba(139, 197, 63, 0.14);
+      color: var(--text-ink);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    main {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      aspect-ratio: 1672 / 941;
+      overflow: hidden;
+      isolation: isolate;
+      border-bottom: 3px solid var(--felice-green);
+    }
+
+    .hero-card {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      animation: rise 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .hero-image-wrap {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      transform: scale(1.01);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .hero-image-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(to top, rgba(29, 29, 27, 0.15), transparent 30%);
+      pointer-events: none;
+    }
+
+    .about-section {
+      margin: 90px 0 100px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(24px, 5vw, 48px);
+      align-items: center;
+    }
+
+    .about-card {
+      border-radius: var(--radius-xl);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(250, 246, 238, 0.9));
+      border: 1px solid rgba(139, 197, 63, 0.15);
+      padding: clamp(24px, 4vw, 44px);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--felice-green), var(--felice-gold));
+    }
+
+    .about-kicker {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--felice-green-deep);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .about-title {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--text-ink);
+    }
+
+    .about-copy {
+      color: var(--text-soft);
+      font-size: 1.02rem;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    /* Features List */
+    .about-features {
+      margin: 28px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .feature-icon-wrapper {
+      background: rgba(139, 197, 63, 0.12);
+      color: var(--felice-green-deep);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .feature-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-ink);
+      line-height: 1.4;
+    }
+
+    .feature-desc {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    /* Core Values Section */
+    .values-container {
+      margin-top: 36px;
+    }
+
+    .values-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+    }
+
+    .values-grid-new {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .value-card-new {
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(29, 29, 27, 0.06);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .value-card-new:hover {
+      background: var(--white);
+      border-color: rgba(139, 197, 63, 0.3);
+      box-shadow: 0 10px 25px rgba(139, 197, 63, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .value-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .value-icon {
+      color: var(--felice-green-deep);
+      background: rgba(139, 197, 63, 0.08);
+      padding: 6px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .value-card-new h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-ink);
+    }
+
+    .value-card-new p {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    /* 3D Product Viewer Styles */
+    .about-photo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.7), rgba(245, 239, 228, 0.4));
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(29, 29, 27, 0.08);
+      box-shadow: var(--shadow-soft);
+      padding: 50px 20px;
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      backdrop-filter: blur(8px);
+    }
+
+    .about-photo-wrap::before {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 197, 63, 0.15) 0%, transparent 70%);
+      top: -50px;
+      right: -50px;
+      z-index: 0;
+    }
+
+    .about-photo-wrap::after {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 179, 26, 0.15) 0%, transparent 70%);
+      bottom: -80px;
+      left: -80px;
+      z-index: 0;
+    }
+
+    .product-3d-viewer {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: grab;
+      user-select: none;
+      z-index: 1;
+    }
+
+    .product-3d-viewer:active {
+      cursor: grabbing;
+    }
+
+    .viewer-instruction {
+      position: absolute;
+      top: 0;
+      background: rgba(29, 29, 27, 0.78);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 10;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .drag-icon-svg {
+      animation: rotateHint 2.5s ease-in-out infinite;
+      fill: none;
+      stroke: currentColor;
+    }
+
+    @keyframes rotateHint {
+
+      0%,
+      100% {
+        transform: rotate(0deg) scale(1);
+      }
+
+      50% {
+        transform: rotate(20deg) scale(1.1);
+      }
+    }
+
+    .product-3d-scene {
+      position: relative;
+      width: 390px;
+      height: 400px;
+      perspective: 1200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+
+    .product-3d-box {
+      position: absolute;
+      width: 390px;
+      height: 400px;
+      transform-style: preserve-3d;
+      transform: rotateX(-15deg) rotateY(0deg);
+    }
+
+    .about-face {
+      position: absolute;
+      background-color: transparent;
+      border: none;
+      backface-visibility: hidden;
+    }
+
+    .about-face.front {
+      width: 390px;
+      height: 400px;
+      background-image: url('image&video/front.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translateZ(12px);
+    }
+
+    .about-face.back {
+      width: 390px;
+      height: 400px;
+      background-image: url('image&video/back.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: rotateY(180deg) translateZ(12px);
+    }
+
+    .product-shadow {
+      position: absolute;
+      bottom: -30px;
+      width: 330px;
+      height: 24px;
+      background: radial-gradient(ellipse at center, rgba(29, 29, 27, 0.28) 0%, rgba(29, 29, 27, 0) 70%);
+      transform: rotateX(90deg) translateZ(0);
+      pointer-events: none;
+      filter: blur(5px);
+      transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+    }
+
+    .viewer-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 10;
+    }
+
+    .control-btn {
+      background: var(--white);
+      border: 1px solid rgba(29, 29, 27, 0.12);
+      color: var(--text-ink);
+      padding: 10px 18px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+    }
+
+    .control-btn:hover {
+      background: rgba(139, 197, 63, 0.08);
+      border-color: var(--felice-green);
+      color: var(--felice-green-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(139, 197, 63, 0.12);
+    }
+
+    .control-btn:active {
+      transform: translateY(1px);
+    }
+
+    .control-btn svg {
+      transition: transform 0.3s ease;
+    }
+
+    .control-btn:hover svg {
+      transform: rotate(-30deg);
+    }
+
+    #btnRotateRight:hover svg {
+      transform: rotate(30deg);
+    }
+
+
+
+    .section-title {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(1.85rem, 3vw, 2.55rem);
+      margin-bottom: 12px;
+    }
+
+    .section-copy {
+      color: var(--text-soft);
+      max-width: 70ch;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .service-item {
+      border-radius: var(--radius-md);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(244, 237, 224, 0.86));
+      border: 1px solid rgba(29, 29, 27, 0.07);
+      padding: 18px 16px;
+      font-weight: 700;
+      box-shadow: var(--shadow-soft);
+      transform-style: preserve-3d;
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .service-item:hover {
+      transform: translateY(-5px) rotateX(5deg);
+      box-shadow: 0 18px 30px rgba(29, 29, 27, 0.14);
+    }
+
+    /* Why Choose Us Section Styles */
+    .why-choose-us {
+      position: relative;
+      margin: 100px 0 110px;
+      padding: clamp(48px, 6vw, 84px) 0;
+      background: transparent;
+    }
+
+    .wcu-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .wcu-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 40px;
+    }
+
+    .wcu-header-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .wcu-brand-name {
+      font-family: "DM Serif Display", serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--felice-green);
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+
+    .wcu-brand-tagline {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-soft);
+      margin-top: 3px;
+    }
+
+    .wcu-title {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 14px;
+      color: #12281a;
+    }
+
+    .wcu-title span {
+      color: var(--felice-green-deep);
+    }
+
+    .wcu-copy {
+      color: var(--text-soft);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .wcu-interactive-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr 1fr;
+      gap: clamp(16px, 3vw, 32px);
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .wcu-side-col {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .wcu-side-col.left-col {
+      gap: 50px;
+      /* Space out the 2 cards */
+    }
+
+    .wcu-side-col.right-col {
+      gap: 20px;
+      /* Pack the 4 cards slightly tighter */
+    }
+
+    .wcu-card {
+      background: var(--white);
+      border: 1px solid rgba(29, 29, 27, 0.08);
+      border-radius: var(--radius-xl);
+      padding: clamp(20px, 2.5vw, 28px);
+      box-shadow: 0 10px 30px rgba(29, 29, 27, 0.04);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    /* Glow trail effect on card hover */
+    .wcu-card-glow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(139, 197, 63, 0.1) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .wcu-card:hover .wcu-card-glow {
+      opacity: 1;
+    }
+
+    .wcu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(29, 29, 27, 0.08);
+      border-color: rgba(139, 197, 63, 0.3);
+    }
+
+    .wcu-card-header-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .wcu-icon-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--felice-green-deep);
+      background: rgba(139, 197, 63, 0.08);
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .wcu-card:hover .wcu-icon-circle {
+      background: var(--felice-green);
+      color: var(--white);
+      transform: scale(1.08);
+    }
+
+    .wcu-card h4 {
+      font-family: "DM Serif Display", serif;
+      font-size: 1.22rem;
+      color: #12281a;
+      line-height: 1.2;
+    }
+
+    .wcu-card p {
+      color: var(--text-soft);
+      line-height: 1.6;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* SVG Connectors */
+    .wcu-svg-connector {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .wcu-path-line {
+      fill: none;
+      stroke: rgba(139, 197, 63, 0.2);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 6 6;
+      transition: stroke 0.4s ease, stroke-width 0.4s ease;
+    }
+
+    .wcu-path-line.active {
+      stroke: var(--felice-green);
+      stroke-width: 4;
+      animation: wcuDashFlow 0.8s linear infinite;
+      filter: drop-shadow(0 0 3px rgba(139, 197, 63, 0.3));
+    }
+
+    @keyframes wcuDashFlow {
+      from {
+        stroke-dashoffset: 24;
+      }
+
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* Center Column & Podium */
+    .wcu-center-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .wcu-podium-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      height: 480px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .podium-base {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 320px;
+      height: 40px;
+      z-index: 1;
+      perspective: 800px;
+    }
+
+    .podium-top {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 30%, #ffffff 40%, #e9e3d6 100%);
+      border-radius: 50%;
+      transform: rotateX(65deg);
+      box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.04), 0 3px 6px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(29, 29, 27, 0.08);
+      top: 0;
+    }
+
+    .podium-side {
+      position: absolute;
+      top: 18px;
+      width: 100%;
+      height: 20px;
+      background: linear-gradient(180deg, #d8ceba 0%, #baae97 100%);
+      border-radius: 50%;
+      transform: rotateX(65deg);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+    }
+
+    .wcu-floating-badge {
+      position: absolute;
+      top: 55px;
+      right: -10px;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--felice-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(139, 197, 63, 0.15);
+      z-index: 12;
+      animation: badgeFloat 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes badgeFloat {
+      0% {
+        transform: translateY(0) rotate(-3deg);
+      }
+
+      100% {
+        transform: translateY(-8px) rotate(3deg);
+      }
+    }
+
+    .badge-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .badge-pct {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--felice-green-deep);
+      line-height: 1;
+    }
+
+    .badge-text {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--text-soft);
+      line-height: 1.1;
+      margin-top: 1px;
+    }
+
+    .wcu-cotton-deco {
+      position: absolute;
+      bottom: 25px;
+      right: -25px;
+      width: 90px;
+      height: 90px;
+      z-index: 10;
+      pointer-events: none;
+      animation: cottonFloat 8s ease-in-out infinite alternate;
+    }
+
+    .wcu-cotton-deco img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.06));
+    }
+
+    @keyframes cottonFloat {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      100% {
+        transform: translateY(-6px) rotate(8deg);
+      }
+    }
+
+    .why-choose-us .product-3d-viewer {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+    }
+
+    .why-choose-us .product-3d-scene {
+      width: 320px;
+      height: 330px;
+      perspective: 1200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
+      margin-top: 15px;
+      margin-bottom: 20px;
+    }
+
+    #wcuProductBox {
+      width: 240px;
+      height: 280px;
+      transform-style: preserve-3d;
+      transform: rotateX(-15deg) rotateY(0deg);
+      position: relative;
+    }
+
+    .wcu-face {
+      position: absolute;
+      border: none;
+      backface-visibility: hidden;
+      box-shadow: none;
+    }
+
+    .wcu-face.front {
+      width: 240px;
+      height: 280px;
+      background-image: url('image&video/animation_why_choose_us.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: translateZ(5px);
+    }
+
+    .wcu-face.back {
+      width: 240px;
+      height: 280px;
+      background-image: url('image&video/animation_why_choose_us_back.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: rotateY(180deg) translateZ(5px);
+    }
+
+    #wcuProductShadow {
+      position: absolute;
+      bottom: -15px;
+      width: 270px;
+      height: 20px;
+      background: radial-gradient(ellipse at center, rgba(29, 29, 27, 0.22) 0%, rgba(29, 29, 27, 0) 70%);
+      transform: rotateX(90deg) translateZ(0);
+      pointer-events: none;
+      filter: blur(5px);
+      transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+    }
+
+    .why-choose-us .viewer-controls {
+      margin-top: -10px;
+    }
+
+    .why-choose-us .control-btn {
+      padding: 8px 14px;
+    }
+
+    /* Our Products Section Styling */
+    .our-products-section {
+      position: relative;
+      margin: 100px 0 110px;
+      padding: clamp(48px, 6vw, 84px) 0;
+      background: transparent;
+    }
+
+    .products-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .products-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 50px;
+    }
+
+    .products-header h3 {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 14px;
+      color: #12281a;
+    }
+
+    .products-header h3 span {
+      color: var(--felice-green-deep);
+    }
+
+    .products-header p {
+      color: var(--text-soft);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid rgba(29, 29, 27, 0.08);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(29, 29, 27, 0.04);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 42px rgba(29, 29, 27, 0.09);
+      border-color: rgba(139, 197, 63, 0.35);
+    }
+
+    .product-img-box {
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      position: relative;
+      background: #f8f6f0;
+    }
+
+    .product-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-card:hover .product-img-box img {
+      transform: scale(1.08);
+    }
+
+    .product-info-box {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-category {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--felice-green-deep);
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .product-info-box h4 {
+      font-family: "DM Serif Display", serif;
+      font-size: 1.35rem;
+      color: #12281a;
+      margin-bottom: 10px;
+    }
+
+    .product-info-box p {
+      color: var(--text-soft);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .product-btn {
+      align-self: flex-start;
+      background: transparent;
+      border: 1.5px solid var(--felice-green);
+      color: var(--felice-green-deep);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 8px 18px;
+      border-radius: 99px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .product-btn:hover {
+      background: var(--felice-green-deep);
+      color: var(--white);
+      border-color: var(--felice-green-deep);
+      transform: translateX(3px);
+    }
+
+    /* Bottom Curved Ribbon Bar */
+    .wcu-bottom-bar {
+      margin-top: 55px;
+      background: linear-gradient(135deg, var(--felice-green), var(--felice-green-deep));
+      color: var(--white);
+      border-radius: 0;
+      padding: 16px 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(14px, 3vw, 32px);
+      box-shadow: 0 10px 30px rgba(139, 197, 63, 0.2);
+    }
+
+    .wcu-bottom-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.98rem;
+    }
+
+    .wcu-bottom-divider {
+      opacity: 0.4;
+      font-weight: 300;
+    }
+
+    .wcu-bullet {
+      color: var(--felice-gold);
+      font-size: 1.25rem;
+    }
+
+    /* Premium Call To Action Section */
+    .cta-section {
+      position: relative;
+      margin: 80px 0 40px;
+      border-radius: 40px;
+      padding: clamp(48px, 6vw, 80px) clamp(24px, 4vw, 60px);
+      border: 1px solid rgba(139, 197, 63, 0.2);
+      background:
+        radial-gradient(circle at 80% 20%, rgba(255, 179, 26, 0.15), transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(139, 197, 63, 0.18), transparent 45%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 244, 235, 0.9));
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .cta-glow-1 {
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 179, 26, 0.22) 0%, transparent 70%);
+      filter: blur(40px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .cta-glow-2 {
+      position: absolute;
+      bottom: -120px;
+      left: -120px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(139, 197, 63, 0.25) 0%, transparent 70%);
+      filter: blur(45px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+    }
+
+    .cta-kicker {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--felice-green-deep);
+      margin-bottom: 16px;
+    }
+
+    .cta-title {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2.3rem, 4.2vw, 3.5rem);
+      line-height: 1.15;
+      color: #12281a;
+      margin-bottom: 20px;
+    }
+
+    .cta-title span {
+      color: var(--felice-green-deep);
+      position: relative;
+      display: inline-block;
+    }
+
+    .cta-title span::after {
+      content: "";
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--felice-gold);
+      border-radius: 2px;
+      opacity: 0.8;
+    }
+
+    .cta-description {
+      font-size: 1.12rem;
+      line-height: 1.75;
+      color: var(--text-soft);
+      margin-bottom: 36px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn-primary {
+      background: linear-gradient(135deg, var(--felice-green), var(--felice-green-deep));
+      color: var(--white);
+      border: none;
+      padding: 16px 36px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(139, 197, 63, 0.25);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .cta-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(139, 197, 63, 0.35);
+      filter: brightness(1.05);
+    }
+
+    .cta-btn-secondary {
+      background: transparent;
+      color: var(--text-ink);
+      border: 2px solid rgba(29, 29, 27, 0.15);
+      padding: 14px 34px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .cta-btn-secondary:hover {
+      background: rgba(29, 29, 27, 0.04);
+      border-color: var(--text-ink);
+      transform: translateY(-3px);
+    }
+
+    /* Floating Trust Badges in CTA */
+    .cta-badges {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+      width: 100%;
+      max-width: 760px;
+      border-top: 1px solid rgba(29, 29, 27, 0.08);
+      padding-top: 36px;
+    }
+
+    .cta-badge-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cta-badge-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(139, 197, 63, 0.08);
+      color: var(--felice-green-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .cta-badge-item:hover .cta-badge-icon {
+      background: var(--felice-green);
+      color: var(--white);
+      transform: scale(1.1);
+    }
+
+    .cta-badge-item h5 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-ink);
+    }
+
+    .cta-badge-item p {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+
+    @media (max-width: 760px) {
+      .cta-badges {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-top: 30px;
+      }
+
+      .cta-section {
+        padding: 40px 20px;
+        border-radius: 30px;
+      }
+    }
+
+    /* Scroll reveal transitions */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .scroll-reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1024px) {
+      .wcu-interactive-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .wcu-side-col.left-col {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        gap: 20px;
+        order: 2;
+      }
+
+      .wcu-side-col.right-col {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        gap: 20px;
+        order: 3;
+      }
+
+      .wcu-center-col {
+        order: 1;
+      }
+
+      .wcu-svg-connector {
+        display: none;
+      }
+
+      .wcu-podium-wrap {
+        height: 380px;
+      }
+    }
+
+    @media (max-width: 760px) {
+
+      .wcu-side-col.left-col,
+      .wcu-side-col.right-col {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .wcu-bottom-bar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 18px 24px;
+        border-radius: 0;
+      }
+
+      .wcu-bottom-divider {
+        display: none;
+      }
+    }
+
+    .footer {
+      background:
+        linear-gradient(160deg, rgba(29, 29, 27, 0.97), rgba(24, 33, 12, 0.95)),
+        radial-gradient(circle at 80% 20%, rgba(139, 197, 63, 0.28), transparent 45%);
+      color: #ededeb;
+      padding: 58px 0 28px;
+      border-top: 2px solid rgba(139, 197, 63, 0.35);
+    }
+
+    .footer-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      gap: 36px;
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+    }
+
+    .footer h4 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .footer p,
+    .footer a,
+    .footer li {
+      color: rgba(237, 237, 235, 0.9);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    .footer a:hover {
+      color: #c6f07d;
+    }
+
+    .footer-menu {
+      display: grid;
+      gap: 4px;
+    }
+
+    .social {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .social a {
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .copyright {
+      width: var(--container);
+      margin: 22px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.87rem;
+      color: rgba(237, 237, 235, 0.75);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .hero {
+        aspect-ratio: 1672 / 941;
+        width: 100vw;
+        height: auto;
+        min-height: auto;
+        padding: 0;
+      }
+
+      .about-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .about-photo-wrap {
+        min-height: 480px;
+      }
+
+
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-wrap {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .header-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 46px;
+      }
+
+      .btn-quote {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .menu {
+        position: absolute;
+        right: 4vw;
+        top: 48px;
+        width: min(280px, 92vw);
+        flex-direction: column;
+        align-items: stretch;
+        background: rgba(252, 249, 243, 0.97);
+        border: 1px solid rgba(29, 29, 27, 0.08);
+        border-radius: 16px;
+        box-shadow: var(--shadow-soft);
+        padding: 10px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: 0.28s ease;
+      }
+
+      .menu.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .menu a {
+        padding: 12px 14px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 0;
+      }
+
+      .about-features {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .values-grid-new {
+        grid-template-columns: 1fr;
+      }
+
+
+
+      .about-photo-wrap {
+        min-height: 420px;
+        padding: 30px 10px;
+      }
+
+      .product-3d-scene {
+        transform: scale(0.78);
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .product-img-box {
+        height: 220px;
+      }
+
+      .product-info-box {
+        padding: 20px 16px;
+      }
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulseGlow {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.95;
+      }
+
+      50% {
+        transform: scale(1.08);
+        opacity: 0.62;
+      }
+    }
+
+    /* Private Label Solutions Section */
+    .private-label-section {
+      position: relative;
+      margin: 100px auto 110px;
+      width: var(--container);
+      padding: clamp(32px, 5vw, 64px) 0;
+      background: transparent;
+    }
+
+    .pl-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(24px, 5vw, 60px);
+      align-items: center;
+    }
+
+    .pl-content-box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .pl-kicker {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--felice-green-deep);
+    }
+
+    .pl-title {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      line-height: 1.15;
+      color: var(--text-ink);
+    }
+
+    .pl-title span {
+      color: var(--felice-green-deep);
+    }
+
+    .pl-description {
+      color: var(--text-soft);
+      font-size: 1.02rem;
+      line-height: 1.75;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* Live Customizer Input */
+    .pl-customizer {
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(139, 197, 63, 0.2);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-top: 10px;
+    }
+
+    .pl-customizer label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-ink);
+      margin-bottom: 8px;
+    }
+
+    .pl-customizer-input-wrapper {
+      display: flex;
+      gap: 10px;
+    }
+
+    .pl-input {
+      flex-grow: 1;
+      padding: 12px 16px;
+      border-radius: 99px;
+      border: 1.5px solid rgba(29, 29, 27, 0.12);
+      background: var(--white);
+      color: var(--text-ink);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .pl-input:focus {
+      border-color: var(--felice-green);
+      box-shadow: 0 0 0 3px rgba(139, 197, 63, 0.15);
+    }
+
+    /* Partner Badges */
+    .pl-partners-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-top: 12px;
+      margin-bottom: -4px;
+    }
+
+    .pl-partners-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pl-partner-badge {
+      background: rgba(139, 197, 63, 0.08);
+      color: var(--felice-green-deep);
+      border: 1px solid rgba(139, 197, 63, 0.15);
+      padding: 8px 18px;
+      border-radius: 99px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: all 0.3s ease;
+    }
+
+    .pl-partner-badge:hover {
+      background: var(--felice-green);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(139, 197, 63, 0.15);
+    }
+
+    /* Right Column - Mockups Showcase with gradient & dots */
+    .pl-visual-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      min-height: 480px;
+      background: radial-gradient(circle at 30% 20%, #9cd84e 0%, #3a6819 100%);
+      background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.12) 1.5px, transparent 3px),
+        radial-gradient(circle at 30% 20%, #9cd84e 0%, #3a6819 100%);
+      background-size: 26px 26px, 100% 100%;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: var(--shadow-soft);
+      padding: 40px 20px;
+      overflow: hidden;
+    }
+
+    .pl-mockups-container {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: clamp(14px, 3.2vw, 26px);
+      width: 100%;
+      height: 350px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .pl-ground-shadow {
+      position: absolute;
+      bottom: -6px;
+      left: 5%;
+      width: 90%;
+      height: 14px;
+      background: radial-gradient(ellipse at center, rgba(21, 51, 10, 0.5) 0%, transparent 75%);
+      filter: blur(4px);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Product: Cotton Buds Box Mockup */
+    .pl-product-buds {
+      width: 380px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
+      animation: float-slow 7s ease-in-out infinite alternate;
+    }
+
+    /* Label Banner Styling */
+    .pl-brand-label-container {
+      position: absolute;
+      background: transparent;
+      padding: 0;
+      color: #5f9a21;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-align: center;
+      text-transform: uppercase;
+      z-index: 10;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pl-product-buds .pl-brand-label-container {
+      top: 32.3%;
+      left: 19.6%;
+      width: 50%;
+      height: 15%;
+      color: #ffffff;
+      font-size: 1.25rem;
+    }
+
+    .pl-brand-label-container span {
+      font-size: inherit;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: inherit;
+      width: 100%;
+    }
+
+    /* Decorative Floating Circles */
+    .pl-deco-ring {
+      position: absolute;
+      border: 1px dashed rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .pl-deco-ring.one {
+      width: 320px;
+      height: 320px;
+      animation: spin-clockwise 40s linear infinite;
+    }
+
+    @keyframes spin-clockwise {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Micro Animations */
+    @keyframes float-slow {
+      0% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      100% {
+        transform: translateY(-12px) rotate(1.2deg);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .pl-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .pl-visual-box {
+        min-height: 420px;
+        padding: 30px 10px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .private-label-section {
+        padding: 36px 0;
+        margin: 80px auto;
+      }
+
+      .pl-mockups-container {
+        transform: scale(0.9);
+        transform-origin: bottom center;
+        height: 290px;
+      }
+
+      .pl-partners-grid {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .pl-mockups-container {
+        transform: scale(0.72);
+        transform-origin: bottom center;
+        height: 230px;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 375px) {
+      .pl-mockups-container {
+        transform: scale(0.64);
+        transform-origin: bottom center;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shape one"></div>
+  <div class="shape two"></div>
+  <div class="shape three"></div>
+
+  <header class="site-header">
+    <div class="header-wrap">
+      <a class="brand" href="#home" aria-label="Felice Home">
+        <img src="image&amp;video/logo.png" alt="Felice logo" />
+      </a>
+
+      <ul class="menu" id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#private-label">Private Label / Job Work</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+
+      <div class="header-right">
+        <a href="#contact" class="btn-quote">Get a Quote</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-card">
+        <div class="hero-image-wrap" id="heroImageWrap">
+          <img src="image&amp;video/new hero.png" alt="Felice products" />
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <article class="about-card">
+        <span class="about-kicker">Reliable, Agile & Innovative</span>
+        <h2 class="about-title">About Felice</h2>
+        <p class="about-copy">
+          Felice is a trusted pioneer in manufacturing premium personal care products with 11+ years of dedicated
+          industry experience. We focus on providing safe, hygienic, and eco-friendly solutions tailored to modern daily
+          essentials.
+        </p>
+        <p class="about-copy">
+          Through state-of-the-art manufacturing processes and strict quality control protocols, we supply top-tier
+          distributors, wholesalers, and private labels globally with consistent reliability and exceptional value.
+        </p>
+
+        <!-- Product Features Checklist -->
+        <div class="about-features">
+          <div class="feature-item">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            </div>
+            <div>
+              <div class="feature-text">100% Pure Cotton Tips</div>
+              <div class="feature-desc">Soft, gentle, and highly absorbent cotton tips.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            </div>
+            <div>
+              <div class="feature-text">Soft Paper Stems</div>
+              <div class="feature-desc">Biodegradable and eco-friendly sturdy stems.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            </div>
+            <div>
+              <div class="feature-text">Responsibly Sourced</div>
+              <div class="feature-desc">Gentle on your skin, kind to the environment.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            </div>
+            <div>
+              <div class="feature-text">Multi-Purpose Care</div>
+              <div class="feature-desc">Perfect for baby care, personal care, and cosmetics.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Values Section -->
+        <div class="values-container">
+          <h3 class="values-title">Our Core Values</h3>
+          <div class="values-grid-new">
+            <div class="value-card-new">
+              <div class="value-header">
+                <div class="value-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </div>
+                <h4>Integrity</h4>
+              </div>
+              <p>Building long-term relationships based on absolute transparency, consistency, and trust.</p>
+            </div>
+            <div class="value-card-new">
+              <div class="value-header">
+                <div class="value-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5.5 5.5 0 0 0 12.5 2.5 5.5 5.5 0 0 0 7 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5" />
+                    <path d="M9 18h6" />
+                    <path d="M10 22h4" />
+                  </svg>
+                </div>
+                <h4>Innovation</h4>
+              </div>
+              <p>Continuously upgrading our design and engineering to create eco-friendly personal care.</p>
+            </div>
+            <div class="value-card-new">
+              <div class="value-header">
+                <div class="value-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                </div>
+                <h4>Customer-Centrality</h4>
+              </div>
+              <p>Tailored packaging and product options built to elevate wholesale and OEM partner brands.</p>
+            </div>
+            <div class="value-card-new">
+              <div class="value-header">
+                <div class="value-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="7" />
+                    <path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12" />
+                  </svg>
+                </div>
+                <h4>Quality Excellence</h4>
+              </div>
+              <p>Stellar manufacturing lines ensuring strict safety, hygiene, and durability controls.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3D Pouch Viewer (About section) -->
+      <div class="about-photo-wrap">
+        <div class="product-3d-viewer" id="aboutViewerContainer">
+          <div class="viewer-instruction" id="aboutViewerInstruction">
+            <svg class="drag-icon-svg" viewBox="0 0 24 24" width="16" height="16" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M12 3v18M3 12h18M12 3l3 3M12 3L9 6M12 21l3-3M12 21l-3-3M21 12l-3-3M21 12l-3 3M3 12l3-3M3 12l3 3" />
+            </svg>
+            <span>Drag to rotate 360°</span>
+          </div>
+
+          <div class="product-3d-scene">
+            <div id="aboutProductBox" class="product-3d-box">
+              <div class="about-face front"></div>
+              <div class="about-face back"></div>
+            </div>
+            <div class="product-shadow" id="aboutProductShadow"></div>
+          </div>
+
+          <div class="viewer-controls">
+            <button class="control-btn" id="btnAboutRotateLeft" aria-label="Rotate Left">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+              </svg>
+              Left
+            </button>
+            <button class="control-btn" id="btnAboutRotateRight" aria-label="Rotate Right">
+              Right
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.5 2v6h6M2.66 15.57a10 10 0 1 0 .57-8.38L2.5 8" />
+              </svg>
+            </button>
+            <button class="control-btn" id="btnAboutFlip" aria-label="Flip 180°">
+              Flip 180°
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand New Our Products Showcase Section -->
+    <section class="our-products-section" id="products">
+      <div class="products-wrap">
+        <div class="products-header">
+          <h3 class="scroll-reveal">Our Premium <span>Cotton Products</span></h3>
+          <p class="scroll-reveal">
+            Explore our diverse catalog of manufactured personal care and raw cotton essentials, built with pure organic
+            materials and state-of-the-art hygiene standards.
+          </p>
+        </div>
+
+        <div class="products-grid">
+          <!-- Product 1: Yarns & Threads -->
+          <article class="product-card scroll-reveal">
+            <div class="product-img-box">
+              <img src="image&amp;video/new Yarns &amp; Threads.png" alt="New Yarns &amp; Threads" />
+            </div>
+            <div class="product-info-box">
+              <span class="product-category">Export & Industrial</span>
+              <h4>New Yarns &amp; Threads</h4>
+              <p>Premium quality spools spun from organic long-staple cotton, optimized for strength, clean texture, and
+                professional stitching.</p>
+              <button class="product-btn" aria-label="Show details about New Yarns &amp; Threads">
+                Show More
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Product 2: Absorbent Cotton Fibre -->
+          <article class="product-card scroll-reveal">
+            <div class="product-img-box">
+              <img src="image&amp;video/new Absorbent Cotton Fibre.png" alt="New Absorbent Cotton Fibre" />
+            </div>
+            <div class="product-info-box">
+              <span class="product-category">Medical & Cosmetic Raw Material</span>
+              <h4>New Absorbent Cotton Fibre</h4>
+              <p>Clinical-grade, pure raw cotton fiber processed to exceed high absorption benchmarks, ideal for
+                cosmetic and medical processing.</p>
+              <button class="product-btn" aria-label="Show details about New Absorbent Cotton Fibre">
+                Show More
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Product 3: Cotton Spunlace Rolls/Tapes -->
+          <article class="product-card scroll-reveal">
+            <div class="product-img-box">
+              <img src="image&amp;video/new Cotton Spunlace Rolls Tapes.png" alt="New Cotton Spunlace Rolls &amp; Tapes" />
+            </div>
+            <div class="product-info-box">
+              <span class="product-category">Hygiene & Medical</span>
+              <h4>New Cotton Spunlace Rolls/Tapes</h4>
+              <p>Non-woven cotton spunlace rolls and high-tensile clinical tapes designed for clean medical wraps and
+                sterile skin hygiene.</p>
+              <button class="product-btn" aria-label="Show details about New Cotton Spunlace Rolls/Tapes">
+                Show More
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Product 4: Exfoliating Pads -->
+          <article class="product-card scroll-reveal">
+            <div class="product-img-box">
+              <img src="image&amp;video/new Exfoliating Pads.png" alt="New Exfoliating Pads" />
+            </div>
+            <div class="product-info-box">
+              <span class="product-category">Cosmetics & Beauty</span>
+              <h4>New Exfoliating Pads</h4>
+              <p>Double-sided textured pads designed to gently exfoliate skin, sweep away impurities, and retain
+                essential serum hydration.</p>
+              <button class="product-btn" aria-label="Show details about New Exfoliating Pads">
+                Show More
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Product 5: Cotton Balls -->
+          <article class="product-card scroll-reveal">
+            <div class="product-img-box">
+              <img src="image&amp;video/new Cotton Balls.png" alt="New Cotton Balls" />
+            </div>
+            <div class="product-info-box">
+              <span class="product-category">Hygiene & Baby Care</span>
+              <h4>New Cotton Balls</h4>
+              <p>Super-soft, compact, and sterilized 100% natural cotton balls, ideal for skincare routines, medical
+                cleanses, and infant care.</p>
+              <button class="product-btn" aria-label="Show details about New Cotton Balls">
+                Show More
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Product 6: Cotton Pads -->
+          <article class="product-card scroll-reveal">
+            <div class="product-img-box">
+              <img src="image&amp;video/new Cotton Pads.png" alt="New Cotton Pads" />
+            </div>
+            <div class="product-info-box">
+              <span class="product-category">Cosmetics & Hygiene</span>
+              <h4>New Cotton Pads</h4>
+              <p>Premium cosmetics pads featuring sealed side borders, providing lint-free makeup removal and highly
+                delicate daily cleansing.</p>
+              <button class="product-btn" aria-label="Show details about New Cotton Pads">
+                Show More
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Private Label Solutions Section -->
+    <section class="private-label-section" id="private-label">
+      <div class="pl-grid">
+        <!-- Content Column -->
+        <article class="pl-content-box scroll-reveal">
+          <span class="pl-kicker">Private Label Solutions</span>
+          <h3 class="pl-title">We Care for <span>Your Brand</span></h3>
+
+          <div class="pl-description">
+            <p>
+              At Felice, we specialize in manufacturing high-quality beauty, personal care, and hygiene products for
+              brands across domestic and international markets.
+            </p>
+            <p>
+              We provide complete private label support, from product development and packaging design to reliable
+              manufacturing and timely delivery. Our focus is to help our partners build strong, trusted, and successful
+              brands.
+            </p>
+            <p>
+              With advanced production standards, quality materials, and flexible packaging solutions, we ensure every
+              product reflects your brand’s identity and promise.
+            </p>
+            <p>
+              We are committed to building long-term partnerships based on trust, consistency, and growth.
+            </p>
+          </div>
+
+          <!-- Interactive Customizer Widget -->
+          <div class="pl-customizer">
+            <label for="brandNameInput">💡 Live Brand Preview Widget</label>
+            <div class="pl-customizer-input-wrapper">
+              <input type="text" id="brandNameInput" class="pl-input" placeholder="Type your brand name..."
+                value="Your Brand Name" maxlength="20" aria-label="Live Brand Name Customizer" />
+            </div>
+          </div>
+
+          <!-- Partner With Badges -->
+          <h4 class="pl-partners-title">We Partner With</h4>
+          <div class="pl-partners-grid">
+            <span class="pl-partner-badge">• Retailers</span>
+            <span class="pl-partner-badge">• Distributors</span>
+            <span class="pl-partner-badge">• Brands</span>
+            <span class="pl-partner-badge">• Exporters</span>
+            <span class="pl-partner-badge">• Healthcare &amp; Cosmetic Businesses</span>
+          </div>
+        </article>
+
+        <!-- Mockups Preview Column -->
+        <div class="pl-visual-box scroll-reveal">
+          <div class="pl-deco-ring one"></div>
+          <div class="pl-mockups-container">
+            <!-- Ground Shadow under packaging -->
+            <div class="pl-ground-shadow" style="width: 80%; left: 10%;"></div>
+
+            <!-- Cotton Buds Box Cartoon Mockup -->
+            <div class="pl-product-buds">
+              <svg class="pl-buds-svg" viewBox="0 0 280 220" width="100%" height="100%">
+                <!-- Outer Case -->
+                <rect x="10" y="10" width="260" height="200" rx="16" fill="rgba(255, 255, 255, 0.08)" stroke="rgba(255, 255, 255, 0.95)" stroke-width="2.5" />
+                
+                <!-- Buds Row -->
+                <!-- Bud 0 -->
+                <ellipse cx="20" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="20" y1="36" x2="20" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="20" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 1 -->
+                <ellipse cx="34.1" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="34.1" y1="36" x2="34.1" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="34.1" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 2 -->
+                <ellipse cx="48.2" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="48.2" y1="36" x2="48.2" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="48.2" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 3 -->
+                <ellipse cx="62.4" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="62.4" y1="36" x2="62.4" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="62.4" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 4 -->
+                <ellipse cx="76.5" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="76.5" y1="36" x2="76.5" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="76.5" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 5 -->
+                <ellipse cx="90.6" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="90.6" y1="36" x2="90.6" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="90.6" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 6 -->
+                <ellipse cx="104.7" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="104.7" y1="36" x2="104.7" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="104.7" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 7 -->
+                <ellipse cx="118.8" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="118.8" y1="36" x2="118.8" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="118.8" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 8 -->
+                <ellipse cx="132.9" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="132.9" y1="36" x2="132.9" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="132.9" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 9 -->
+                <ellipse cx="147.1" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="147.1" y1="36" x2="147.1" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="147.1" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 10 -->
+                <ellipse cx="161.2" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="161.2" y1="36" x2="161.2" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="161.2" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 11 -->
+                <ellipse cx="175.3" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="175.3" y1="36" x2="175.3" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="175.3" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 12 -->
+                <ellipse cx="189.4" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="189.4" y1="36" x2="189.4" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="189.4" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 13 -->
+                <ellipse cx="203.5" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="203.5" y1="36" x2="203.5" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="203.5" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 14 -->
+                <ellipse cx="217.6" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="217.6" y1="36" x2="217.6" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="217.6" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 15 -->
+                <ellipse cx="231.8" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="231.8" y1="36" x2="231.8" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="231.8" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 16 -->
+                <ellipse cx="245.9" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="245.9" y1="36" x2="245.9" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="245.9" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+                <!-- Bud 17 -->
+                <ellipse cx="260" cy="24" rx="4.5" ry="12" fill="#ffffff" />
+                <line x1="260" y1="36" x2="260" y2="184" stroke="rgba(255,255,255,0.4)" stroke-width="1.8" />
+                <ellipse cx="260" cy="196" rx="4.5" ry="12" fill="#ffffff" />
+
+                <!-- Paper Sleeve Wrap (Green) -->
+                <rect x="8" y="60" width="264" height="100" fill="#5f9a21" stroke="rgba(255, 255, 255, 0.95)" stroke-width="2" />
+                
+                <!-- White Badge Cutout on Sleeve -->
+                <path d="M 35 60 C 35 120, 245 120, 245 60 Z" fill="#ffffff" />
+
+                <!-- Brand Name Green Shape inside White Badge -->
+                <path d="M 65 68 L 200 68 C 210 68, 215 72, 210 82 L 198 101 C 195 105, 190 105, 185 105 L 65 105 C 55 105, 50 100, 50 90 C 50 80, 55 68, 65 68 Z" fill="#5f9a21" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" />
+                
+                <!-- Small registration symbol next to brand shape -->
+                <circle cx="212" cy="74" r="2.2" fill="none" stroke="#5f9a21" stroke-width="0.6" />
+                <text x="212" y="75.5" fill="#5f9a21" font-size="2" font-family="Manrope, sans-serif" font-weight="800" text-anchor="middle">R</text>
+
+                <!-- "For Delicate Cleaning" small green pill shape -->
+                <rect x="90" y="110" width="100" height="13" rx="6.5" fill="#8bc53f" />
+                <text x="140" y="119.5" fill="#ffffff" font-size="6.5" font-family="Manrope, sans-serif" font-weight="800" text-anchor="middle" letter-spacing="0.02em">For Delicate Cleaning</text>
+
+                <!-- Wave accent on green background below the white badge -->
+                <path d="M 8 135 Q 140 120 272 135 L 272 160 L 8 160 Z" fill="#8bc53f" opacity="0.6" />
+
+                <!-- Cotton plant doodles row -->
+                <g stroke="#ffffff" stroke-opacity="0.85" stroke-width="1" fill="none">
+                  <!-- Cotton plant 1 -->
+                  <path d="M 30 144 L 30 137 M 30 139 L 27 141 M 30 140 L 33 142" />
+                  <path d="M 27 136 A 2.2 2.2 0 0 1 33 136 A 2.2 2.2 0 0 1 31 133 A 2.2 2.2 0 0 1 29 133 Z" fill="#ffffff" />
+                  
+                  <!-- Cotton plant 2 -->
+                  <path d="M 55 144 L 55 137 M 55 139 L 52 141 M 55 140 L 58 142" />
+                  <path d="M 52 136 A 2.2 2.2 0 0 1 58 136 A 2.2 2.2 0 0 1 56 133 A 2.2 2.2 0 0 1 54 133 Z" fill="#ffffff" />
+
+                  <!-- Cotton plant 3 -->
+                  <path d="M 80 144 L 80 137 M 80 139 L 77 141 M 80 140 L 83 142" />
+                  <path d="M 77 136 A 2.2 2.2 0 0 1 83 136 A 2.2 2.2 0 0 1 81 133 A 2.2 2.2 0 0 1 79 133 Z" fill="#ffffff" />
+
+                  <!-- Cotton plant 4 -->
+                  <path d="M 200 144 L 200 137 M 200 139 L 197 141 M 200 140 L 203 142" />
+                  <path d="M 197 136 A 2.2 2.2 0 0 1 203 136 A 2.2 2.2 0 0 1 201 133 A 2.2 2.2 0 0 1 199 133 Z" fill="#ffffff" />
+
+                  <!-- Cotton plant 5 -->
+                  <path d="M 225 144 L 225 137 M 225 139 L 222 141 M 225 140 L 228 142" />
+                  <path d="M 222 136 A 2.2 2.2 0 0 1 228 136 A 2.2 2.2 0 0 1 226 133 A 2.2 2.2 0 0 1 224 133 Z" fill="#ffffff" />
+
+                  <!-- Cotton plant 6 -->
+                  <path d="M 250 144 L 250 137 M 250 139 L 247 141 M 250 140 L 253 142" />
+                  <path d="M 247 136 A 2.2 2.2 0 0 1 253 136 A 2.2 2.2 0 0 1 251 133 A 2.2 2.2 0 0 1 249 133 Z" fill="#ffffff" />
+                </g>
+
+                <!-- Bottom White Banner -->
+                <rect x="8" y="145" width="264" height="14" fill="#ffffff" />
+
+                <!-- Left feature: 200 Buds -->
+                <line x1="16" y1="152" x2="28" y2="152" stroke="#5fa323" stroke-width="1.2" />
+                <ellipse cx="14" cy="152" rx="2" ry="1.2" fill="#5fa323" />
+                <ellipse cx="30" cy="152" rx="2" ry="1.2" fill="#5fa323" />
+                <text x="34" y="155.5" fill="#5fa323" font-size="5.5" font-family="Manrope, sans-serif" font-weight="800" text-anchor="start">200 Buds</text>
+
+                <!-- Center feature: Finest Cotton Quality -->
+                <!-- Tiny cotton icon -->
+                <circle cx="108" cy="152" r="1.3" fill="#5fa323" />
+                <circle cx="111" cy="152" r="1.3" fill="#5fa323" />
+                <circle cx="109.5" cy="150" r="1.3" fill="#5fa323" />
+                <text x="116" y="155.5" fill="#5fa323" font-size="5.5" font-family="Manrope, sans-serif" font-weight="800" text-anchor="start">Finest Cotton Quality</text>
+
+                <!-- Right feature: Biodegradable Paper Stems -->
+                <!-- Recycle loop style outline -->
+                <path d="M 197 154 L 200 150 L 203 154 Z" fill="none" stroke="#5fa323" stroke-width="0.8" />
+                <text x="206" y="155.5" fill="#5fa323" font-size="5.5" font-family="Manrope, sans-serif" font-weight="800" text-anchor="start">Biodegradable Paper Stems</text>
+
+              </svg>
+              <!-- Dynamic Brand Label Overlay -->
+              <div class="pl-brand-label-container">
+                <span class="pl-preview-brand-text">Your Brand Name</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section (Custom Interactive 3D Showcase) -->
+    <section class="why-choose-us" id="why-choose-us">
+      <!-- SVG Connectors between Cards and Central Product -->
+      <svg class="wcu-svg-connector" id="wcuConnectorSvg">
+        <path id="wcuPath1" class="wcu-path-line" />
+        <path id="wcuPath2" class="wcu-path-line" />
+        <path id="wcuPath3" class="wcu-path-line" />
+        <path id="wcuPath4" class="wcu-path-line" />
+        <path id="wcuPath5" class="wcu-path-line" />
+        <path id="wcuPath6" class="wcu-path-line" />
+      </svg>
+
+      <div class="wcu-wrap">
+        <div class="wcu-header">
+          <h3 class="wcu-title">Why Choose <span>Felice?</span></h3>
+          <p class="wcu-copy">
+            Thoughtfully designed for delicate care, everyday hygiene and a cleaner tomorrow.
+          </p>
+        </div>
+
+        <div class="wcu-interactive-grid">
+          <!-- Left Column (2 Cards) -->
+          <div class="wcu-side-col left-col">
+            <!-- Card 1: 100 Buds -->
+            <div class="wcu-card scroll-reveal card-l1" data-index="1">
+              <div class="wcu-card-glow"></div>
+              <div class="wcu-card-header-row">
+                <div class="wcu-icon-circle">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                  </svg>
+                </div>
+                <h4>Private Label Manufacturing
+                </h4>
+              </div>
+              <p>We manufacture premium hygiene products with custom packaging tailored to your brand.</p>
+            </div>
+
+            <!-- Card 2: Soft & Gentle -->
+            <div class="wcu-card scroll-reveal card-l2" data-index="2">
+              <div class="wcu-card-glow"></div>
+              <div class="wcu-card-header-row">
+                <div class="wcu-icon-circle">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
+                    <line x1="16" y1="8" x2="2" y2="22" />
+                    <line x1="17.5" y1="15" x2="9" y2="15" />
+                  </svg>
+                </div>
+                <h4>Soft & Gentle</h4>
+              </div>
+              <p>Ultra-soft tips designed for sensitive skin and delicate cleaning.</p>
+            </div>
+          </div>
+
+          <!-- Center Column (3D Viewer on Podium) -->
+          <div class="wcu-center-col">
+            <div class="wcu-podium-wrap">
+              <!-- Floating Badge -->
+              <div class="wcu-floating-badge scroll-reveal">
+                <div class="badge-inner">
+                  <span class="badge-pct">100%</span>
+                  <span class="badge-text">Gentle Care,<br>Every Time</span>
+                </div>
+              </div>
+
+              <!-- Decorative Cotton flower boll -->
+              <div class="wcu-cotton-deco">
+                <img src="image&video/cotton_flower.png" alt="Natural Cotton Flower" />
+              </div>
+
+              <!-- Circular Marble Podium Base -->
+              <div class="podium-base">
+                <div class="podium-top"></div>
+                <div class="podium-side"></div>
+                <div class="podium-reflection"></div>
+              </div>
+
+              <!-- 3D Cardboard Box Viewer (Why Choose Us section) -->
+              <div class="product-3d-viewer" id="wcuViewerContainer">
+                <div class="viewer-instruction" id="wcuViewerInstruction">
+                  <svg class="drag-icon-svg" viewBox="0 0 24 24" width="16" height="16" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      d="M12 3v18M3 12h18M12 3l3 3M12 3L9 6M12 21l3-3M12 21l-3-3M21 12l-3-3M21 12l-3 3M3 12l3-3M3 12l3 3" />
+                  </svg>
+                  <span>Drag to rotate 360°</span>
+                </div>
+
+                <div class="product-3d-scene" style="width: 320px; height: 330px;">
+                  <div id="wcuProductBox">
+                    <div class="wcu-face front"></div>
+                    <div class="wcu-face back"></div>
+                  </div>
+                  <div class="product-shadow" id="wcuProductShadow"></div>
+                </div>
+
+                <div class="viewer-controls">
+                  <button class="control-btn" id="btnWcuRotateLeft" aria-label="Rotate Left">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+                    </svg>
+                    Left
+                  </button>
+                  <button class="control-btn" id="btnWcuRotateRight" aria-label="Rotate Right">
+                    Right
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M2.5 2v6h6M2.66 15.57a10 10 0 1 0 .57-8.38L2.5 8" />
+                    </svg>
+                  </button>
+                  <button class="control-btn" id="btnWcuFlip" aria-label="Flip 180°">
+                    Flip 180°
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column (4 Cards) -->
+          <div class="wcu-side-col right-col">
+            <!-- Card 3: Finest Cotton Quality -->
+            <div class="wcu-card scroll-reveal card-r1" data-index="3">
+              <div class="wcu-card-glow"></div>
+              <div class="wcu-card-header-row">
+                <div class="wcu-icon-circle">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                    <path d="M12 6a6 6 0 0 1 6 6M12 8a4 4 0 0 1 4 4" />
+                  </svg>
+                </div>
+                <h4>Finest Cotton Quality</h4>
+              </div>
+              <p>Made with premium cotton for superior absorbency and care.</p>
+            </div>
+
+            <!-- Card 4: Biodegradable Paper Stems -->
+            <div class="wcu-card scroll-reveal card-r2" data-index="4">
+              <div class="wcu-card-glow"></div>
+              <div class="wcu-card-header-row">
+                <div class="wcu-icon-circle">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+                  </svg>
+                </div>
+                <h4>Biodegradable Paper Stems</h4>
+              </div>
+              <p>Eco-friendly choice that's better for you and the planet.</p>
+            </div>
+
+            <!-- Card 5: Hygienic Packaging -->
+            <div class="wcu-card scroll-reveal card-r3" data-index="5">
+              <div class="wcu-card-glow"></div>
+              <div class="wcu-card-header-row">
+                <div class="wcu-icon-circle">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </div>
+                <h4>Hygienic Packaging</h4>
+              </div>
+              <p>Sealed pack to ensure cleanliness and protection every time.</p>
+            </div>
+
+            <!-- Card 6: Ideal for Delicate Cleaning -->
+            <div class="wcu-card scroll-reveal card-r4" data-index="6">
+              <div class="wcu-card-glow"></div>
+              <div class="wcu-card-header-row">
+                <div class="wcu-icon-circle">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </div>
+                <h4>Ideal for Delicate Cleaning</h4>
+              </div>
+              <p>Perfect for ears, baby care, makeup touch-ups and more.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Curved Ribbon Bar -->
+        <div class="wcu-bottom-bar scroll-reveal">
+          <div class="wcu-bottom-item">
+            <span class="wcu-bullet">•</span>
+            <span>Custom Brand Packaging</span>
+          </div>
+          <div class="wcu-bottom-divider">|</div>
+          <div class="wcu-bottom-item">
+            <span class="wcu-bullet">•</span>
+            <span>Finest Cotton Quality</span>
+          </div>
+          <div class="wcu-bottom-divider">|</div>
+          <div class="wcu-bottom-item">
+            <span class="wcu-bullet">•</span>
+            <span>Biodegradable Paper Stems</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Premium CTA Section -->
+    <section class="cta-section scroll-reveal">
+      <div class="cta-glow-1"></div>
+      <div class="cta-glow-2"></div>
+      <div class="cta-content">
+        <span class="cta-kicker">Get in Touch</span>
+        <h3 class="cta-title">Ready to Elevate Your <span>Hygiene Brand?</span></h3>
+        <p class="cta-description">
+          Whether you are a global distributor, wholesaler, or an OEM partner, we provide tailored premium cotton care
+          products, clinical spunlace rolls, and custom packaging solutions engineered for trust and reliability.
+        </p>
+        <div class="cta-buttons">
+          <a href="#contact" class="cta-btn-primary">
+            Inquire Now
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4Z" />
+            </svg>
+          </a>
+          <a href="#products" class="cta-btn-secondary">
+            Explore Products
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m8 12 4 4 6-6" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="cta-badges">
+          <div class="cta-badge-item">
+            <div class="cta-badge-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h5>100% Organic Cotton</h5>
+            <p>Pure, sterile, hypoallergenic care</p>
+          </div>
+          <div class="cta-badge-item">
+            <div class="cta-badge-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="7" />
+                <path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12" />
+              </svg>
+            </div>
+            <h5>11+ Years Excellence</h5>
+            <p>Trusted global manufacturing lines</p>
+          </div>
+          <div class="cta-badge-item">
+            <div class="cta-badge-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              </svg>
+            </div>
+            <h5>Custom OEM/ODM</h5>
+            <p>Bespoke packaging and dimensions</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="footer-wrap">
+      <div>
+        <div class="footer-logo-wrap" style="margin-bottom: 16px;">
+          <img src="image&amp;video/logo.png" alt="Felice logo"
+            style="width: 150px; display: block; filter: drop-shadow(0 8px 20px rgba(139, 197, 63, 0.2));" />
+        </div>
+        <p style="margin-bottom: 14px; line-height: 1.6; font-size: 0.9rem; color: rgba(237, 237, 235, 0.8);">
+          PASSION FOR CONSISTENT QUALITY AND CUSTOMER SATISFACTION-Building long-term relationships based on trust &
+          transparency
+        </p>
+        <p style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="color: var(--felice-green);">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <a href="tel:+919016661725" style="color: rgba(237, 237, 235, 0.9); text-decoration: none;">+91 9016661725</a>
+        </p>
+        <p style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="color: var(--felice-green);">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          <a href="mailto:Sales@felice.co.in"
+            style="color: rgba(237, 237, 235, 0.9); text-decoration: none;">Sales@felice.co.in</a>
+        </p>
+        <p
+          style="margin-bottom: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"
+            style="color: var(--felice-green); flex-shrink: 0; margin-top: 3px;">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Shubham Industrial Estates Mankada Villege, Kamrej Surat - 394310</span>
+        </p>
+        <div class="social">
+          <a href="#" aria-label="Facebook">Facebook</a>
+          <a href="#" aria-label="Instagram">Instagram</a>
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          Services
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="#products">New Yarns &amp; Threads</a></li>
+          <li><a href="#products">New Absorbent Cotton Fibre</a></li>
+          <li><a href="#products">New Cotton Spunlace Rolls/Tapes</a></li>
+          <li><a href="#products">New Exfoliating Pads</a></li>
+          <li><a href="#products">New Cotton Balls</a></li>
+          <li><a href="#products">New Cotton Pads</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          Support
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#private-label">Private Label / Job Work</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          One-stop Solutions for All Industries
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      Copyright @2026, All Rights Reserved. Design By Technomantra India
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("menu");
+    const heroImageWrap = document.getElementById("heroImageWrap");
+
+    // Mobile Menu Toggle
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("open");
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => menu.classList.remove("open"));
+    });
+
+    // Hero Image Subtle Parallax
+    window.addEventListener("mousemove", (e) => {
+      if (!heroImageWrap) return;
+      if (window.innerWidth < 900) return;
+      const x = (e.clientX / window.innerWidth - 0.5) * 12;
+      const y = (e.clientY / window.innerHeight - 0.5) * 8;
+      heroImageWrap.style.transform = `scale(1.02) translate3d(${x}px, ${y}px, 0)`;
+    });
+
+
+
+    function drawWcuConnectingLines() {
+      const svg = document.getElementById("wcuConnectorSvg");
+      if (!svg) return;
+
+      const cards = document.querySelectorAll(".wcu-card");
+      const viewer = document.getElementById("wcuViewerContainer");
+      if (!viewer || cards.length === 0) return;
+
+      if (window.innerWidth <= 1024) {
+        for (let i = 1; i <= 6; i++) {
+          const path = document.getElementById(`wcuPath${i}`);
+          if (path) path.setAttribute("d", "");
+        }
+        return;
+      }
+
+      const svgRect = svg.getBoundingClientRect();
+      const viewerRect = viewer.getBoundingClientRect();
+
+      // Core anchor point inside the viewer (center-ish)
+      const pX = (viewerRect.left + viewerRect.right) / 2 - svgRect.left;
+      const pY = (viewerRect.top + viewerRect.bottom) / 2 - svgRect.top - 20;
+
+      cards.forEach(card => {
+        const index = parseInt(card.getAttribute("data-index"), 10);
+        const path = document.getElementById(`wcuPath${index}`);
+        const iconCircle = card.querySelector(".wcu-icon-circle");
+        if (!path || !iconCircle) return;
+
+        const iconRect = iconCircle.getBoundingClientRect();
+
+        let startX, startY, tX, tY;
+        const isLeft = index <= 2;
+
+        if (isLeft) {
+          startX = iconRect.right - svgRect.left;
+          startY = (iconRect.top + iconRect.bottom) / 2 - svgRect.top;
+          tX = pX - 110;
+          tY = index === 1 ? pY - 30 : pY + 25;
+        } else {
+          startX = iconRect.left - svgRect.left;
+          startY = (iconRect.top + iconRect.bottom) / 2 - svgRect.top;
+          tX = pX + 110;
+          if (index === 3) tY = pY - 60;
+          else if (index === 4) tY = pY - 20;
+          else if (index === 5) tY = pY + 20;
+          else tY = pY + 60;
+        }
+
+        // Draw curved Bezier path
+        const ctrlX = (startX + tX) / 2;
+        const d = `M ${startX} ${startY} C ${ctrlX} ${startY}, ${ctrlX} ${tY}, ${tX} ${tY}`;
+        path.setAttribute("d", d);
+      });
+    }
+
+    // Set up hover triggers for connectors
+    const wcuCardsForLines = document.querySelectorAll(".wcu-card");
+    wcuCardsForLines.forEach(card => {
+      const index = card.getAttribute("data-index");
+      const path = document.getElementById(`wcuPath${index}`);
+      card.addEventListener("mouseenter", () => {
+        if (path) path.classList.add("active");
+      });
+      card.addEventListener("mouseleave", () => {
+        if (path) path.classList.remove("active");
+      });
+    });
+
+    function updateAllLines() {
+      drawWcuConnectingLines();
+    }
+
+    window.addEventListener("load", updateAllLines);
+    window.addEventListener("resize", updateAllLines);
+    window.addEventListener("scroll", updateAllLines);
+
+    // 1. About Us 3D Pouch Viewer Logic
+    const aboutBox = document.getElementById("aboutProductBox");
+    const aboutShadow = document.getElementById("aboutProductShadow");
+    const aboutViewer = document.getElementById("aboutViewerContainer");
+    const aboutInstruction = document.getElementById("aboutViewerInstruction");
+    const btnAboutRotateLeft = document.getElementById("btnAboutRotateLeft");
+    const btnAboutRotateRight = document.getElementById("btnAboutRotateRight");
+    const btnAboutFlip = document.getElementById("btnAboutFlip");
+
+    let aboutDragging = false;
+    let aboutStartX = 0, aboutStartY = 0;
+    let aboutCurrentX = 0;    // rotateY
+    let aboutCurrentY = -15;  // rotateX
+    let aboutTargetX = 0;
+    let aboutTargetY = -15;
+    let aboutSpinActive = true;
+    let aboutSpinSpeed = 0.3;
+    let aboutResumeTimeout = null;
+
+    function animateAbout3D() {
+      if (aboutSpinActive && !aboutDragging) {
+        aboutTargetX += aboutSpinSpeed;
+      }
+      aboutCurrentX += (aboutTargetX - aboutCurrentX) * 0.1;
+      aboutCurrentY += (aboutTargetY - aboutCurrentY) * 0.1;
+
+      if (aboutBox) {
+        aboutBox.style.transform = `rotateX(${aboutCurrentY}deg) rotateY(${aboutCurrentX}deg)`;
+      }
+      if (aboutShadow) {
+        const scaleVal = 1 - Math.abs(aboutCurrentY) / 180;
+        const opacityVal = 0.9 - Math.abs(aboutCurrentY) / 100;
+        aboutShadow.style.transform = `rotateX(90deg) translateZ(-215px) scale(${scaleVal})`;
+        aboutShadow.style.opacity = Math.max(0.2, opacityVal);
+      }
+      requestAnimationFrame(animateAbout3D);
+    }
+    requestAnimationFrame(animateAbout3D);
+
+    function stopAboutSpin() {
+      aboutSpinActive = false;
+      if (aboutInstruction) aboutInstruction.style.opacity = "0";
+      if (aboutResumeTimeout) clearTimeout(aboutResumeTimeout);
+    }
+    function startAboutSpinDelay() {
+      aboutResumeTimeout = setTimeout(() => {
+        if (!aboutDragging) aboutSpinActive = true;
+      }, 3000);
+    }
+
+    if (aboutViewer) {
+      aboutViewer.addEventListener("mousedown", (e) => {
+        if (e.target.closest(".viewer-controls")) return;
+        aboutDragging = true;
+        stopAboutSpin();
+        aboutStartX = e.clientX;
+        aboutStartY = e.clientY;
+        e.preventDefault();
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (!aboutDragging) return;
+        const deltaX = e.clientX - aboutStartX;
+        const deltaY = e.clientY - aboutStartY;
+        aboutTargetX += deltaX * 0.6;
+        aboutTargetY -= deltaY * 0.6;
+        aboutTargetY = Math.max(-45, Math.min(45, aboutTargetY));
+        aboutStartX = e.clientX;
+        aboutStartY = e.clientY;
+      });
+
+      window.addEventListener("mouseup", () => {
+        if (aboutDragging) {
+          aboutDragging = false;
+          startAboutSpinDelay();
+        }
+      });
+
+      aboutViewer.addEventListener("touchstart", (e) => {
+        if (e.target.closest(".viewer-controls")) return;
+        aboutDragging = true;
+        stopAboutSpin();
+        aboutStartX = e.touches[0].clientX;
+        aboutStartY = e.touches[0].clientY;
+      });
+
+      window.addEventListener("touchmove", (e) => {
+        if (!aboutDragging) return;
+        const deltaX = e.touches[0].clientX - aboutStartX;
+        const deltaY = e.touches[0].clientY - aboutStartY;
+        aboutTargetX += deltaX * 0.6;
+        aboutTargetY -= deltaY * 0.6;
+        aboutTargetY = Math.max(-45, Math.min(45, aboutTargetY));
+        aboutStartX = e.touches[0].clientX;
+        aboutStartY = e.touches[0].clientY;
+      });
+
+      window.addEventListener("touchend", () => {
+        if (aboutDragging) {
+          aboutDragging = false;
+          startAboutSpinDelay();
+        }
+      });
+    }
+
+    if (btnAboutRotateLeft) {
+      btnAboutRotateLeft.addEventListener("click", () => {
+        stopAboutSpin();
+        aboutTargetX -= 45;
+        startAboutSpinDelay();
+      });
+    }
+    if (btnAboutRotateRight) {
+      btnAboutRotateRight.addEventListener("click", () => {
+        stopAboutSpin();
+        aboutTargetX += 45;
+        startAboutSpinDelay();
+      });
+    }
+    if (btnAboutFlip) {
+      btnAboutFlip.addEventListener("click", () => {
+        stopAboutSpin();
+        aboutTargetX += 180;
+        startAboutSpinDelay();
+      });
+    }
+
+    // 2. Why Choose Us 3D Cardboard Box Viewer Logic
+    const wcuBox = document.getElementById("wcuProductBox");
+    const wcuShadow = document.getElementById("wcuProductShadow");
+    const wcuViewer = document.getElementById("wcuViewerContainer");
+    const wcuInstruction = document.getElementById("wcuViewerInstruction");
+    const btnWcuRotateLeft = document.getElementById("btnWcuRotateLeft");
+    const btnWcuRotateRight = document.getElementById("btnWcuRotateRight");
+    const btnWcuFlip = document.getElementById("btnWcuFlip");
+
+    let wcuDragging = false;
+    let wcuStartX = 0, wcuStartY = 0;
+    let wcuCurrentX = 0;    // rotateY
+    let wcuCurrentY = -15;  // rotateX
+    let wcuTargetX = 0;
+    let wcuTargetY = -15;
+    let wcuSpinActive = true;
+    let wcuSpinSpeed = 0.3;
+    let wcuResumeTimeout = null;
+
+    function animateWcu3D() {
+      if (wcuSpinActive && !wcuDragging) {
+        wcuTargetX += wcuSpinSpeed;
+      }
+      wcuCurrentX += (wcuTargetX - wcuCurrentX) * 0.1;
+      wcuCurrentY += (wcuTargetY - wcuCurrentY) * 0.1;
+
+      if (wcuBox) {
+        wcuBox.style.transform = `rotateX(${wcuCurrentY}deg) rotateY(${wcuCurrentX}deg)`;
+      }
+      if (wcuShadow) {
+        const scaleVal = 1 - Math.abs(wcuCurrentY) / 180;
+        const opacityVal = 0.9 - Math.abs(wcuCurrentY) / 100;
+        wcuShadow.style.transform = `rotateX(90deg) translateZ(-155px) scale(${scaleVal})`;
+        wcuShadow.style.opacity = Math.max(0.2, opacityVal);
+      }
+      requestAnimationFrame(animateWcu3D);
+    }
+    requestAnimationFrame(animateWcu3D);
+
+    function stopWcuSpin() {
+      wcuSpinActive = false;
+      if (wcuInstruction) wcuInstruction.style.opacity = "0";
+      if (wcuResumeTimeout) clearTimeout(wcuResumeTimeout);
+    }
+    function startWcuSpinDelay() {
+      wcuResumeTimeout = setTimeout(() => {
+        if (!wcuDragging) wcuSpinActive = true;
+      }, 3000);
+    }
+
+    if (wcuViewer) {
+      wcuViewer.addEventListener("mousedown", (e) => {
+        if (e.target.closest(".viewer-controls")) return;
+        wcuDragging = true;
+        stopWcuSpin();
+        wcuStartX = e.clientX;
+        wcuStartY = e.clientY;
+        e.preventDefault();
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (!wcuDragging) return;
+        const deltaX = e.clientX - wcuStartX;
+        const deltaY = e.clientY - wcuStartY;
+        wcuTargetX += deltaX * 0.6;
+        wcuTargetY -= deltaY * 0.6;
+        wcuTargetY = Math.max(-45, Math.min(45, wcuTargetY));
+        wcuStartX = e.clientX;
+        wcuStartY = e.clientY;
+      });
+
+      window.addEventListener("mouseup", () => {
+        if (wcuDragging) {
+          wcuDragging = false;
+          startWcuSpinDelay();
+        }
+      });
+
+      wcuViewer.addEventListener("touchstart", (e) => {
+        if (e.target.closest(".viewer-controls")) return;
+        wcuDragging = true;
+        stopWcuSpin();
+        wcuStartX = e.touches[0].clientX;
+        wcuStartY = e.touches[0].clientY;
+      });
+
+      window.addEventListener("touchmove", (e) => {
+        if (!wcuDragging) return;
+        const deltaX = e.touches[0].clientX - wcuStartX;
+        const deltaY = e.touches[0].clientY - wcuStartY;
+        wcuTargetX += deltaX * 0.6;
+        wcuTargetY -= deltaY * 0.6;
+        wcuTargetY = Math.max(-45, Math.min(45, wcuTargetY));
+        wcuStartX = e.touches[0].clientX;
+        wcuStartY = e.touches[0].clientY;
+      });
+
+      window.addEventListener("touchend", () => {
+        if (wcuDragging) {
+          wcuDragging = false;
+          startWcuSpinDelay();
+        }
+      });
+    }
+
+    if (btnWcuRotateLeft) {
+      btnWcuRotateLeft.addEventListener("click", () => {
+        stopWcuSpin();
+        wcuTargetX -= 45;
+        startWcuSpinDelay();
+      });
+    }
+    if (btnWcuRotateRight) {
+      btnWcuRotateRight.addEventListener("click", () => {
+        stopWcuSpin();
+        wcuTargetX += 45;
+        startWcuSpinDelay();
+      });
+    }
+    if (btnWcuFlip) {
+      btnWcuFlip.addEventListener("click", () => {
+        stopWcuSpin();
+        wcuTargetX += 180;
+        startWcuSpinDelay();
+      });
+    }
+
+    // Intersection Observer for scroll reveal animations
+    const revealElements = document.querySelectorAll(".scroll-reveal");
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add active class to animate entry
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: "0px 0px -20px 0px"
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Mouse glow trail effect for cards
+    const glowCards = document.querySelectorAll(".wcu-card");
+    glowCards.forEach(card => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+      });
+    });
+
+    // Private Label Live Preview Binder
+    const brandNameInput = document.getElementById("brandNameInput");
+    const previewTexts = document.querySelectorAll(".pl-preview-brand-text");
+
+    if (brandNameInput) {
+      brandNameInput.addEventListener("input", (e) => {
+        const textVal = e.target.value.trim() || "Your Brand";
+        previewTexts.forEach(el => {
+          el.textContent = textVal;
+        });
+      });
+    }
+  </script>
+</body>
+
+</html>
