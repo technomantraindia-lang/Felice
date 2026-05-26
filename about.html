@@ -1,0 +1,2579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Felice | Premium Cotton Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg-cream: #f5efe4;
+      --bg-champagne: #e9dbc1;
+      --felice-green: #8bc53f;
+      --felice-green-deep: #5f9a21;
+      --felice-gold: #ffb31a;
+      --text-ink: #1d1d1b;
+      --text-soft: #5b5b53;
+      --white: #ffffff;
+      --shadow-soft: 0 12px 38px rgba(29, 29, 27, 0.12);
+      --shadow-card: 0 22px 42px rgba(29, 29, 27, 0.15);
+      --radius-xl: 28px;
+      --radius-md: 16px;
+      --container: min(1560px, 94vw);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--text-ink);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(139, 197, 63, 0.2), transparent 32%),
+        radial-gradient(circle at 85% 22%, rgba(255, 179, 26, 0.2), transparent 38%),
+        linear-gradient(135deg, var(--bg-cream), #f8f4ec 55%, var(--bg-champagne));
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Fixed floating background shapes */
+    .shape {
+      position: fixed;
+      z-index: -1;
+      border-radius: 50%;
+      filter: blur(0.4px);
+      animation: float 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .shape.one {
+      width: 280px;
+      aspect-ratio: 1;
+      left: -80px;
+      top: 100px;
+      background: radial-gradient(circle at 30% 30%, #d6f3ac, #8bc53f);
+      opacity: 0.25;
+    }
+
+    .shape.two {
+      width: 360px;
+      aspect-ratio: 1;
+      right: -120px;
+      top: 320px;
+      background: radial-gradient(circle at 35% 35%, #ffe6ad, #ffb31a);
+      opacity: 0.2;
+      animation-delay: 1.8s;
+    }
+
+    .shape.three {
+      width: 210px;
+      aspect-ratio: 1;
+      right: 20%;
+      bottom: 80px;
+      background: radial-gradient(circle at 35% 35%, #dbf5b5, #8bc53f);
+      opacity: 0.18;
+      animation-delay: 3s;
+    }
+
+    /* Header Styling */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: rgba(250, 247, 240, 0.78);
+      border-bottom: 1px solid rgba(29, 29, 27, 0.08);
+    }
+
+    .header-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      min-height: 80px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand {
+      justify-self: start;
+      display: block;
+      position: relative;
+      width: 155px;
+      height: 60px;
+      overflow: hidden;
+    }
+
+    .brand img {
+      position: absolute;
+      width: 171px;
+      height: 171px;
+      top: -34px;
+      left: -9px;
+      display: block;
+      filter: drop-shadow(0 1px 4px rgba(139, 197, 63, 0.15));
+    }
+
+    .menu {
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .menu a {
+      color: var(--text-ink);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 6px 16px;
+      border-radius: 999px;
+      transition: transform 0.26s ease, color 0.26s ease, background 0.26s ease;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      color: var(--felice-green-deep);
+      background: rgba(139, 197, 63, 0.14);
+      transform: translateY(-2px);
+    }
+
+    .menu a.active {
+      background: rgba(139, 197, 63, 0.2);
+    }
+
+    .header-right {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-quote {
+      background: linear-gradient(135deg, var(--felice-green) 0%, var(--felice-green-deep) 100%);
+      color: var(--white);
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(139, 197, 63, 0.3);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-quote:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 197, 63, 0.45);
+      filter: brightness(1.05);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: rgba(139, 197, 63, 0.14);
+      color: var(--text-ink);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    /* Main Content Wrapper */
+    main {
+      width: var(--container);
+      margin: 0 auto;
+      padding-top: 0;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-top: 24px;
+      margin-bottom: 24px;
+      animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .breadcrumbs a {
+      color: var(--felice-green-deep);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumbs a:hover {
+      color: var(--felice-gold);
+    }
+
+    .breadcrumbs span {
+      color: var(--text-soft);
+    }
+
+    /* Page Hero Banner - Updated to show full hero image */
+    .hero {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      isolation: isolate;
+      border-bottom: 3px solid var(--felice-green);
+      background: #ffffff;
+    }
+
+    .hero-card {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      animation: rise 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      transform: none;
+      transition: none;
+      background: #ffffff;
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      object-position: center center;
+      filter: brightness(1.08) contrast(1.02) saturate(1.04);
+    }
+
+    .hero-image-wrap::before {
+      display: none;
+    }
+
+    .hero-overlay-content {
+      display: none;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        width: 100%;
+      }
+
+      .hero-image-wrap img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center center;
+      }
+    }
+
+    /* Split Section Layout */
+    .about-split {
+      display: grid;
+      grid-template-columns: 1.1fr 1.2fr;
+      gap: clamp(24px, 5vw, 60px);
+      align-items: center;
+      margin-bottom: 90px;
+    }
+
+    .about-image-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(139, 197, 63, 0.25);
+      aspect-ratio: 4 / 3;
+      background: var(--white);
+    }
+
+    .about-image-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .about-image-card:hover img {
+      transform: scale(1.04);
+    }
+
+    /* Floating badges */
+    .img-badge {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      border: 1.5px solid rgba(139, 197, 63, 0.35);
+      padding: 10px 18px;
+      border-radius: 999px;
+      box-shadow: 0 10px 25px rgba(29, 29, 27, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 3;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text-ink);
+      transition: all 0.3s ease;
+    }
+
+    .img-badge svg {
+      color: var(--felice-green-deep);
+      flex-shrink: 0;
+    }
+
+    .img-badge.badge-iso {
+      top: 24px;
+      left: 24px;
+      animation: floatBadge1 5s ease-in-out infinite alternate;
+    }
+
+    .img-badge.badge-capacity {
+      top: 80px;
+      right: 24px;
+      animation: floatBadge2 6s ease-in-out infinite alternate;
+      border-color: rgba(255, 179, 26, 0.4);
+    }
+
+    .img-badge.badge-capacity svg {
+      color: var(--felice-gold);
+    }
+
+    .about-experience-badge {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      background: var(--white);
+      border: 2px solid var(--felice-green);
+      padding: 14px 22px;
+      border-radius: var(--radius-md);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      z-index: 3;
+      animation: badgeFloat 6s ease-in-out infinite alternate;
+    }
+
+    .about-experience-badge span.plus {
+      font-family: "DM Serif Display", serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--felice-green-deep);
+      line-height: 1;
+    }
+
+    .badge-years {
+      font-family: "DM Serif Display", serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--felice-green-deep);
+      line-height: 1;
+    }
+
+    .badge-label {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-soft);
+      margin-top: 4px;
+    }
+
+    @keyframes floatBadge1 {
+      0% {
+        transform: translateY(0) rotate(-1deg);
+      }
+
+      100% {
+        transform: translateY(-8px) rotate(1deg);
+      }
+    }
+
+    @keyframes floatBadge2 {
+      0% {
+        transform: translateY(0) rotate(1deg);
+      }
+
+      100% {
+        transform: translateY(-10px) rotate(-1deg);
+      }
+    }
+
+    .about-content-card {
+      border-radius: var(--radius-xl);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(250, 246, 238, 0.9));
+      border: 1px solid rgba(139, 197, 63, 0.15);
+      padding: clamp(24px, 4vw, 44px);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+
+    .about-content-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--felice-green), var(--felice-gold));
+    }
+
+    .about-content-card h2 {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+      color: var(--text-ink);
+      line-height: 1.25;
+      margin-bottom: 24px;
+    }
+
+    .about-content-card h2 span {
+      color: var(--felice-green-deep);
+    }
+
+    /* Interactive highlight cards */
+    .intro-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .intro-highlight {
+      display: flex;
+      gap: 16px;
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.45);
+      border: 1px solid rgba(29, 29, 27, 0.05);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-highlight::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--felice-green);
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .intro-highlight:hover::before {
+      transform: scaleY(1);
+    }
+
+    .intro-highlight:hover {
+      background: var(--white);
+      transform: translateX(6px);
+      box-shadow: 0 8px 24px rgba(29, 29, 27, 0.06);
+      border-color: rgba(139, 197, 63, 0.25);
+    }
+
+    .highlight-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(139, 197, 63, 0.1);
+      color: var(--felice-green-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .intro-highlight:hover .highlight-icon {
+      background: var(--felice-green);
+      color: var(--white);
+      transform: scale(1.05);
+    }
+
+    .highlight-details h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-ink);
+      margin-bottom: 4px;
+    }
+
+    .highlight-details p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    /* Stats Grid */
+    .intro-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      border-top: 1px solid rgba(29, 29, 27, 0.08);
+      padding-top: 24px;
+      margin-top: 16px;
+    }
+
+    .stat-item {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-num-wrap {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--felice-green-deep);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-soft);
+    }
+
+    /* Core Values Section */
+    .section-header-center {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 50px;
+    }
+
+    .section-header-center h2 {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 14px;
+      color: var(--text-ink);
+    }
+
+    .section-header-center h2 span {
+      color: var(--felice-green-deep);
+    }
+
+    .section-header-center p {
+      color: var(--text-soft);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* Core Values Orbit Styling */
+    .values-orbit-container {
+      position: relative;
+      max-width: 580px;
+      width: 100%;
+      aspect-ratio: 1;
+      margin: 40px auto 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .orbit-ring {
+      position: absolute;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .orbit-ring-outer {
+      width: 82.75%;
+      height: 82.75%;
+      border: 2px solid rgba(139, 197, 63, 0.18);
+    }
+
+    .orbit-ring-middle {
+      width: 66.38%;
+      height: 66.38%;
+      border: 1.5px dashed rgba(255, 179, 26, 0.35);
+    }
+
+    .orbit-ring-inner {
+      width: 50%;
+      height: 50%;
+      border: 1px solid rgba(139, 197, 63, 0.35);
+    }
+
+    .orbit-center-card {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      z-index: 5;
+    }
+
+    .center-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(15px, 3vw, 30px);
+      text-align: center;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .center-content.active {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
+    .center-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .center-logo img {
+      max-height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .center-instruction {
+      font-size: clamp(0.72rem, 1.5vw, 0.82rem);
+      color: var(--text-soft);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+      max-width: 80%;
+    }
+
+    .value-num-badge {
+      font-family: "DM Serif Display", serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--white);
+      background: var(--felice-green-deep);
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      display: inline-block;
+      box-shadow: 0 4px 10px rgba(95, 154, 33, 0.2);
+    }
+
+    .center-content h4 {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      color: var(--text-ink);
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    .center-content p {
+      font-size: clamp(0.75rem, 1.5vw, 0.88rem);
+      color: var(--text-soft);
+      line-height: 1.5;
+      max-width: 90%;
+    }
+
+    .orbit-node {
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid rgba(139, 197, 63, 0.4);
+      color: var(--text-ink);
+      font-family: "Manrope", sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(29, 29, 27, 0.08);
+      outline: none;
+    }
+
+    .orbit-node:hover,
+    .orbit-node.active {
+      background: var(--felice-green-deep);
+      color: var(--white);
+      border-color: var(--felice-green);
+      transform: translate(-50%, -50%) scale(1.15);
+      box-shadow: 0 0 20px rgba(139, 197, 63, 0.5);
+    }
+
+    /* Positioning nodes relative to the center using percentages */
+    .node-01 {
+      top: calc(50% - 41.38%);
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .node-02 {
+      top: 50%;
+      left: calc(50% + 41.38%);
+      transform: translate(-50%, -50%);
+    }
+
+    .node-03 {
+      top: calc(50% + 41.38%);
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .node-04 {
+      top: 50%;
+      left: calc(50% - 41.38%);
+      transform: translate(-50%, -50%);
+    }
+
+    /* Mobile Fallback List - Hidden on desktop */
+    .values-mobile-list {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 60px;
+      padding: 0 15px;
+    }
+
+    .mobile-value-card {
+      background: var(--white);
+      border: 1px solid rgba(29, 29, 27, 0.08);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      box-shadow: 0 8px 24px rgba(29, 29, 27, 0.04);
+      transition: all 0.3s ease;
+    }
+
+    .mobile-value-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(139, 197, 63, 0.3);
+      box-shadow: 0 12px 30px rgba(29, 29, 27, 0.08);
+    }
+
+    .mobile-value-num {
+      font-family: "DM Serif Display", serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--white);
+      background: var(--felice-green-deep);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(95, 154, 33, 0.2);
+    }
+
+    .mobile-value-content h3 {
+      font-family: "DM Serif Display", serif;
+      font-size: 1.15rem;
+      color: var(--text-ink);
+      margin-bottom: 6px;
+    }
+
+    .mobile-value-content p {
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    /* Restructured Mission & Vision Grid Layout */
+    /* Flowchart Tree Mission & Vision Layout */
+    .mv-interactive-tree {
+      max-width: 1040px;
+      margin: 0 auto 110px;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .mv-tree-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .mv-top-tag {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--felice-green-deep);
+      background: rgba(139, 197, 63, 0.12);
+      padding: 6px 18px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(139, 197, 63, 0.25);
+    }
+
+    .mv-title {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      line-height: 1.15;
+      color: var(--text-ink);
+      margin: 0;
+    }
+
+    .mv-title span {
+      color: var(--felice-green-deep);
+    }
+
+    .mv-tree-container {
+      position: relative;
+      width: 1000px;
+      height: 180px;
+      margin: 0 auto;
+    }
+
+    /* Center Foundation Node */
+    .mv-center-node {
+      position: absolute;
+      left: 50%;
+      top: 30px;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .center-circle {
+      width: 115px;
+      height: 115px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--white) 0%, #f6f0e4 100%);
+      border: 2px solid var(--felice-green);
+      box-shadow: 0 10px 25px rgba(139, 197, 63, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 2;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+
+    .mv-center-node:hover .center-circle {
+      transform: scale(1.06);
+      box-shadow: 0 14px 32px rgba(139, 197, 63, 0.38);
+    }
+
+    .center-circle-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .sparkle-icon {
+      color: var(--felice-green-deep);
+      margin-bottom: 4px;
+      animation: pulseStar 2s infinite ease-in-out;
+    }
+
+    .center-main-text {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text-ink);
+      line-height: 1.2;
+    }
+
+    .center-sub-text {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--text-soft);
+      margin-top: 1px;
+    }
+
+    /* Spinning concentric rings */
+    .center-rings {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .ring-one,
+    .ring-two {
+      position: absolute;
+      border-radius: 50%;
+      border: 1.5px dashed var(--felice-green);
+      opacity: 0.45;
+    }
+
+    .ring-one {
+      inset: 12px;
+      animation: spinClock 15s linear infinite;
+    }
+
+    .ring-two {
+      inset: -2px;
+      border-color: var(--felice-gold);
+      opacity: 0.35;
+      animation: spinCounter 22s linear infinite;
+    }
+
+    .mv-center-node:hover .ring-one {
+      animation-duration: 5s;
+      opacity: 0.8;
+    }
+
+    .mv-center-node:hover .ring-two {
+      animation-duration: 7s;
+      opacity: 0.7;
+    }
+
+    /* SVG curves styling */
+    .mv-tree-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .dash-flow {
+      animation: strokeFlow 30s linear infinite;
+      stroke-dashoffset: 0;
+    }
+
+    @keyframes strokeFlow {
+      to {
+        stroke-dashoffset: -1000;
+      }
+    }
+
+    @keyframes pulseStar {
+
+      0%,
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.85;
+      }
+
+      50% {
+        transform: scale(1.2) rotate(15deg);
+        opacity: 1;
+        filter: drop-shadow(0 0 4px rgba(139, 197, 63, 0.4));
+      }
+    }
+
+    /* Cards Row Layout */
+    .mv-cards-row {
+      display: flex;
+      justify-content: space-between;
+      width: 1000px;
+      max-width: 100%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Card Redesigns */
+    .mv-cards-row .mv-flex-card {
+      width: 45%;
+      flex: 0 0 45%;
+      margin-bottom: 0;
+      cursor: pointer;
+      border-left: none;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+      transform-style: preserve-3d;
+      transform: translateZ(0);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 244, 235, 0.95));
+      border: 1px solid rgba(139, 197, 63, 0.16);
+      padding: clamp(24px, 3.5vw, 42px);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Shifting Laser Border Glow */
+    .mv-flex-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: var(--radius-xl);
+      padding: 1.5px;
+      background: linear-gradient(135deg,
+          rgba(var(--accent-rgb), 0) 0%,
+          rgba(var(--accent-rgb), 0.3) 30%,
+          rgba(var(--accent-rgb), 1) 50%,
+          rgba(var(--accent-rgb), 0.3) 70%,
+          rgba(var(--accent-rgb), 0) 100%);
+      background-size: 250% 250%;
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    /* Color Specific Themes */
+    .mv-flex-card.mission {
+      --accent-color: var(--felice-green-deep);
+      --accent-rgb: 139, 197, 63;
+      --glow-color: rgba(139, 197, 63, 0.12);
+      border-top: 5px solid var(--felice-green);
+    }
+
+    .mv-flex-card.vision {
+      --accent-color: #df9708;
+      --accent-rgb: 255, 179, 26;
+      --glow-color: rgba(255, 179, 26, 0.12);
+      border-top: 5px solid var(--felice-gold);
+      border-color: rgba(255, 179, 26, 0.16);
+    }
+
+    .mv-interactive-tree:hover .mv-flex-card {
+      flex: 0 0 45%;
+      opacity: 1;
+    }
+
+    .mv-cards-row .mv-flex-card:hover {
+      flex: 0 0 45% !important;
+      transform: translateY(-5px);
+      border-color: rgba(var(--accent-rgb), 0.45);
+      box-shadow:
+        0 22px 42px rgba(29, 29, 27, 0.12),
+        0 0 24px rgba(var(--accent-rgb), 0.18);
+    }
+
+    .mv-flex-card:hover::before {
+      opacity: 1;
+      animation: borderGlow 4s linear infinite;
+    }
+
+    .mv-landing-dot {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 14px;
+      height: 14px;
+      background: var(--accent-color);
+      border: 3px solid var(--white);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.6);
+      z-index: 10;
+    }
+
+    .mv-flex-card:hover .mv-landing-dot {
+      transform: translate(-50%, -50%) scale(1.25);
+      box-shadow: 0 0 14px rgba(var(--accent-rgb), 0.85);
+    }
+
+    /* Top Row */
+    .mv-card-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mv-card-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: rgba(var(--accent-rgb), 0.08);
+      color: var(--accent-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+    }
+
+    .mv-flex-card:hover .mv-card-icon-box {
+      background: var(--accent-color);
+      color: var(--white);
+      transform: scale(1.08) rotate(4deg);
+    }
+
+    .mv-card-badge {
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--accent-color);
+      background: rgba(var(--accent-rgb), 0.08);
+      padding: 4px 12px;
+      border-radius: 99px;
+      border: 1px solid rgba(var(--accent-rgb), 0.16);
+    }
+
+    .mv-card-title {
+      font-family: "DM Serif Display", serif;
+      font-size: 1.8rem;
+      margin: 8px 0 12px;
+      color: var(--text-ink);
+      position: relative;
+      z-index: 2;
+    }
+
+    .mv-pillars-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(29, 29, 27, 0.08);
+      margin: 8px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mv-card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .mv-card-list li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 0.93rem;
+      line-height: 1.5;
+      color: var(--text-ink);
+      transition: transform 0.3s ease;
+    }
+
+    .mv-card-list li::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--felice-gold);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .mv-flex-card:hover .mv-card-list li::before {
+      transform: scale(1.3);
+      background-color: var(--accent-color);
+    }
+
+    .mv-card-list li:hover {
+      transform: translateX(3px);
+    }
+
+    .mv-card-list li strong {
+      font-weight: 700;
+      color: var(--text-ink);
+    }
+
+    .mv-card-list li span {
+      font-weight: 400;
+      color: var(--text-soft);
+    }
+
+    /* Glow overlays */
+    .mv-flex-card-glow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--glow-color) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .mv-flex-card:hover .mv-flex-card-glow {
+      opacity: 1;
+    }
+
+    /* Bubble Stream Particle System */
+    .bubble-stream {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .stream-bubble {
+      position: absolute;
+      bottom: -30px;
+      border-radius: 50%;
+      border: 1px solid rgba(var(--accent-rgb), 0.16);
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, rgba(var(--accent-rgb), 0.02) 65%, rgba(var(--accent-rgb), 0.08) 100%);
+      animation: riseBubble 7s infinite linear;
+      opacity: 0;
+    }
+
+    .stream-bubble.b1 {
+      left: 10%;
+      width: 12px;
+      height: 12px;
+      animation-duration: 6.5s;
+      animation-delay: 0s;
+    }
+
+    .stream-bubble.b2 {
+      left: 28%;
+      width: 20px;
+      height: 20px;
+      animation-duration: 8.5s;
+      animation-delay: -1.8s;
+    }
+
+    .stream-bubble.b3 {
+      left: 46%;
+      width: 9px;
+      height: 9px;
+      animation-duration: 5.5s;
+      animation-delay: -3.2s;
+    }
+
+    .stream-bubble.b4 {
+      left: 62%;
+      width: 16px;
+      height: 16px;
+      animation-duration: 7s;
+      animation-delay: -0.6s;
+    }
+
+    .stream-bubble.b5 {
+      left: 78%;
+      width: 11px;
+      height: 11px;
+      animation-duration: 6.2s;
+      animation-delay: -2.4s;
+    }
+
+    .stream-bubble.b6 {
+      left: 90%;
+      width: 24px;
+      height: 24px;
+      animation-duration: 9.5s;
+      animation-delay: -4.5s;
+    }
+
+    @keyframes riseBubble {
+      0% {
+        bottom: -30px;
+        transform: translateX(0) scale(1);
+        opacity: 0;
+      }
+
+      12% {
+        opacity: 0.55;
+      }
+
+      88% {
+        opacity: 0.55;
+      }
+
+      100% {
+        bottom: 110%;
+        transform: translateX(15px) scale(0.9);
+        opacity: 0;
+      }
+    }
+
+    @keyframes borderGlow {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      50% {
+        background-position: 100% 100%;
+      }
+
+      100% {
+        background-position: 0% 0%;
+      }
+    }
+
+    @keyframes spinClock {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spinCounter {
+      0% {
+        transform: rotate(360deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    /* Future Growth Section & Timeline */
+    .growth-section {
+      margin-bottom: 100px;
+    }
+
+    .timeline-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 50px auto 0;
+      padding: 20px 0;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: rgba(139, 197, 63, 0.25);
+      transform: translateX(-50%);
+      border-radius: 99px;
+    }
+
+    .timeline-progress {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--felice-green), var(--felice-green-deep));
+      transform: translateX(-50%);
+      height: 0;
+      transition: height 1s ease-out;
+      border-radius: 99px;
+    }
+
+    .timeline-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-content {
+      width: 44%;
+      background: var(--white);
+      border: 1px solid rgba(29, 29, 27, 0.08);
+      border-radius: var(--radius-xl);
+      padding: 24px 30px;
+      box-shadow: 0 8px 24px rgba(29, 29, 27, 0.03);
+      position: relative;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+      cursor: pointer;
+    }
+
+    .timeline-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(139, 197, 63, 0.1);
+      border-color: rgba(139, 197, 63, 0.35);
+    }
+
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 4px solid rgba(139, 197, 63, 0.3);
+      z-index: 10;
+      transition: all 0.4s ease;
+    }
+
+    .timeline-item.active .timeline-dot {
+      background: var(--felice-green-deep);
+      border-color: var(--felice-green);
+      box-shadow: 0 0 0 6px rgba(139, 197, 63, 0.25);
+      transform: translate(-50%, 0) scale(1.2);
+    }
+
+    .timeline-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--felice-green-deep);
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+
+    .timeline-content h4 {
+      font-family: "DM Serif Display", serif;
+      font-size: 1.25rem;
+      color: var(--text-ink);
+      margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+      color: var(--text-soft);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* Scroll reveal transitions */
+    .scroll-reveal {
+      opacity: 0;
+      transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-up {
+      transform: translateY(50px);
+    }
+
+    .reveal-left {
+      transform: translateX(-70px);
+    }
+
+    .reveal-right {
+      transform: translateX(70px);
+    }
+
+    .reveal-scale {
+      transform: scale(0.92);
+    }
+
+    .scroll-reveal.active {
+      opacity: 1;
+      transform: translate(0) scale(1);
+    }
+
+    /* Footer Styling */
+    .footer {
+      background:
+        linear-gradient(160deg, rgba(29, 29, 27, 0.97), rgba(24, 33, 12, 0.95)),
+        radial-gradient(circle at 80% 20%, rgba(139, 197, 63, 0.28), transparent 45%);
+      color: #ededeb;
+      padding: 58px 0 28px;
+      border-top: 2px solid rgba(139, 197, 63, 0.35);
+    }
+
+    .footer-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      gap: 36px;
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+    }
+
+    .footer h4 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .footer p,
+    .footer a,
+    .footer li {
+      color: rgba(237, 237, 235, 0.9);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    .footer a:hover {
+      color: #c6f07d;
+    }
+
+    .footer-menu {
+      display: grid;
+      gap: 4px;
+    }
+
+    .social {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .social a {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      color: rgba(237, 237, 235, 0.85);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0;
+    }
+
+    .social a:hover {
+      background: var(--felice-green);
+      border-color: var(--felice-green);
+      color: var(--white);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(139, 197, 63, 0.3);
+    }
+
+    .social a svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .social a:hover svg {
+      transform: scale(1.15);
+    }
+
+    .copyright {
+      width: var(--container);
+      margin: 22px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.87rem;
+      color: rgba(237, 237, 235, 0.75);
+      line-height: 1.6;
+    }
+
+    /* Keyframe Animations */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes badgeFloat {
+      0% {
+        transform: translateY(0) rotate(-3deg);
+      }
+
+      100% {
+        transform: translateY(-8px) rotate(3deg);
+      }
+    }
+
+    /* Responsive Adjustments */
+
+    @media (max-width: 760px) {
+      .header-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 65px;
+      }
+
+      .brand {
+        width: 116px;
+        height: 45px;
+      }
+
+      .brand img {
+        width: 129px;
+        height: 129px;
+        top: -26px;
+        left: -7px;
+      }
+
+      .btn-quote {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .menu {
+        position: absolute;
+        right: 4vw;
+        top: 67px;
+        width: min(280px, 92vw);
+        flex-direction: column;
+        align-items: stretch;
+        background: rgba(252, 249, 243, 0.97);
+        border: 1px solid rgba(29, 29, 27, 0.08);
+        border-radius: 16px;
+        box-shadow: var(--shadow-soft);
+        padding: 10px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: 0.28s ease;
+        z-index: 50;
+      }
+
+      .menu.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .menu a {
+        padding: 12px 14px;
+      }
+
+      .about-split {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .about-image-card {
+        order: 1;
+      }
+
+      .about-content-card {
+        order: 2;
+      }
+
+      .values-orbit-container {
+        display: none;
+      }
+
+      .values-mobile-list {
+        display: flex;
+      }
+
+      /* Mobile responsive overrides for flowchart tree */
+      .mv-tree-container {
+        display: none !important;
+      }
+
+      .mv-cards-row {
+        flex-direction: column !important;
+        gap: 30px !important;
+        align-items: center !important;
+        max-width: 500px !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+      }
+
+      .mv-cards-row .mv-flex-card {
+        width: 100% !important;
+        flex: none !important;
+        padding: 28px !important;
+      }
+
+      .mv-interactive-tree:hover .mv-flex-card {
+        flex: none !important;
+      }
+
+      .mv-cards-row .mv-flex-card:hover {
+        flex: none !important;
+        transform: translateY(-5px) !important;
+      }
+
+      .mv-landing-dot {
+        display: none !important;
+      }
+
+      .intro-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .about-split {
+        margin-bottom: 60px;
+      }
+
+      .timeline-line {
+        left: 20px;
+      }
+
+      .timeline-progress {
+        left: 20px;
+      }
+
+      .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 45px;
+      }
+
+      .timeline-item:nth-child(even) {
+        flex-direction: column;
+      }
+
+      .timeline-content {
+        width: 100%;
+      }
+
+      .timeline-dot {
+        left: 20px;
+        transform: translate(-50%, 0);
+      }
+
+      .timeline-item.active .timeline-dot {
+        transform: translate(-50%, 0) scale(1.1);
+      }
+
+      .footer-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shape one"></div>
+  <div class="shape two"></div>
+  <div class="shape three"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-wrap">
+      <a class="brand" href="index.html#home" aria-label="Felice Home">
+        <img src="image&amp;video/logo.png" alt="Felice logo" />
+      </a>
+
+      <ul class="menu" id="menu">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="private-label.html">Private Label / Job Work</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <div class="header-right">
+        <a href="contact.html" class="btn-quote">Get a Quote</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero" id="about-hero">
+    <div class="hero-card">
+      <div class="hero-image-wrap" id="heroImageWrap">
+        <img src="image%26video/new%20hero%20about.png" alt="About Felice Hero" />
+      </div>
+      <!-- No overlay content (removed text and background card per feedback) -->
+    </div>
+  </section>
+
+  <main>
+
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>&gt;</span>
+      <span>About Us</span>
+    </nav>
+
+    <!-- Split Intro Section -->
+    <section class="about-split">
+      <div class="about-image-card scroll-reveal reveal-left">
+        <img src="image&amp;video/about_factory.png" alt="State-of-the-art Felice Manufacturing Facility" />
+
+        <!-- Floating Badges -->
+        <div class="img-badge badge-iso">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <path d="M12 8v6" />
+            <path d="M12 11h.01" />
+          </svg>
+          <span>ISO 9001:2015 Approved</span>
+        </div>
+
+
+        <div class="about-experience-badge">
+          <span class="badge-years" data-target="11">0</span><span class="plus">+</span>
+          <span class="badge-label">Years of Trust</span>
+        </div>
+      </div>
+
+      <article class="about-content-card scroll-reveal reveal-right">
+        <h2>Quality That Cares, <span>Technology That Protects</span></h2>
+
+        <div class="intro-highlights">
+          <!-- Highlight 1 -->
+          <div class="intro-highlight">
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <polyline points="9 11 11 13 15 9" />
+              </svg>
+            </div>
+            <div class="highlight-details">
+              <h4>11+ Years of Trustworthy Manufacturing</h4>
+              <p>Trusted partner producing high-quality personal hygiene products meeting global safety and hygiene
+                standards.</p>
+            </div>
+          </div>
+
+          <!-- Highlight 2 -->
+          <div class="intro-highlight">
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </div>
+            <div class="highlight-details">
+              <h4>Consistent Quality & Reliable Supply</h4>
+              <p>Equipped with advanced manufacturing facilities and a skilled workforce focused on hygiene, precision,
+                and efficiency.</p>
+            </div>
+          </div>
+
+          <!-- Highlight 3 -->
+          <div class="intro-highlight">
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <div class="highlight-details">
+              <h4>Distributor & Private Label Alignment</h4>
+              <p>Strong long-term relationships with distributors, wholesalers, and private label brands with
+                competitive pricing.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Counter Grid -->
+        <div class="intro-stats-grid">
+          <div class="stat-item">
+            <div class="stat-num-wrap">
+              <span class="stat-num" data-target="11">0</span><span>+</span>
+            </div>
+            <span class="stat-label">Years of trust</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num-wrap">
+              <span class="stat-num" data-target="100">0</span><span>%</span>
+            </div>
+            <span class="stat-label">Sterility assured</span>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num-wrap">
+              <span class="stat-num" data-target="15">0</span><span>+</span>
+            </div>
+            <span class="stat-label">Countries supplied</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Mission & Vision Restructured Section -->
+    <section class="scroll-reveal reveal-up" style="margin-bottom: 110px;">
+      <div class="mv-interactive-tree">
+        <div class="mv-tree-header">
+          <div class="mv-top-tag">FOUNDATION</div>
+          <h2 class="mv-title">Our <span>Mission &amp; Vision</span></h2>
+        </div>
+
+        <div class="mv-tree-container">
+          <!-- Central Foundation Node -->
+          <div class="mv-center-node">
+            <div class="center-circle">
+              <div class="center-circle-content">
+                <!-- spark / star icon -->
+                <svg viewBox="0 0 24 24" class="sparkle-icon" width="20" height="20" fill="none" stroke="currentColor"
+                  stroke-width="2.5">
+                  <path
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10z" />
+                </svg>
+                <span class="center-main-text">Trust Driven</span>
+                <span class="center-sub-text">Quality &amp; Service</span>
+              </div>
+            </div>
+            <!-- Spinning Rings -->
+            <div class="center-rings">
+              <div class="ring-one"></div>
+              <div class="ring-two"></div>
+            </div>
+          </div>
+
+          <!-- SVG Flowchart Lines -->
+          <svg class="mv-tree-svg" width="1000" height="180" viewBox="0 0 1000 180" fill="none"
+            preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="grad-left" x1="1" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="var(--felice-green)" />
+                <stop offset="100%" stop-color="var(--felice-green-deep)" />
+              </linearGradient>
+              <linearGradient id="grad-right" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="var(--felice-green)" />
+                <stop offset="100%" stop-color="var(--felice-gold)" />
+              </linearGradient>
+              <filter id="glow-green" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+              <filter id="glow-gold" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="4" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+
+            <!-- Gray guide lines under animated lines -->
+            <path d="M 500,30 C 500,100 225,100 225,180" stroke="rgba(29, 29, 27, 0.08)" stroke-width="4"
+              stroke-linecap="round" />
+            <path d="M 500,30 C 500,100 775,100 775,180" stroke="rgba(29, 29, 27, 0.08)" stroke-width="4"
+              stroke-linecap="round" />
+
+            <!-- Flowing dashes -->
+            <path class="dash-flow" d="M 500,30 C 500,100 225,100 225,180" stroke="url(#grad-left)" stroke-width="3"
+              stroke-linecap="round" stroke-dasharray="10, 8" />
+            <path class="dash-flow" d="M 500,30 C 500,100 775,100 775,180" stroke="url(#grad-right)" stroke-width="3"
+              stroke-linecap="round" stroke-dasharray="10, 8" />
+
+            <!-- Continuous SVG animateMotion particles -->
+            <circle r="6" fill="var(--felice-green-deep)" filter="url(#glow-green)">
+              <animateMotion dur="3.5s" repeatCount="indefinite" path="M 500,30 C 500,100 225,100 225,180" />
+            </circle>
+            <circle r="6" fill="var(--felice-gold)" filter="url(#glow-gold)">
+              <animateMotion dur="3.5s" repeatCount="indefinite" path="M 500,30 C 500,100 775,100 775,180" />
+            </circle>
+          </svg>
+        </div>
+
+        <div class="mv-cards-row">
+          <!-- Vision Card (Left) -->
+          <div class="mv-flex-card vision scroll-reveal reveal-left">
+            <div class="mv-landing-dot"></div>
+            <div class="mv-flex-card-glow"></div>
+
+            <!-- Rising bubbles stream -->
+            <div class="bubble-stream">
+              <div class="stream-bubble b1"></div>
+              <div class="stream-bubble b2"></div>
+              <div class="stream-bubble b3"></div>
+              <div class="stream-bubble b4"></div>
+              <div class="stream-bubble b5"></div>
+              <div class="stream-bubble b6"></div>
+            </div>
+
+            <div class="mv-card-top-row">
+              <div class="mv-card-icon-box">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </div>
+              <div class="mv-card-badge">01 / VISION</div>
+            </div>
+
+            <h3 class="mv-card-title">Our Vision</h3>
+            <p class="mv-intro-text">
+              To emerge as a premier global leader in personal care solutions, driving green, sustainable, and organic
+              product innovations. We aim to inspire healthy daily lifestyles across all continents by continuously
+              upgrading our automation, reducing carbon footprints, and making premium care accessible to every
+              household.
+            </p>
+            <div class="mv-pillars-divider"></div>
+            <ul class="mv-card-list">
+              <li>
+                <strong>Eco-Friendly Innovation:</strong> <span>Developing bio-degradable cotton stems, natural bamboo
+                  cores, and plastic-free materials.</span>
+              </li>
+              <li>
+                <strong>Global Network:</strong> <span>Expanding export channels and wholesale partnerships across
+                  America, Europe, and Asia.</span>
+              </li>
+              <li>
+                <strong>Sustainable Growth:</strong> <span>Empowering standard lifestyles while adhering to responsible
+                  environmental practices.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Mission Card (Right) -->
+          <div class="mv-flex-card mission scroll-reveal reveal-right">
+            <div class="mv-landing-dot"></div>
+            <div class="mv-flex-card-glow"></div>
+
+            <!-- Rising bubbles stream -->
+            <div class="bubble-stream">
+              <div class="stream-bubble b1"></div>
+              <div class="stream-bubble b2"></div>
+              <div class="stream-bubble b3"></div>
+              <div class="stream-bubble b4"></div>
+              <div class="stream-bubble b5"></div>
+              <div class="stream-bubble b6"></div>
+            </div>
+
+            <div class="mv-card-top-row">
+              <div class="mv-card-icon-box">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="6" />
+                  <circle cx="12" cy="12" r="2" />
+                </svg>
+              </div>
+              <div class="mv-card-badge">02 / MISSION</div>
+            </div>
+
+            <h3 class="mv-card-title">Our Mission</h3>
+            <p class="mv-intro-text">
+              To engineer and manufacture world-class personal hygiene and care products that set the absolute benchmark
+              for safety, purity, and convenience. Utilizing advanced automated machinery and clean-room setups, we are
+              dedicated to providing global partners with premium, cost-competitive OEM, job work, and private label
+              manufacturing solutions.
+            </p>
+            <div class="mv-pillars-divider"></div>
+            <ul class="mv-card-list">
+              <li>
+                <strong>Medical-Grade Purity:</strong> <span>100% pure sterilized cotton processed under stringent
+                  hygienic conditions.</span>
+              </li>
+              <li>
+                <strong>Private Label Agility:</strong> <span>Seamless custom packaging, branding, and sizing options
+                  for global brands.</span>
+              </li>
+              <li>
+                <strong>Consistent Excellence:</strong> <span>11+ years of manufacturing expertise maintaining
+                  zero-defect production outputs.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="values-section">
+      <div class="section-header-center scroll-reveal reveal-up">
+        <h2>Our <span>Core Values</span></h2>
+        <p>The foundation of our commitment to producing premium personal care essentials.</p>
+      </div>
+
+      <div class="values-orbit-container scroll-reveal reveal-scale">
+        <!-- Concentric Rings -->
+        <div class="orbit-ring orbit-ring-outer"></div>
+        <div class="orbit-ring orbit-ring-middle"></div>
+        <div class="orbit-ring orbit-ring-inner"></div>
+
+        <!-- Center Card -->
+        <div class="orbit-center-card">
+          <!-- Default View -->
+          <div class="center-content active" id="value-default">
+            <div class="center-logo">
+              <img src="image&amp;video/logo.png" alt="Felice Logo" />
+            </div>
+            <p class="center-instruction">Hover over the numbers to discover our values</p>
+          </div>
+
+          <!-- Value 1: Integrity -->
+          <div class="center-content" id="value-integrity">
+            <span class="value-num-badge">01</span>
+            <h4>Integrity</h4>
+            <p>Maintaining the highest standards of safety and transparency in every product we manufacture.</p>
+          </div>
+
+          <!-- Value 2: Innovation -->
+          <div class="center-content" id="value-innovation">
+            <span class="value-num-badge">02</span>
+            <h4>Innovation</h4>
+            <p>We continuously improve our products with better design and technology to meet the changing needs of
+              modern hygiene.</p>
+          </div>
+
+          <!-- Value 3: Customer-Centrality -->
+          <div class="center-content" id="value-customer">
+            <span class="value-num-badge">03</span>
+            <h4>Customer-Centrality</h4>
+            <p>Placing the health and comfort of our end-users at the heart of our decision-making.</p>
+          </div>
+
+          <!-- Value 4: Quality Excellence -->
+          <div class="center-content" id="value-quality">
+            <span class="value-num-badge">04</span>
+            <h4>Quality Excellence</h4>
+            <p>Leveraging over a decade of manufacturing expertise to ensure every product is superior.</p>
+          </div>
+        </div>
+
+        <!-- Numbered Nodes -->
+        <button class="orbit-node node-01" data-value="integrity" aria-label="Value 1: Integrity">01</button>
+        <button class="orbit-node node-02" data-value="innovation" aria-label="Value 2: Innovation">02</button>
+        <button class="orbit-node node-03" data-value="customer" aria-label="Value 3: Customer-Centrality">03</button>
+        <button class="orbit-node node-04" data-value="quality" aria-label="Value 4: Quality Excellence">04</button>
+      </div>
+
+      <!-- Mobile Fallback List -->
+      <div class="values-mobile-list scroll-reveal">
+        <!-- Card 1: Integrity -->
+        <article class="mobile-value-card">
+          <div class="mobile-value-num">01</div>
+          <div class="mobile-value-content">
+            <h3>Integrity</h3>
+            <p>Maintaining the highest standards of safety and transparency in every product we manufacture.</p>
+          </div>
+        </article>
+
+        <!-- Card 2: Innovation -->
+        <article class="mobile-value-card">
+          <div class="mobile-value-num">02</div>
+          <div class="mobile-value-content">
+            <h3>Innovation</h3>
+            <p>We continuously improve our products with better design and technology to meet the changing needs of
+              modern hygiene.</p>
+          </div>
+        </article>
+
+        <!-- Card 3: Customer-Centrality -->
+        <article class="mobile-value-card">
+          <div class="mobile-value-num">03</div>
+          <div class="mobile-value-content">
+            <h3>Customer-Centrality</h3>
+            <p>Placing the health and comfort of our end-users at the heart of our decision-making.</p>
+          </div>
+        </article>
+
+        <!-- Card 4: Quality Excellence -->
+        <article class="mobile-value-card">
+          <div class="mobile-value-num">04</div>
+          <div class="mobile-value-content">
+            <h3>Quality Excellence</h3>
+            <p>Leveraging over a decade of manufacturing expertise to ensure every product is superior.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Future Growth Roadmap -->
+    <section class="growth-section">
+      <div class="section-header-center scroll-reveal reveal-up">
+        <h2>Future <span>Growth</span></h2>
+        <p>Our roadmap for upcoming product expansion and global market presence.</p>
+      </div>
+
+      <div class="timeline-container scroll-reveal reveal-scale">
+        <div class="timeline-line"></div>
+        <div class="timeline-progress" id="timelineProgress"></div>
+
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item scroll-reveal reveal-left">
+          <div class="timeline-dot"></div>
+          <article class="timeline-content">
+            <span class="timeline-tag">Expansion</span>
+            <h4>Expand Product Lines</h4>
+            <p>We plan to expand our product lines with innovative personal care items that cater to diverse customer
+              needs and lifestyles.</p>
+          </article>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item scroll-reveal reveal-right">
+          <div class="timeline-dot"></div>
+          <article class="timeline-content">
+            <span class="timeline-tag">Global Presence</span>
+            <h4>Explore International Markets</h4>
+            <p>Actively exploring new export corridors and establishing private label partnerships in emerging global
+              markets.</p>
+          </article>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="timeline-item scroll-reveal reveal-left">
+          <div class="timeline-dot"></div>
+          <article class="timeline-content">
+            <span class="timeline-tag">Quality Priority</span>
+            <h4>Core Value Commitment</h4>
+            <p>Striving to make our presence felt globally while strictly maintaining our foundational values of quality
+              and customer satisfaction.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-wrap">
+      <div>
+        <div class="footer-logo-wrap"
+          style="margin-bottom: 6px; width: 240px; height: 95px; overflow: hidden; position: relative;">
+          <img src="image&amp;video/felice white logo.png" alt="Felice logo"
+            style="position: absolute; width: 240px; height: 240px; top: -58px; left: 0; display: block; filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.15));" />
+        </div>
+        <p style="margin-bottom: 14px; line-height: 1.6; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
+          PASSION FOR CONSISTENT QUALITY AND CUSTOMER SATISFACTION-Building long-term relationships based on trust &amp;
+          transparency
+        </p>
+        <p style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="color: var(--felice-green);">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <a href="tel:+919016661725" style="color: rgba(237, 237, 235, 0.9); text-decoration: none;">+91 9016661725</a>
+        </p>
+        <p style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="color: var(--felice-green);">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          <a href="mailto:Sales@felice.co.in"
+            style="color: rgba(237, 237, 235, 0.9); text-decoration: none;">Sales@felice.co.in</a>
+        </p>
+        <p
+          style="margin-bottom: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"
+            style="color: var(--felice-green); flex-shrink: 0; margin-top: 3px;">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Shubham Industrial Estates Mankada Villege, Kamrej Surat - 394310</span>
+        </p>
+        <div class="social">
+          <a href="https://wa.me/919016661725" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M17.49 15.3a1.55 1.55 0 0 1-1 1c-.3.07-.63.11-1.73-.33-1.07-.43-2.16-1.24-3-2.1-1.33-1.35-2.22-2.9-2.22-4.07 0-.58.18-.89.36-1.12.18-.22.4-.41.6-.61.16-.16.34-.16.5-.06l1 1c.16.12.19.34.09.53l-.4.79a.42.42 0 0 0 0 .42 6.54 6.54 0 0 0 2.7 2.7 .42.42 0 0 0 .42 0l.79-.4c.19-.1.41-.07.53.09l1 1c.1.16.1.34-.06.5z">
+              </path>
+              <path d="M22 11.5a10 10 0 0 1-17.77 6.16L1 23l5.34-3.23A10 10 0 1 1 22 11.5z"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          Services
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="products.html">Paper Stick Cotton Buds</a></li>
+          <li><a href="products.html">Bamboo Stick Cotton Buds</a></li>
+          <li><a href="products.html">Organic Cotton Balls</a></li>
+          <li><a href="products.html">Organic Toothbrush</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          Support
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="private-label.html">Private Label / Job Work</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          One-stop Solutions for All Industries
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      Copyright @2026, All Rights Reserved. Design By Technomantra India
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("menu");
+    const heroImageWrap = document.getElementById("heroImageWrap");
+
+    // Mobile Menu Toggle
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("open");
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => menu.classList.remove("open"));
+    });
+
+    // Hero Image Subtle Parallax
+    window.addEventListener("mousemove", (e) => {
+      if (!heroImageWrap) return;
+      if (window.innerWidth < 900) return;
+      const x = (e.clientX / window.innerWidth - 0.5) * 12;
+      const y = (e.clientY / window.innerHeight - 0.5) * 8;
+      heroImageWrap.style.transform = `scale(1.02) translate3d(${x}px, ${y}px, 0)`;
+    });
+
+    // Intersection Observer for scroll reveal animations
+    const revealElements = document.querySelectorAll(".scroll-reveal");
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: "0px 0px -20px 0px"
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Core Values Orbit Interactivity
+    const orbitNodes = document.querySelectorAll(".orbit-node");
+    const centerContents = document.querySelectorAll(".center-content");
+    const orbitContainer = document.querySelector(".values-orbit-container");
+
+    orbitNodes.forEach((node) => {
+      node.addEventListener("mouseenter", () => {
+        const targetValue = node.getAttribute("data-value");
+
+        // Remove active class from all nodes and contents
+        orbitNodes.forEach((n) => n.classList.remove("active"));
+        centerContents.forEach((c) => c.classList.remove("active"));
+
+        // Add active class to hovered node
+        node.classList.add("active");
+
+        // Show matching content card
+        const targetCard = document.getElementById(`value-${targetValue}`);
+        if (targetCard) {
+          targetCard.classList.add("active");
+        }
+      });
+    });
+
+    if (orbitContainer) {
+      orbitContainer.addEventListener("mouseleave", () => {
+        // Reset all nodes and contents
+        orbitNodes.forEach((n) => n.classList.remove("active"));
+        centerContents.forEach((c) => c.classList.remove("active"));
+
+        // Show default card
+        const defaultCard = document.getElementById("value-default");
+        if (defaultCard) {
+          defaultCard.classList.add("active");
+        }
+      });
+    }
+
+    // Mouse glow trail effect for cards
+    const glowCards = document.querySelectorAll(".value-card, .mv-flex-card");
+    glowCards.forEach(card => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+      });
+    });
+
+    // 3D Tilt effect for flex cards (desktop only)
+    const flexCards = document.querySelectorAll(".mv-flex-card");
+    flexCards.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        if (window.innerWidth < 760) return;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const tiltX = (centerY - y) / 24;
+        const tiltY = (x - centerX) / 28;
+        card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(8px)`;
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0)`;
+      });
+    });
+
+    // Stats counter animation with IntersectionObserver
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counters = entry.target.querySelectorAll("[data-target]");
+          counters.forEach(counter => {
+            const target = +counter.getAttribute("data-target");
+            const duration = 1800; // 1.8 seconds for smooth flow
+            const startTime = performance.now();
+
+            const updateCount = (currentTime) => {
+              const elapsedTime = currentTime - startTime;
+              if (elapsedTime >= duration) {
+                counter.innerText = target;
+              } else {
+                const progress = elapsedTime / duration;
+                // Ease out cubic
+                const easeProgress = 1 - Math.pow(1 - progress, 3);
+                counter.innerText = Math.floor(easeProgress * target);
+                requestAnimationFrame(updateCount);
+              }
+            };
+            requestAnimationFrame(updateCount);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    const statsContainer = document.querySelector(".about-split");
+    if (statsContainer) {
+      statsObserver.observe(statsContainer);
+    }
+
+    // Future Growth Timeline Progress Bar Animation
+    const timelineItems = document.querySelectorAll(".timeline-item");
+    const timelineProgress = document.getElementById("timelineProgress");
+
+    const timelineObserver = new IntersectionObserver((entries) => {
+      let activeCount = 0;
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+
+      // Calculate progress percentage based on visible active items
+      const items = Array.from(timelineItems);
+      const activeItems = items.filter(item => item.classList.contains("active"));
+      if (activeItems.length > 0) {
+        // Height ratio: (activeCount - 0.5) / (total - 1) * 100% or similar
+        const percentage = ((activeItems.length - 0.5) / (items.length - 0.5)) * 100;
+        timelineProgress.style.height = `${Math.max(10, Math.min(100, percentage))}%`;
+      }
+    }, {
+      threshold: 0.5,
+      rootMargin: "0px 0px -50px 0px"
+    });
+
+    timelineItems.forEach(item => timelineObserver.observe(item));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Felice | Premium Cotton Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg-cream: #f5efe4;
+      --bg-champagne: #e9dbc1;
+      --felice-green: #8bc53f;
+      --felice-green-deep: #5f9a21;
+      --felice-gold: #ffb31a;
+      --text-ink: #1d1d1b;
+      --text-soft: #5b5b53;
+      --white: #ffffff;
+      --shadow-soft: 0 12px 38px rgba(29, 29, 27, 0.12);
+      --shadow-card: 0 22px 42px rgba(29, 29, 27, 0.15);
+      --radius-xl: 28px;
+      --radius-md: 16px;
+      --container: min(1560px, 94vw);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--text-ink);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(139, 197, 63, 0.2), transparent 32%),
+        radial-gradient(circle at 85% 22%, rgba(255, 179, 26, 0.2), transparent 38%),
+        linear-gradient(135deg, var(--bg-cream), #f8f4ec 55%, var(--bg-champagne));
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Fixed floating background shapes */
+    .shape {
+      position: fixed;
+      z-index: -1;
+      border-radius: 50%;
+      filter: blur(0.4px);
+      animation: float 10s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .shape.one {
+      width: 280px;
+      aspect-ratio: 1;
+      left: -80px;
+      top: 100px;
+      background: radial-gradient(circle at 30% 30%, #d6f3ac, #8bc53f);
+      opacity: 0.25;
+    }
+
+    .shape.two {
+      width: 360px;
+      aspect-ratio: 1;
+      right: -120px;
+      top: 320px;
+      background: radial-gradient(circle at 35% 35%, #ffe6ad, #ffb31a);
+      opacity: 0.2;
+      animation-delay: 1.8s;
+    }
+
+    .shape.three {
+      width: 210px;
+      aspect-ratio: 1;
+      right: 20%;
+      bottom: 80px;
+      background: radial-gradient(circle at 35% 35%, #dbf5b5, #8bc53f);
+      opacity: 0.18;
+      animation-delay: 3s;
+    }
+
+    /* Header Styling */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: rgba(250, 247, 240, 0.78);
+      border-bottom: 1px solid rgba(29, 29, 27, 0.08);
+    }
+
+    .header-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      min-height: 80px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand {
+      justify-self: start;
+      display: block;
+      position: relative;
+      width: 155px;
+      height: 60px;
+      overflow: hidden;
+    }
+
+    .brand img {
+      position: absolute;
+      width: 171px;
+      height: 171px;
+      top: -34px;
+      left: -9px;
+      display: block;
+      filter: drop-shadow(0 1px 4px rgba(139, 197, 63, 0.15));
+    }
+
+    .menu {
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .menu a {
+      color: var(--text-ink);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 6px 16px;
+      border-radius: 999px;
+      transition: transform 0.26s ease, color 0.26s ease, background 0.26s ease;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      color: var(--felice-green-deep);
+      background: rgba(139, 197, 63, 0.14);
+      transform: translateY(-2px);
+    }
+
+    .menu a.active {
+      background: rgba(139, 197, 63, 0.2);
+    }
+
+    .header-right {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-quote {
+      background: linear-gradient(135deg, var(--felice-green) 0%, var(--felice-green-deep) 100%);
+      color: var(--white);
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(139, 197, 63, 0.3);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-quote:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 197, 63, 0.45);
+      filter: brightness(1.05);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: rgba(139, 197, 63, 0.14);
+      color: var(--text-ink);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    /* Main Content Wrapper */
+    main {
+      width: var(--container);
+      margin: 0 auto;
+      padding-top: 30px;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .breadcrumbs a {
+      color: var(--felice-green-deep);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumbs a:hover {
+      color: var(--felice-gold);
+    }
+
+    .breadcrumbs span {
+      color: var(--text-soft);
+    }
+
+    /* Page Hero Banner */
+    .contact-hero {
+      text-align: center;
+      padding: 40px 0 60px;
+      position: relative;
+      animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .contact-kicker {
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--felice-green-deep);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .contact-page-title {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      color: var(--text-ink);
+    }
+
+    /* Split Section Layout */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(24px, 5vw, 60px);
+      align-items: start;
+      margin-bottom: 100px;
+    }
+
+    /* Contact details side */
+    .contact-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .info-card {
+      background: var(--white);
+      border: 1px solid rgba(139, 197, 63, 0.15);
+      border-radius: var(--radius-xl);
+      padding: clamp(20px, 3vw, 30px);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      gap: 20px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: var(--felice-green);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .info-card:hover::before {
+      opacity: 1;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(139, 197, 63, 0.08);
+      border-color: rgba(139, 197, 63, 0.35);
+    }
+
+    .info-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(139, 197, 63, 0.08);
+      color: var(--felice-green-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .info-card:hover .info-icon {
+      background: var(--felice-green-deep);
+      color: var(--white);
+    }
+
+    .info-details {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .info-details span {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--felice-green-deep);
+    }
+
+    .info-details h3 {
+      font-family: "DM Serif Display", serif;
+      font-size: 1.35rem;
+      color: var(--text-ink);
+    }
+
+    .info-details p,
+    .info-details a {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .info-details a:hover {
+      color: var(--felice-green-deep);
+    }
+
+    /* Inquiry highlight card */
+    .inquiry-highlight-card {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(247, 252, 238, 0.96));
+      border: 1px solid rgba(139, 197, 63, 0.18);
+      border-radius: var(--radius-xl);
+      padding: clamp(22px, 3vw, 32px);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .inquiry-highlight-card::before {
+      content: "";
+      position: absolute;
+      right: -70px;
+      top: -70px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(139, 197, 63, 0.14);
+    }
+
+    .inquiry-highlight-card h3 {
+      font-family: "DM Serif Display", serif;
+      font-size: 1.65rem;
+      color: var(--text-ink);
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .inquiry-highlight-card p {
+      color: var(--text-soft);
+      line-height: 1.7;
+      font-size: 0.96rem;
+      position: relative;
+    }
+
+    .quick-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .quick-points span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-ink);
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .quick-points span::before {
+      content: "✓";
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(139, 197, 63, 0.15);
+      color: var(--felice-green-deep);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 900;
+    }
+
+    /* Sleek form card side */
+    .contact-form-card {
+      border-radius: var(--radius-xl);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(250, 246, 238, 0.9));
+      border: 1px solid rgba(139, 197, 63, 0.18);
+      padding: clamp(24px, 4vw, 44px);
+      box-shadow: var(--shadow-card);
+      backdrop-filter: blur(8px);
+      position: relative;
+    }
+
+    .form-header {
+      margin-bottom: 30px;
+    }
+
+    .form-header h2 {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+      color: var(--text-ink);
+      margin-bottom: 8px;
+    }
+
+    .form-header h2 span {
+      color: var(--felice-green-deep);
+    }
+
+    .form-header p {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-note {
+      background: rgba(139, 197, 63, 0.1);
+      border: 1px solid rgba(139, 197, 63, 0.2);
+      color: var(--felice-green-deep);
+      font-size: 0.86rem;
+      font-weight: 700;
+      line-height: 1.5;
+      padding: 12px 16px;
+      border-radius: 14px;
+    }
+
+    .error-message {
+      display: none;
+      color: #d93025;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .form-group.invalid .error-message {
+      display: block;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+    }
+
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-soft);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid rgba(29, 29, 27, 0.12);
+      background: var(--white);
+      color: var(--text-ink);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      outline: none;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+      border-radius: 20px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--felice-green);
+      box-shadow: 0 0 0 4px rgba(139, 197, 63, 0.15);
+      background: var(--white);
+    }
+
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b5b53' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 18px center;
+      background-size: 16px;
+      padding-right: 48px;
+      cursor: pointer;
+    }
+
+    /* Form Shake validation feedback */
+    .form-group.invalid input,
+    .form-group.invalid select,
+    .form-group.invalid textarea {
+      border-color: #ff3333;
+      box-shadow: 0 0 0 4px rgba(255, 51, 51, 0.12);
+    }
+
+    .shake {
+      animation: shakeFeedback 0.4s ease;
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, var(--felice-green), var(--felice-green-deep));
+      color: var(--white);
+      border: none;
+      padding: 16px 36px;
+      border-radius: 99px;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(139, 197, 63, 0.25);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(139, 197, 63, 0.35);
+      filter: brightness(1.05);
+    }
+
+    .btn-submit:active {
+      transform: translateY(-1px);
+    }
+
+    /* Success Toast Alert */
+    .toast-alert {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--white);
+      border: 1.5px solid var(--felice-green);
+      border-radius: var(--radius-md);
+      padding: 20px 26px;
+      box-shadow: var(--shadow-card);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transform: translateY(120px) scale(0.9);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .toast-alert.show {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .toast-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(139, 197, 63, 0.12);
+      color: var(--felice-green-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .toast-details h4 {
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--text-ink);
+    }
+
+    .toast-details p {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      margin-top: 2px;
+    }
+
+    /* Footer Styling */
+    .footer {
+      background:
+        linear-gradient(160deg, rgba(29, 29, 27, 0.97), rgba(24, 33, 12, 0.95)),
+        radial-gradient(circle at 80% 20%, rgba(139, 197, 63, 0.28), transparent 45%);
+      color: #ededeb;
+      padding: 58px 0 28px;
+      border-top: 2px solid rgba(139, 197, 63, 0.35);
+    }
+
+    .footer-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      gap: 36px;
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+    }
+
+    .footer h4 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .footer p,
+    .footer a,
+    .footer li {
+      color: rgba(237, 237, 235, 0.9);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    .footer a:hover {
+      color: #c6f07d;
+    }
+
+    .footer-menu {
+      display: grid;
+      gap: 4px;
+    }
+
+    .social {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .social a {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      color: rgba(237, 237, 235, 0.85);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0;
+    }
+
+    .social a:hover {
+      background: var(--felice-green);
+      border-color: var(--felice-green);
+      color: var(--white);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(139, 197, 63, 0.3);
+    }
+
+    .social a svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .social a:hover svg {
+      transform: scale(1.15);
+    }
+
+    .copyright {
+      width: var(--container);
+      margin: 22px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.87rem;
+      color: rgba(237, 237, 235, 0.75);
+      line-height: 1.6;
+    }
+
+    /* Scroll reveal transitions */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .scroll-reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Keyframes */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes mapPulse {
+      0% {
+        transform: scale(0.3);
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    @keyframes badgeFloat {
+      0% {
+        transform: translateY(0) rotate(-1.5deg);
+      }
+
+      100% {
+        transform: translateY(-5px) rotate(1.5deg);
+      }
+    }
+
+    @keyframes shakeFeedback {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      20%,
+      60% {
+        transform: translateX(-6px);
+      }
+
+      40%,
+      80% {
+        transform: translateX(6px);
+      }
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .header-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 65px;
+      }
+
+      .brand {
+        width: 116px;
+        height: 45px;
+      }
+
+      .brand img {
+        width: 129px;
+        height: 129px;
+        top: -26px;
+        left: -7px;
+      }
+
+      .btn-quote {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .menu {
+        position: absolute;
+        right: 4vw;
+        top: 67px;
+        width: min(280px, 92vw);
+        flex-direction: column;
+        align-items: stretch;
+        background: rgba(252, 249, 243, 0.97);
+        border: 1px solid rgba(29, 29, 27, 0.08);
+        border-radius: 16px;
+        box-shadow: var(--shadow-soft);
+        padding: 10px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: 0.28s ease;
+        z-index: 50;
+      }
+
+      .menu.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .menu a {
+        padding: 12px 14px;
+      }
+
+      .footer-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .toast-alert {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shape one"></div>
+  <div class="shape two"></div>
+  <div class="shape three"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-wrap">
+      <a class="brand" href="index.html#home" aria-label="Felice Home">
+        <img src="image&amp;video/logo.png" alt="Felice logo" />
+      </a>
+
+      <ul class="menu" id="menu">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="private-label.html">Private Label / Job Work</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
+      </ul>
+
+      <div class="header-right">
+        <a href="contact.html" class="btn-quote">Get a Quote</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>&gt;</span>
+      <span>Contact Us</span>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="contact-hero">
+      <span class="contact-kicker">Get in Touch</span>
+      <h1 class="contact-page-title">Contact Us</h1>
+    </section>
+
+    <!-- Split Contact Section -->
+    <section class="contact-grid">
+      <!-- Left Column: Info & Map -->
+      <div class="contact-info-col scroll-reveal">
+
+        <!-- Location Card -->
+        <article class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div class="info-details">
+            <span>Our Current Location</span>
+            <h3>Visit Our Office</h3>
+            <p>Shubham Industrial Estates Mankada Villege, Kamrej Surat - 394310</p>
+          </div>
+        </article>
+
+        <!-- Phone Card -->
+        <article class="info-card" onclick="window.location.href='tel:+919016661725'">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </div>
+          <div class="info-details">
+            <span>Phone Number</span>
+            <h3>Call Us Direct</h3>
+            <a href="tel:+919016661725">+91 90 16 66 17 25</a>
+          </div>
+        </article>
+
+        <!-- Email Card -->
+        <article class="info-card" onclick="window.location.href='mailto:Sales@felice.co.in'">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div class="info-details">
+            <span>Email Address</span>
+            <h3>Send An Email</h3>
+            <a href="mailto:Sales@felice.co.in">Sales@felice.co.in</a>
+          </div>
+        </article>
+
+        <!-- Inquiry Support Card -->
+        <div class="inquiry-highlight-card">
+          <h3>Ready to Help With Every Inquiry</h3>
+          <p>Send your product, wholesale, private-label, or job-work requirement through the form. Our team will review
+            your details and contact you for the next step.</p>
+          <div class="quick-points">
+            <span>Wholesale and bulk order support</span>
+            <span>Private label and job-work inquiries</span>
+            <span>Fast response on phone, email, or WhatsApp</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Interactive Form -->
+      <article class="contact-form-card scroll-reveal">
+        <div class="form-header">
+          <h2>Do you have questions? <span>Contact Us</span></h2>
+          <p>Fill the form below to send your inquiry for wholesale, private label, OEM/ODM, or job-work requirements.
+          </p>
+        </div>
+
+        <form class="contact-form" id="contactUsForm" action="https://formsubmit.co/Sales@felice.co.in" method="POST"
+          novalidate>
+          <input type="hidden" name="_subject" value="New inquiry from Felice contact page" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="Source" value="Felice Contact Us Page" />
+
+          <div class="form-row">
+            <div class="form-group" id="groupName">
+              <label for="inputName">Full Name*</label>
+              <input type="text" id="inputName" name="Name" placeholder="Enter your full name" autocomplete="name"
+                required />
+              <small class="error-message">Please enter your name.</small>
+            </div>
+
+            <div class="form-group" id="groupCompany">
+              <label for="inputCompany">Company Name</label>
+              <input type="text" id="inputCompany" name="Company" placeholder="Your company / brand name"
+                autocomplete="organization" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" id="groupPhone">
+              <label for="inputPhone">Phone Number*</label>
+              <input type="tel" id="inputPhone" name="Phone" placeholder="Mobile / WhatsApp number" autocomplete="tel"
+                required />
+              <small class="error-message">Please enter a valid phone number.</small>
+            </div>
+
+            <div class="form-group" id="groupEmail">
+              <label for="inputEmail">Email Address*</label>
+              <input type="email" id="inputEmail" name="Email" placeholder="example@domain.com" autocomplete="email"
+                required />
+              <small class="error-message">Please enter a valid email address.</small>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" id="groupDept">
+              <label for="selectDept">Inquiry Type*</label>
+              <select id="selectDept" name="Inquiry Type" required>
+                <option value="" disabled selected hidden>Select inquiry type...</option>
+                <option value="Sales & Wholesaling">Sales &amp; Wholesaling</option>
+                <option value="Private Label & Job Work">Private Label &amp; Job Work</option>
+                <option value="OEM / ODM Inquiry">OEM / ODM Inquiry</option>
+                <option value="Quality Standards Inquiry">Quality Standards Inquiry</option>
+                <option value="General Information">General Information</option>
+              </select>
+              <small class="error-message">Please choose an inquiry type.</small>
+            </div>
+
+            <div class="form-group" id="groupQuantity">
+              <label for="inputQuantity">Expected Quantity</label>
+              <input type="text" id="inputQuantity" name="Expected Quantity"
+                placeholder="Example: 5000 boxes / monthly" />
+            </div>
+          </div>
+
+          <div class="form-group" id="groupMessage">
+            <label for="textareaMessage">Requirement Details*</label>
+            <textarea id="textareaMessage" name="Message"
+              placeholder="Tell us your product, packing, private label, or bulk order requirement..."
+              required></textarea>
+            <small class="error-message">Please write your inquiry details.</small>
+          </div>
+
+
+
+          <button type="submit" class="btn-submit" id="btnSubmit">
+            Send Inquiry
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4Z" />
+            </svg>
+          </button>
+
+        </form>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-wrap">
+      <div>
+        <div class="footer-logo-wrap"
+          style="margin-bottom: 6px; width: 240px; height: 95px; overflow: hidden; position: relative;">
+          <img src="image&amp;video/felice white logo.png" alt="Felice logo"
+            style="position: absolute; width: 240px; height: 240px; top: -58px; left: 0; display: block; filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.15));" />
+        </div>
+        <p style="margin-bottom: 14px; line-height: 1.6; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
+          PASSION FOR CONSISTENT QUALITY AND CUSTOMER SATISFACTION-Building long-term relationships based on trust &amp;
+          transparency
+        </p>
+        <p style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="color: var(--felice-green);">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <a href="tel:+919016661725" style="color: rgba(237, 237, 235, 0.9); text-decoration: none;">+91 9016661725</a>
+        </p>
+        <p style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="color: var(--felice-green);">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          <a href="mailto:Sales@felice.co.in"
+            style="color: rgba(237, 237, 235, 0.9); text-decoration: none;">Sales@felice.co.in</a>
+        </p>
+        <p
+          style="margin-bottom: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"
+            style="color: var(--felice-green); flex-shrink: 0; margin-top: 3px;">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Shubham Industrial Estates Mankada Villege, Kamrej Surat - 394310</span>
+        </p>
+        <div class="social">
+          <a href="https://wa.me/919016661725" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M17.49 15.3a1.55 1.55 0 0 1-1 1c-.3.07-.63.11-1.73-.33-1.07-.43-2.16-1.24-3-2.1-1.33-1.35-2.22-2.9-2.22-4.07 0-.58.18-.89.36-1.12.18-.22.4-.41.6-.61.16-.16.34-.16.5-.06l1 1c.16.12.19.34.09.53l-.4.79a.42.42 0 0 0 0 .42 6.54 6.54 0 0 0 2.7 2.7 .42.42 0 0 0 .42 0l.79-.4c.19-.1.41-.07.53.09l1 1c.1.16.1.34-.06.5z">
+              </path>
+              <path d="M22 11.5a10 10 0 0 1-17.77 6.16L1 23l5.34-3.23A10 10 0 1 1 22 11.5z"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          Services
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="products.html">Paper Stick Cotton Buds</a></li>
+          <li><a href="products.html">Bamboo Stick Cotton Buds</a></li>
+          <li><a href="products.html">Organic Cotton Balls</a></li>
+          <li><a href="products.html">Organic Toothbrush</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          Support
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="private-label.html">Private Label / Job Work</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          One-stop Solutions for All Industries
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      Copyright @2026, All Rights Reserved. Design By Technomantra India
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("menu");
+
+    // Mobile Menu Toggle
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("open");
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => menu.classList.remove("open"));
+    });
+
+    // Intersection Observer for scroll reveal animations
+    const revealElements = document.querySelectorAll(".scroll-reveal");
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: "0px 0px -20px 0px"
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Parse URL parameter to auto-select department
+    const urlParams = new URLSearchParams(window.location.search);
+    const deptParam = urlParams.get('dept');
+    const deptSelect = document.getElementById("selectDept");
+    if (deptParam && deptSelect) {
+      const hasOption = Array.from(deptSelect.options).some(opt => opt.value === deptParam);
+      if (hasOption) {
+        deptSelect.value = deptParam;
+      }
+    }
+
+    // Form Handling & Custom Validation
+    const form = document.getElementById("contactUsForm");
+
+    form.addEventListener("submit", (e) => {
+      const name = document.getElementById("inputName");
+      const phone = document.getElementById("inputPhone");
+      const email = document.getElementById("inputEmail");
+      const dept = document.getElementById("selectDept");
+      const message = document.getElementById("textareaMessage");
+
+      let isValid = true;
+
+      if (!name.value.trim()) {
+        markInvalid(name, "groupName");
+        isValid = false;
+      } else {
+        markValid(name, "groupName");
+      }
+
+      const phoneDigits = phone.value.replace(/\D/g, "");
+      if (phoneDigits.length < 8) {
+        markInvalid(phone, "groupPhone");
+        isValid = false;
+      } else {
+        markValid(phone, "groupPhone");
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.value.trim() || !emailRegex.test(email.value.trim())) {
+        markInvalid(email, "groupEmail");
+        isValid = false;
+      } else {
+        markValid(email, "groupEmail");
+      }
+
+      if (!dept.value) {
+        markInvalid(dept, "groupDept");
+        isValid = false;
+      } else {
+        markValid(dept, "groupDept");
+      }
+
+      if (!message.value.trim()) {
+        markInvalid(message, "groupMessage");
+        isValid = false;
+      } else {
+        markValid(message, "groupMessage");
+      }
+
+      if (!isValid) {
+        e.preventDefault();
+        const firstInvalid = form.querySelector(".form-group.invalid input, .form-group.invalid select, .form-group.invalid textarea");
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      const submitButton = document.getElementById("btnSubmit");
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending Inquiry...";
+    });
+
+    function markInvalid(element, groupId) {
+      const group = document.getElementById(groupId);
+      group.classList.add("invalid");
+      group.classList.add("shake");
+
+      setTimeout(() => {
+        group.classList.remove("shake");
+      }, 400);
+    }
+
+    function markValid(element, groupId) {
+      const group = document.getElementById(groupId);
+      group.classList.remove("invalid");
+      group.classList.add("valid");
+    }
+
+    const inputs = form.querySelectorAll("input, select, textarea");
+    inputs.forEach(input => {
+      input.addEventListener("input", () => {
+        input.closest(".form-group").classList.remove("invalid");
+      });
+      input.addEventListener("change", () => {
+        input.closest(".form-group").classList.remove("invalid");
+      });
+    });
+  </script>
+</body>
+
+</html>
