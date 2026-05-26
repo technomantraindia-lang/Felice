@@ -455,7 +455,7 @@
       width: 100%;
       padding: 20px 0;
     }
-    
+
     .partners-header {
       text-align: center;
       max-width: 800px;
@@ -465,7 +465,7 @@
       align-items: center;
       gap: 12px;
     }
-    
+
     .partners-header h2 {
       font-family: "DM Serif Display", serif;
       font-size: clamp(2.3rem, 4vw, 3.3rem);
@@ -488,11 +488,11 @@
       background: var(--felice-gold);
       border-radius: 2px;
     }
-    
+
     .partners-header h2 span {
       color: var(--felice-green-deep);
     }
-    
+
     .partners-header p {
       color: var(--text-soft);
       font-size: 1.12rem;
@@ -500,14 +500,14 @@
       font-weight: 500;
       margin-top: 10px;
     }
-    
+
     .partners-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       justify-content: center;
     }
-    
+
     .partner-card {
       background: var(--white);
       border: 1.5px solid rgba(29, 29, 27, 0.07);
@@ -522,7 +522,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .partner-card::before {
       content: '';
       position: absolute;
@@ -534,17 +534,17 @@
       opacity: 0;
       transition: opacity 0.3s ease;
     }
-    
+
     .partner-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 20px 40px rgba(139, 197, 63, 0.12);
       border-color: rgba(139, 197, 63, 0.25);
     }
-    
+
     .partner-card:hover::before {
       opacity: 1;
     }
-    
+
     .partner-card-icon {
       width: 64px;
       height: 64px;
@@ -556,13 +556,13 @@
       justify-content: center;
       transition: all 0.3s ease;
     }
-    
+
     .partner-card:hover .partner-card-icon {
       background: linear-gradient(135deg, var(--felice-green) 0%, var(--felice-green-deep) 100%);
       color: var(--white);
       transform: scale(1.05);
     }
-    
+
     .partner-card h3 {
       font-family: "Lora", serif;
       font-size: 1.45rem;
@@ -571,11 +571,11 @@
       transition: color 0.3s ease;
       margin: 0;
     }
-    
+
     .partner-card:hover h3 {
       color: var(--felice-green-deep);
     }
-    
+
     .partner-card p {
       color: var(--text-soft);
       font-size: 1rem;
@@ -1011,9 +1011,12 @@
     }
 
     @keyframes float {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: translateY(0);
       }
+
       50% {
         transform: translateY(-12px);
       }
@@ -1024,6 +1027,7 @@
         opacity: 0;
         transform: translateY(22px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -1034,6 +1038,7 @@
       0% {
         transform: translateY(0px) rotate(0deg);
       }
+
       100% {
         transform: translateY(-12px) rotate(1.2deg);
       }
@@ -1043,6 +1048,7 @@
       from {
         transform: rotate(0deg);
       }
+
       to {
         transform: rotate(360deg);
       }
@@ -1149,7 +1155,8 @@
         position: absolute;
         top: 20px;
         bottom: 20px;
-        left: 50px; /* Aligned with the center of the step number */
+        left: 50px;
+        /* Aligned with the center of the step number */
         width: 3px;
         background: linear-gradient(to bottom, var(--felice-green) 0%, rgba(139, 197, 63, 0.15) 100%);
         z-index: 0;
@@ -1187,18 +1194,18 @@
         box-shadow: 0 4px 10px rgba(139, 197, 63, 0.1);
         border-width: 1.5px;
       }
-      
+
       .timeline-step-content {
         display: flex;
         flex-direction: column;
         gap: 6px;
       }
-      
+
       .timeline-step h3 {
         font-size: 1.2rem;
         margin-bottom: 2px;
       }
-      
+
       .timeline-step p {
         font-size: 0.92rem;
         line-height: 1.55;
@@ -1238,7 +1245,8 @@
         width: 100%;
       }
 
-      .pl-hero-btn-primary, .pl-hero-btn-secondary {
+      .pl-hero-btn-primary,
+      .pl-hero-btn-secondary {
         width: 100%;
         justify-content: center;
       }
@@ -1309,13 +1317,15 @@
         <span class="pl-hero-kicker">OEM &amp; ODM Services</span>
         <h1 class="pl-hero-title">We Care for <br><span>Your Brand</span></h1>
         <p class="pl-hero-desc">
-          Partner with Felice to manufacture premium, custom-branded personal care essentials crafted for global success. We offer end-to-end support from specification engineering to final dispatch.
+          Partner with Felice to manufacture premium, custom-branded personal care essentials crafted for global
+          success. We offer end-to-end support from specification engineering to final dispatch.
         </p>
         <div class="pl-hero-buttons">
           <a href="contact.html?dept=private-label" class="pl-hero-btn-primary">
             Start Your Brand
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
           <a href="contact.html" class="pl-hero-btn-secondary">Request Samples</a>
@@ -1333,13 +1343,17 @@
 
           <div class="pl-description">
             <p>
-              At Felice, we specialize in manufacturing high-quality beauty, personal care, and hygiene products for brands across domestic and international markets. We are dedicated to providing the ultimate support.
+              At Felice, we specialize in manufacturing high-quality beauty, personal care, and hygiene products for
+              brands across domestic and international markets. We are dedicated to providing the ultimate support.
             </p>
             <p>
-              We provide complete private label support, from product development and packaging design to reliable manufacturing and timely delivery. Our focus is to help our partners build strong, trusted, and successful brands.
+              We provide complete private label support, from product development and packaging design to reliable
+              manufacturing and timely delivery. Our focus is to help our partners build strong, trusted, and successful
+              brands.
             </p>
             <p>
-              With advanced production standards, quality materials, and flexible packaging solutions, we ensure every product reflects your brand’s identity and promise. We are committed to building long-term partnerships.
+              With advanced production standards, quality materials, and flexible packaging solutions, we ensure every
+              product reflects your brand’s identity and promise. We are committed to building long-term partnerships.
             </p>
           </div>
 
@@ -1539,25 +1553,28 @@
         <h2>We Partner <span>With</span></h2>
         <p>We supply and manufacture premium solutions for a diverse range of global commercial partners.</p>
       </div>
-      
+
       <div class="partners-grid">
         <!-- Retailers -->
         <article class="partner-card">
           <div class="partner-card-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
           </div>
           <h3>Retailers</h3>
-          <p>Bespoke packaging designs, barcode integration, and shelf-ready retail specifications custom-crafted for supermarkets, pharmacies, and department store chains.</p>
+          <p>Bespoke packaging designs, barcode integration, and shelf-ready retail specifications custom-crafted for
+            supermarkets, pharmacies, and department store chains.</p>
         </article>
 
         <!-- Distributors -->
         <article class="partner-card">
           <div class="partner-card-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
               <rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect>
               <polygon points="16 8 20 8 23 11 23 16 16 16"></polygon>
               <circle cx="5.5" cy="18.5" r="2.5"></circle>
@@ -1565,32 +1582,38 @@
             </svg>
           </div>
           <h3>Distributors</h3>
-          <p>Flexible supply agreements, optimized shipping packaging, and seamless container loading logistics support to power wholesale distribution and supply networks.</p>
+          <p>Flexible supply agreements, optimized shipping packaging, and seamless container loading logistics support
+            to power wholesale distribution and supply networks.</p>
         </article>
 
         <!-- Brands -->
         <article class="partner-card">
           <div class="partner-card-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="8" r="7"></circle>
               <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
             </svg>
           </div>
           <h3>Brands</h3>
-          <p>Complete OEM & ODM formulations, custom container sizing, and premium finishing styles to successfully project your brand's unique identity and values.</p>
+          <p>Complete OEM & ODM formulations, custom container sizing, and premium finishing styles to successfully
+            project your brand's unique identity and values.</p>
         </article>
 
         <!-- Exporters -->
         <article class="partner-card">
           <div class="partner-card-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+              </path>
             </svg>
           </div>
           <h3>Exporters</h3>
-          <p>Regulatory compliance assistance, international certifications, multi-lingual packaging templates, and export documents for worldwide supply chains.</p>
+          <p>Regulatory compliance assistance, international certifications, multi-lingual packaging templates, and
+            export documents for worldwide supply chains.</p>
         </article>
 
 
@@ -1601,14 +1624,16 @@
     <section class="capabilities-section scroll-reveal reveal-up">
       <div class="cap-header">
         <h2>Customization <span>Capabilities</span></h2>
-        <p>We tailor everything to match your brand requirements, giving you full control over product dimensions, styles, and packing.</p>
+        <p>We tailor everything to match your brand requirements, giving you full control over product dimensions,
+          styles, and packing.</p>
       </div>
 
       <div class="cap-grid">
         <!-- Capability 1 -->
         <article class="cap-card">
           <div class="cap-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
               <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
             </svg>
           </div>
@@ -1625,7 +1650,8 @@
         <!-- Capability 2 -->
         <article class="cap-card">
           <div class="cap-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
           </div>
@@ -1642,8 +1668,10 @@
         <!-- Capability 3 -->
         <article class="cap-card">
           <div class="cap-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
             </svg>
           </div>
           <h3>Bespoke Brand Identity</h3>
@@ -1662,7 +1690,8 @@
     <section class="timeline-section scroll-reveal reveal-up">
       <div class="timeline-header">
         <h2>Simple <span>5-Step OEM Workflow</span></h2>
-        <p>Our streamlined production pipeline ensures swift turnaround times, strict compliance, and effortless execution.</p>
+        <p>Our streamlined production pipeline ensures swift turnaround times, strict compliance, and effortless
+          execution.</p>
       </div>
 
       <div class="workflow-timeline">
@@ -1689,7 +1718,8 @@
           <div class="step-number">03</div>
           <div class="timeline-step-content">
             <h3>Production</h3>
-            <p>High-speed automated manufacturing of your orders under sterilized, medically hygienic cleanroom setups.</p>
+            <p>High-speed automated manufacturing of your orders under sterilized, medically hygienic cleanroom setups.
+            </p>
           </div>
         </div>
 
@@ -1698,7 +1728,8 @@
           <div class="step-number">04</div>
           <div class="timeline-step-content">
             <h3>Quality Testing</h3>
-            <p>Strict quality control tests including fiber adhesion check, stem stiffness testing, and packaging sealing.</p>
+            <p>Strict quality control tests including fiber adhesion check, stem stiffness testing, and packaging
+              sealing.</p>
           </div>
         </div>
 
@@ -1718,12 +1749,14 @@
   <footer class="footer">
     <div class="footer-wrap">
       <div>
-        <div class="footer-logo-wrap" style="margin-bottom: 6px; width: 240px; height: 95px; overflow: hidden; position: relative;">
+        <div class="footer-logo-wrap"
+          style="margin-bottom: 6px; width: 240px; height: 95px; overflow: hidden; position: relative;">
           <img src="image&amp;video/felice white logo.png" alt="Felice logo"
             style="position: absolute; width: 240px; height: 240px; top: -58px; left: 0; display: block; filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.15));" />
         </div>
         <p style="margin-bottom: 14px; line-height: 1.6; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
-          PASSION FOR CONSISTENT QUALITY AND CUSTOMER SATISFACTION-Building long-term relationships based on trust &amp; transparency
+          PASSION FOR CONSISTENT QUALITY AND CUSTOMER SATISFACTION-Building long-term relationships based on trust &amp;
+          transparency
         </p>
         <p style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
@@ -1739,11 +1772,14 @@
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
             <polyline points="22,6 12,13 2,6" />
           </svg>
-          <a href="mailto:Sales@felice.co.in" style="color: rgba(237, 237, 235, 0.9); text-decoration: none;">Sales@felice.co.in</a>
+          <a href="mailto:Sales@felice.co.in"
+            style="color: rgba(237, 237, 235, 0.9); text-decoration: none;">Sales@felice.co.in</a>
         </p>
-        <p style="margin-bottom: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
+        <p
+          style="margin-bottom: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" style="color: var(--felice-green); flex-shrink: 0; margin-top: 3px;">
+            stroke-linecap="round" stroke-linejoin="round"
+            style="color: var(--felice-green); flex-shrink: 0; margin-top: 3px;">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
             <circle cx="12" cy="10" r="3" />
           </svg>
@@ -1751,24 +1787,30 @@
         </p>
         <div class="social">
           <a href="https://wa.me/919016661725" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17.49 15.3a1.55 1.55 0 0 1-1 1c-.3.07-.63.11-1.73-.33-1.07-.43-2.16-1.24-3-2.1-1.33-1.35-2.22-2.9-2.22-4.07 0-.58.18-.89.36-1.12.18-.22.4-.41.6-.61.16-.16.34-.16.5-.06l1 1c.16.12.19.34.09.53l-.4.79a.42.42 0 0 0 0 .42 6.54 6.54 0 0 0 2.7 2.7 .42.42 0 0 0 .42 0l.79-.4c.19-.1.41-.07.53.09l1 1c.1.16.1.34-.06.5z"></path>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M17.49 15.3a1.55 1.55 0 0 1-1 1c-.3.07-.63.11-1.73-.33-1.07-.43-2.16-1.24-3-2.1-1.33-1.35-2.22-2.9-2.22-4.07 0-.58.18-.89.36-1.12.18-.22.4-.41.6-.61.16-.16.34-.16.5-.06l1 1c.16.12.19.34.09.53l-.4.79a.42.42 0 0 0 0 .42 6.54 6.54 0 0 0 2.7 2.7 .42.42 0 0 0 .42 0l.79-.4c.19-.1.41-.07.53.09l1 1c.1.16.1.34-.06.5z">
+              </path>
               <path d="M22 11.5a10 10 0 0 1-17.77 6.16L1 23l5.34-3.23A10 10 0 1 1 22 11.5z"></path>
             </svg>
           </a>
           <a href="#" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
             </svg>
           </a>
           <a href="#" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
             </svg>
           </a>
           <a href="#" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
               <rect x="2" y="9" width="4" height="12"></rect>
               <circle cx="4" cy="4" r="2"></circle>
@@ -1780,7 +1822,8 @@
       <div>
         <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
           Services
-          <span style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
         </h4>
         <ul class="footer-menu">
           <li><a href="products.html">Paper Stick Cotton Buds</a></li>
@@ -1793,7 +1836,8 @@
       <div>
         <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
           Support
-          <span style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
         </h4>
         <ul class="footer-menu">
           <li><a href="index.html#home">Home</a></li>
@@ -1807,7 +1851,8 @@
       <div>
         <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
           One-stop Solutions for All Industries
-          <span style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
         </h4>
         <ul class="footer-menu">
           <li><a href="about.html">About Us</a></li>
