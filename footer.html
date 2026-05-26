@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Footer | Felice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg-cream: #f5efe4;
+      --bg-champagne: #e9dbc1;
+      --felice-green: #8bc53f;
+      --felice-green-deep: #5f9a21;
+      --felice-gold: #ffb31a;
+      --text-ink: #1d1d1b;
+      --text-soft: #5b5b53;
+      --white: #ffffff;
+      --shadow-soft: 0 12px 38px rgba(29, 29, 27, 0.12);
+      --shadow-card: 0 22px 42px rgba(29, 29, 27, 0.15);
+      --radius-xl: 28px;
+      --radius-md: 16px;
+      --container: min(1560px, 94vw);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--text-ink);
+    }
+
+    /* Footer styling */
+    .footer {
+      background:
+        linear-gradient(160deg, rgba(29, 29, 27, 0.97), rgba(24, 33, 12, 0.95)),
+        radial-gradient(circle at 80% 20%, rgba(139, 197, 63, 0.28), transparent 45%);
+      color: #ededeb;
+      padding: 58px 0 28px;
+      border-top: 2px solid rgba(139, 197, 63, 0.35);
+    }
+
+    .footer-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      gap: 36px;
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+    }
+
+    .footer h4 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .footer p,
+    .footer a,
+    .footer li {
+      color: rgba(237, 237, 235, 0.9);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    .footer a:hover {
+      color: #c6f07d;
+    }
+
+    .footer-menu {
+      display: grid;
+      gap: 4px;
+    }
+
+    .social {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .social a {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      color: rgba(237, 237, 235, 0.85);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0;
+    }
+
+    .social a:hover {
+      background: var(--felice-green);
+      border-color: var(--felice-green);
+      color: var(--white);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(139, 197, 63, 0.3);
+    }
+
+    .social a svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .social a:hover svg {
+      transform: scale(1.15);
+    }
+
+    .copyright {
+      width: var(--container);
+      margin: 22px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.87rem;
+      color: rgba(237, 237, 235, 0.75);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .footer-wrap {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .footer-wrap {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .footer h4 {
+        font-size: 1rem;
+      }
+
+      .footer p,
+      .footer a,
+      .footer li {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <footer class="footer" id="contact">
+    <div class="footer-wrap">
+      <div>
+        <div class="footer-logo-wrap" style="margin-bottom: 6px; width: 240px; height: 95px; overflow: hidden; position: relative;">
+          <img src="image&video/new%20logo%20%20in%20white.png" alt="Felice new logo"
+            style="position: absolute; width: 240px; height: 240px; top: -58px; left: 0; display: block; filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.15));" />
+        </div>
+        <p style="margin-bottom: 14px; line-height: 1.6; font-size: 0.9rem; color: rgba(237, 237, 235, 0.8);">
+          PASSION FOR CONSISTENT QUALITY AND CUSTOMER SATISFACTION-Building long-term relationships based on trust &amp;
+          transparency
+        </p>
+        <p style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="color: var(--felice-green);">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <a href="tel:+919016661725" style="color: rgba(237, 237, 235, 0.9); text-decoration: none;">+91 9016661725</a>
+        </p>
+        <p style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="color: var(--felice-green);">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          <a href="mailto:Sales@felice.co.in"
+            style="color: rgba(237, 237, 235, 0.9); text-decoration: none;">Sales@felice.co.in</a>
+        </p>
+        <p
+          style="margin-bottom: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"
+            style="color: var(--felice-green); flex-shrink: 0; margin-top: 3px;">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Shubham Industrial Estates Mankada Villege, Kamrej Surat - 394310</span>
+        </p>
+        <div class="social">
+          <a href="https://wa.me/919016661725" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17.49 15.3a1.55 1.55 0 0 1-1 1c-.3.07-.63.11-1.73-.33-1.07-.43-2.16-1.24-3-2.1-1.33-1.35-2.22-2.9-2.22-4.07 0-.58.18-.89.36-1.12.18-.22.4-.41.6-.61.16-.16.34-.16.5-.06l1 1c.16.12.19.34.09.53l-.4.79a.42.42 0 0 0 0 .42 6.54 6.54 0 0 0 2.7 2.7 .42.42 0 0 0 .42 0l.79-.4c.19-.1.41-.07.53.09l1 1c.1.16.1.34-.06.5z"></path>
+              <path d="M22 11.5a10 10 0 0 1-17.77 6.16L1 23l5.34-3.23A10 10 0 1 1 22 11.5z"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          Services
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="products.html">Paper Stick Cotton Buds</a></li>
+          <li><a href="products.html">Bamboo Stick Cotton Buds</a></li>
+          <li><a href="products.html">Organic Cotton Balls</a></li>
+          <li><a href="products.html">Organic Toothbrush</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          Support
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="private-label.html">Private Label / Job Work</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          One-stop Solutions for All Industries
+          <span
+            style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      Copyright @2026, All Rights Reserved. Design By Technomantra India
+    </div>
+  </footer>
+</body>
+</html>
