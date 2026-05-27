@@ -19,6 +19,7 @@
       --felice-gold: #ffb31a;
       --text-ink: #1d1d1b;
       --text-soft: #5b5b53;
+      --text-heading: #4a8528;
       --white: #ffffff;
       --shadow-soft: 0 12px 38px rgba(29, 29, 27, 0.12);
       --shadow-card: 0 22px 42px rgba(29, 29, 27, 0.15);
@@ -43,6 +44,21 @@
       background: #f5f7fa;
       min-height: 100vh;
       overflow-x: hidden;
+    }
+    main h1,
+    main h2,
+    main h3,
+    main h4,
+    main h5,
+    main h6 {
+      color: var(--text-heading);
+    }
+
+    main h1 span,
+    main h2 span,
+    main h3 span,
+    main h4 span {
+      color: var(--felice-green-deep);
     }
 
     .shape {
@@ -283,9 +299,9 @@
 
     .pl-hero-title {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.3rem, 4.6vw, 4.2rem);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
       line-height: 1.1;
-      color: #12281a;
+      color: var(--text-heading);
       margin-bottom: 16px;
       font-weight: 400;
       text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
@@ -390,9 +406,9 @@
 
     .pl-title {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.3rem, 4vw, 3.3rem);
+      font-size: clamp(2rem, 3vw, 2.6rem);
       line-height: 1.2;
-      color: var(--text-ink);
+      color: var(--text-heading);
       font-weight: 400;
     }
 
@@ -468,9 +484,9 @@
 
     .partners-header h2 {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.3rem, 4vw, 3.3rem);
+      font-size: clamp(2rem, 3vw, 2.6rem);
       line-height: 1.2;
-      color: var(--text-ink);
+      color: var(--text-heading);
       font-weight: 400;
       position: relative;
       display: inline-block;
@@ -567,7 +583,7 @@
       font-family: "Lora", serif;
       font-size: 1.45rem;
       font-weight: 700;
-      color: var(--text-ink);
+      color: var(--text-heading);
       transition: color 0.3s ease;
       margin: 0;
     }
@@ -697,10 +713,10 @@
 
     .cap-header h2 {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
       line-height: 1.15;
       margin-bottom: 16px;
-      color: var(--text-ink);
+      color: var(--text-heading);
       font-weight: 400;
     }
 
@@ -753,7 +769,7 @@
     .cap-card h3 {
       font-family: "Lora", serif;
       font-size: 1.35rem;
-      color: var(--text-ink);
+      color: var(--text-heading);
       font-weight: 700;
     }
 
@@ -804,10 +820,10 @@
 
     .timeline-header h2 {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
       line-height: 1.15;
       margin-bottom: 16px;
-      color: var(--text-ink);
+      color: var(--text-heading);
       font-weight: 400;
     }
 
@@ -878,7 +894,7 @@
     .timeline-step h3 {
       font-family: "Lora", serif;
       font-size: 1.15rem;
-      color: var(--text-ink);
+      color: var(--text-heading);
       margin-bottom: 10px;
       font-weight: 700;
     }

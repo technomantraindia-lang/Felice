@@ -19,6 +19,7 @@
       --felice-gold: #ffb31a;
       --text-ink: #1d1d1b;
       --text-soft: #5b5b53;
+      --text-heading: #4a8528;
       --white: #ffffff;
       --shadow-soft: 0 12px 38px rgba(29, 29, 27, 0.12);
       --shadow-card: 0 22px 42px rgba(29, 29, 27, 0.15);
@@ -43,6 +44,22 @@
       background: #f5f7fa;
       min-height: 100vh;
       overflow-x: hidden;
+    }
+
+    main h1,
+    main h2,
+    main h3,
+    main h4,
+    main h5,
+    main h6 {
+      color: var(--text-heading);
+    }
+
+    main h1 span,
+    main h2 span,
+    main h3 span,
+    main h4 span {
+      color: var(--felice-green-deep);
     }
 
     .shape {
@@ -283,12 +300,11 @@
 
     .about-title {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+      font-size: clamp(1.45rem, 2.1vw, 1.85rem);
       font-weight: 400;
       line-height: 1.2;
       margin-bottom: 20px;
-      color: #1b3322;
-      /* Soft elegant dark green-charcoal */
+      color: var(--text-heading);
     }
 
     .about-copy {
@@ -399,7 +415,7 @@
     .value-card-new h4 {
       font-size: 1rem;
       font-weight: 700;
-      color: var(--text-ink);
+      color: var(--text-heading);
     }
 
     .value-card-new p {
@@ -408,7 +424,7 @@
       line-height: 1.5;
     }
 
-    /* 3D Product Viewer Styles */
+    /* Product image showcase card */
     .about-photo-wrap {
       display: flex;
       align-items: center;
@@ -417,35 +433,25 @@
       border-radius: var(--radius-xl);
       border: 1px solid rgba(29, 29, 27, 0.08);
       box-shadow: var(--shadow-soft);
-      padding: 50px 20px;
+      padding: 40px 24px;
       position: relative;
       overflow: hidden;
-      min-height: 520px;
+      min-height: 420px;
       backdrop-filter: blur(8px);
     }
 
-    .about-photo-wrap::before {
-      content: "";
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(139, 197, 63, 0.15) 0%, transparent 70%);
-      top: -50px;
-      right: -50px;
-      z-index: 0;
+    .about-products-img {
+      width: 100%;
+      height: auto;
+      max-height: 340px;
+      object-fit: contain;
+      z-index: 1;
+      filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.08));
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .about-photo-wrap::after {
-      content: "";
-      position: absolute;
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 179, 26, 0.15) 0%, transparent 70%);
-      bottom: -80px;
-      left: -80px;
-      z-index: 0;
+    .about-photo-wrap:hover .about-products-img {
+      transform: scale(1.04) translateY(-4px);
     }
 
     .product-3d-viewer {
@@ -695,12 +701,11 @@
 
     .wcu-title {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+      font-size: clamp(1.45rem, 2.1vw, 1.85rem);
       font-weight: 400;
       line-height: 1.2;
       margin-bottom: 14px;
-      color: #1b3322;
-      /* Soft elegant dark green-charcoal */
+      color: var(--text-heading);
     }
 
     .wcu-title span {
@@ -805,7 +810,7 @@
     .wcu-card h4 {
       font-family: "DM Serif Display", serif;
       font-size: 1.22rem;
-      color: #12281a;
+      color: var(--text-heading);
       line-height: 1.2;
     }
 
@@ -1084,12 +1089,11 @@
 
     .products-header h3 {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+      font-size: clamp(1.45rem, 2.1vw, 1.85rem);
       font-weight: 400;
       line-height: 1.2;
       margin-bottom: 14px;
-      color: #1b3322;
-      /* Soft elegant dark green-charcoal */
+      color: var(--text-heading);
     }
 
     .products-header h3 span {
@@ -1164,7 +1168,7 @@
     .product-info-box h4 {
       font-family: "DM Serif Display", serif;
       font-size: 1.35rem;
-      color: #12281a;
+      color: var(--text-heading);
       margin-bottom: 10px;
     }
 
@@ -1294,11 +1298,10 @@
 
     .cta-title {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+      font-size: clamp(1.45rem, 2.1vw, 1.85rem);
       font-weight: 400;
       line-height: 1.2;
-      color: #1b3322;
-      /* Soft elegant dark green-charcoal */
+      color: var(--text-heading);
       margin-bottom: 20px;
     }
 
@@ -1410,7 +1413,7 @@
     .cta-badge-item h5 {
       font-size: 1.05rem;
       font-weight: 700;
-      color: var(--text-ink);
+      color: var(--text-heading);
     }
 
     .cta-badge-item p {
@@ -1618,12 +1621,9 @@
       }
 
       .about-photo-wrap {
-        min-height: 480px;
+        min-height: 380px;
+        padding: 32px 16px;
       }
-
-
-
-      .service-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -1740,11 +1740,13 @@
 
 
       .about-photo-wrap {
-        min-height: 420px;
-        padding: 30px 10px;
+        min-height: 340px;
+        padding: 28px 12px;
       }
 
-      .product-3d-scene {
+      .about-products-img {
+        max-height: 260px;
+      }
         transform: scale(0.78);
         margin-top: 10px;
         margin-bottom: 20px;
@@ -1844,9 +1846,9 @@
 
     .pl-title {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.6rem, 4.2vw, 3.6rem);
+      font-size: clamp(1.45rem, 2.1vw, 1.85rem);
       line-height: 1.2;
-      color: var(--text-ink);
+      color: var(--text-heading);
     }
 
     .pl-title span {
@@ -2205,11 +2207,11 @@
 
     .hero-title {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.18rem, 3.35vw, 3.92rem);
+      font-size: clamp(1.65rem, 2.5vw, 2.35rem);
       line-height: 1.04;
       letter-spacing: -0.026em;
       font-weight: 400;
-      color: #202522;
+      color: var(--text-heading);
       margin-bottom: 14px;
     }
 
@@ -2399,6 +2401,64 @@
       filter: saturate(0.98) contrast(1.02) brightness(1.02);
     }
 
+    /* Hero Carousel Styles */
+    .hero-carousel {
+      position: relative;
+      width: 100%;
+      height: clamp(360px, 38vw, 480px);
+      border-radius: 24px;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero-carousel-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      z-index: 1;
+    }
+
+    .hero-carousel-slide.active {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .hero-carousel-slide img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(0.98) contrast(1.02) brightness(1.02);
+    }
+
+    .hero-carousel-dots {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .hero-carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.45);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero-carousel-dot.active {
+      background: var(--white);
+      transform: scale(1.2);
+      box-shadow: 0 0 10px rgba(139, 197, 63, 0.5);
+    }
+
     .hero-hygiene-badge {
       position: absolute;
       top: clamp(10px, 2.2vw, 28px);
@@ -2476,7 +2536,7 @@
       }
 
       .hero-title {
-        font-size: clamp(2.25rem, 3.2vw, 3.35rem);
+        font-size: clamp(1.8rem, 2.8vw, 2.8rem);
       }
 
       .hero-copy {
@@ -2492,7 +2552,8 @@
         width: min(100%, 690px);
       }
 
-      .hero-image-wrap img {
+      .hero-image-wrap img,
+      .hero-carousel {
         height: clamp(350px, 35vw, 430px);
       }
     }
@@ -2515,7 +2576,7 @@
       }
 
       .hero-title {
-        font-size: clamp(2.28rem, 5vw, 3.6rem);
+        font-size: clamp(1.8rem, 4.5vw, 3.0rem);
       }
 
       .hero-feature-card {
@@ -2532,7 +2593,8 @@
         width: min(100%, 860px);
       }
 
-      .hero-image-wrap img {
+      .hero-image-wrap img,
+      .hero-carousel {
         height: clamp(330px, 48vw, 470px);
       }
     }
@@ -2569,7 +2631,7 @@
       }
 
       .hero-title {
-        font-size: clamp(2rem, 9vw, 2.75rem);
+        font-size: clamp(1.75rem, 7vw, 2.4rem);
         margin-bottom: 12px;
       }
 
@@ -2939,7 +3001,7 @@
       }
 
       .hero-title {
-        font-size: clamp(2.3rem, 3.3vw, 3.7rem) !important;
+        font-size: clamp(1.65rem, 2.5vw, 2.35rem) !important;
       }
 
       .hero-visual {
@@ -2947,7 +3009,8 @@
         min-height: 500px !important;
       }
 
-      .hero-image-wrap img {
+      .hero-image-wrap img,
+      .hero-carousel {
         height: clamp(380px, 36vw, 500px) !important;
       }
     }
@@ -2978,7 +3041,7 @@
       }
 
       .hero-title {
-        font-size: clamp(2.35rem, 5.2vw, 3.4rem) !important;
+        font-size: clamp(1.65rem, 4vw, 2.35rem) !important;
       }
 
       .hero-copy {
@@ -3001,7 +3064,8 @@
         width: min(100%, 840px) !important;
       }
 
-      .hero-image-wrap img {
+      .hero-image-wrap img,
+      .hero-carousel {
         height: clamp(330px, 46vw, 450px) !important;
       }
     }
@@ -3118,12 +3182,11 @@
         border-radius: 15px !important;
       }
 
-      .hero-image-wrap img {
+      .hero-image-wrap img,
+      .hero-carousel {
         display: block !important;
         width: 100% !important;
         height: clamp(210px, 55vw, 270px) !important;
-        object-fit: cover !important;
-        object-position: center center !important;
         border-radius: 15px !important;
       }
 
@@ -3166,7 +3229,8 @@
         max-width: 20rem !important;
       }
 
-      .hero-image-wrap img {
+      .hero-image-wrap img,
+      .hero-carousel {
         height: clamp(190px, 52vw, 235px) !important;
       }
 
@@ -3312,7 +3376,7 @@
 
           <h1 class="hero-title">
             <span>100% Hygienic</span>
-            Cotton Care
+            Cotton Product
           </h1>
 
           <p class="hero-copy">
@@ -3355,7 +3419,18 @@
           </div>
 
           <div class="hero-image-wrap" id="heroImageWrap">
-            <img src="image&amp;video/new hero.png" alt="Felice hygienic cotton care products" />
+            <div class="hero-carousel">
+              <div class="hero-carousel-slide active">
+                <img src="image&amp;video/new hero.png" alt="Felice hygienic cotton care products" />
+              </div>
+              <div class="hero-carousel-slide">
+                <img src="image&amp;video/new carousle brush.png" alt="Felice toothbrush care products" />
+              </div>
+              <div class="hero-carousel-dots">
+                <span class="hero-carousel-dot active" onclick="setHeroSlide(0)" aria-label="Slide 1"></span>
+                <span class="hero-carousel-dot" onclick="setHeroSlide(1)" aria-label="Slide 2"></span>
+              </div>
+            </div>
           </div>
 
           <div class="hero-product-note">
@@ -3374,13 +3449,19 @@
         <span class="about-kicker">Because hygiene with safety matters</span>
         <h2 class="about-title">Why Felice</h2>
         <p class="about-copy">
-          Felice is a modern personal hygiene care brand committed to delivering safe, hygienic, and high-quality daily care products for every family. We believe personal care should combine cleanliness, comfort, safety, and sustainability.
+          Felice is a modern personal hygiene care brand committed to delivering safe, hygienic, and high-quality daily
+          care products for every family. We believe personal care should combine cleanliness, comfort, safety, and
+          sustainability.
         </p>
         <p class="about-copy">
-          With advanced manufacturing facilities and a skilled workforce, we focus on maintaining consistent product quality, efficient production, and reliable supply with 11 years of industry experience. Our products are designed to provide comfort, cleanliness, and convenience for everyday use.
+          With advanced manufacturing facilities and a skilled workforce, we focus on maintaining consistent product
+          quality, efficient production, and reliable supply with 11 years of industry experience. Our products are
+          designed to provide comfort, cleanliness, and convenience for everyday use.
         </p>
         <p class="about-copy">
-          Over the years, we have built strong relationships with distributors, wholesalers, and private label partners by delivering dependable products and maintaining competitive pricing. We believe in continuous improvement, innovation, and maintaining the highest level of customer satisfaction.
+          Over the years, we have built strong relationships with distributors, wholesalers, and private label partners
+          by delivering dependable products and maintaining competitive pricing. We believe in continuous improvement,
+          innovation, and maintaining the highest level of customer satisfaction.
         </p>
 
         <!-- Product Features Checklist -->
@@ -3464,7 +3545,8 @@
                 </div>
                 <h4>Innovation</h4>
               </div>
-              <p>We continuously improve our products with better design and technology to meet the changing needs of modern hygiene.</p>
+              <p>We continuously improve our products with better design and technology to meet the changing needs of
+                modern hygiene.</p>
             </div>
             <div class="value-card-new">
               <div class="value-header">
@@ -3498,46 +3580,9 @@
         </div>
       </article>
 
-      <!-- 3D Pouch Viewer (About section) -->
+      <!-- Product Image Showcase (About section) -->
       <div class="about-photo-wrap scroll-reveal reveal-right">
-        <div class="product-3d-viewer" id="aboutViewerContainer">
-          <div class="viewer-instruction" id="aboutViewerInstruction">
-            <svg class="drag-icon-svg" viewBox="0 0 24 24" width="16" height="16" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path
-                d="M12 3v18M3 12h18M12 3l3 3M12 3L9 6M12 21l3-3M12 21l-3-3M21 12l-3-3M21 12l-3 3M3 12l3-3M3 12l3 3" />
-            </svg>
-            <span>Drag to rotate 360°</span>
-          </div>
-
-          <div class="product-3d-scene">
-            <div id="aboutProductBox" class="product-3d-box">
-              <div class="about-face front"></div>
-              <div class="about-face back"></div>
-            </div>
-            <div class="product-shadow" id="aboutProductShadow"></div>
-          </div>
-
-          <div class="viewer-controls">
-            <button class="control-btn" id="btnAboutRotateLeft" aria-label="Rotate Left">
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
-              </svg>
-              Left
-            </button>
-            <button class="control-btn" id="btnAboutRotateRight" aria-label="Rotate Right">
-              Right
-              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2.5 2v6h6M2.66 15.57a10 10 0 1 0 .57-8.38L2.5 8" />
-              </svg>
-            </button>
-            <button class="control-btn" id="btnAboutFlip" aria-label="Flip 180°">
-              Flip 180°
-            </button>
-          </div>
-        </div>
+        <img src="image&amp;video/all product.png" alt="All Felice Products" class="about-products-img" />
       </div>
     </section>
 
@@ -3545,7 +3590,7 @@
     <section class="our-products-section" id="products">
       <div class="products-wrap">
         <div class="products-header">
-          <h3 class="scroll-reveal reveal-up">Our Premium <span>Cotton Products</span></h3>
+          <h3 class="scroll-reveal reveal-up">Our <span> Products</span></h3>
           <p class="scroll-reveal reveal-up">
             Explore our diverse catalog of manufactured personal care and raw cotton essentials, built with pure organic
             materials and state-of-the-art hygiene standards.
@@ -3563,7 +3608,8 @@
               <h4>Paper Stick Cotton Buds</h4>
               <p>Premium cotton buds crafted with biodegradable paper stems and 100% natural organic cotton. Gentle on
                 ears, skin, and the environment.</p>
-              <a class="product-btn" href="product-paper-buds.html" aria-label="Show details about Paper Stick Cotton Buds">
+              <a class="product-btn" href="product-paper-buds.html"
+                aria-label="Show details about Paper Stick Cotton Buds">
                 Show More
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
@@ -3583,7 +3629,8 @@
               <h4>Bamboo Stick Cotton Buds</h4>
               <p>Sustainable cotton buds made with sturdy, biodegradable bamboo stems. Perfect for precise cosmetic
                 applications and daily hygiene.</p>
-              <a class="product-btn" href="product-bamboo-buds.html" aria-label="Show details about Bamboo Stick Cotton Buds">
+              <a class="product-btn" href="product-bamboo-buds.html"
+                aria-label="Show details about Bamboo Stick Cotton Buds">
                 Show More
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
@@ -3593,28 +3640,8 @@
             </div>
           </article>
 
-          <!-- Product 3: Organic Cotton Balls -->
+          <!-- Product 3: Organic Toothbrush -->
           <article class="product-card scroll-reveal reveal-up" style="transition-delay: 0.3s;">
-            <div class="product-img-box">
-              <img src="image&amp;video/new product cooton balls .png" alt="Organic Cotton Balls" />
-            </div>
-            <div class="product-info-box">
-              <span class="product-category">Cosmetics &amp; Baby Care</span>
-              <h4>Organic Cotton Balls</h4>
-              <p>Pure, soft, and highly absorbent organic cotton balls. Ideal for makeup removal, skincare routines, and
-                delicate baby care.</p>
-              <a class="product-btn" href="product-cotton-balls.html" aria-label="Show details about Organic Cotton Balls">
-                Show More
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <!-- Product 4: Organic Toothbrush -->
-          <article class="product-card scroll-reveal reveal-up" style="transition-delay: 0.45s;">
             <div class="product-img-box">
               <img src="image&amp;video/new product tooth brush.png" alt="Organic Toothbrush" />
             </div>
@@ -3624,6 +3651,27 @@
               <p>Ergonomic toothbrush designed with soft, gentle bristles and an organic handle for effective, clean
                 dental hygiene.</p>
               <a class="product-btn" href="product-toothbrush.html" aria-label="Show details about Organic Toothbrush">
+                Show More
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Product 4: Organic Cotton Balls -->
+          <article class="product-card scroll-reveal reveal-up" style="transition-delay: 0.45s;">
+            <div class="product-img-box">
+              <img src="image&amp;video/new product cooton balls .png" alt="Organic Cotton Balls" />
+            </div>
+            <div class="product-info-box">
+              <span class="product-category">Cosmetics &amp; Baby Care</span>
+              <h4>Organic Cotton Balls</h4>
+              <p>Pure, soft, and highly absorbent organic cotton balls. Ideal for makeup removal, skincare routines, and
+                delicate baby care.</p>
+              <a class="product-btn" href="product-cotton-balls.html"
+                aria-label="Show details about Organic Cotton Balls">
                 Show More
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
@@ -3703,215 +3751,7 @@
       </div>
     </section>
 
-    <!-- Why Choose Us Section (Custom Interactive 3D Showcase) -->
-    <section class="why-choose-us" id="why-choose-us">
-      <!-- SVG Connectors between Cards and Central Product -->
-      <svg class="wcu-svg-connector" id="wcuConnectorSvg">
-        <path id="wcuPath1" class="wcu-path-line" />
-        <path id="wcuPath2" class="wcu-path-line" />
-        <path id="wcuPath3" class="wcu-path-line" />
-        <path id="wcuPath4" class="wcu-path-line" />
-        <path id="wcuPath5" class="wcu-path-line" />
-        <path id="wcuPath6" class="wcu-path-line" />
-      </svg>
 
-      <div class="wcu-wrap">
-        <div class="wcu-header scroll-reveal reveal-up">
-          <h3 class="wcu-title">Why Choose <span>Felice?</span></h3>
-          <p class="wcu-copy">
-            Thoughtfully designed for delicate care, everyday hygiene and a cleaner tomorrow.
-          </p>
-        </div>
-
-        <div class="wcu-interactive-grid">
-          <!-- Left Column (2 Cards) -->
-          <div class="wcu-side-col left-col">
-            <!-- Card 1: 100 Buds -->
-            <div class="wcu-card scroll-reveal reveal-left card-l1" data-index="1">
-              <div class="wcu-card-glow"></div>
-              <div class="wcu-card-header-row">
-                <div class="wcu-icon-circle">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                    <line x1="12" y1="17" x2="12.01" y2="17" />
-                  </svg>
-                </div>
-                <h4>Private Label Manufacturing
-                </h4>
-              </div>
-              <p>We manufacture premium hygiene products with custom packaging tailored to your brand.</p>
-            </div>
-
-            <!-- Card 2: Soft & Gentle -->
-            <div class="wcu-card scroll-reveal reveal-left card-l2" data-index="2">
-              <div class="wcu-card-glow"></div>
-              <div class="wcu-card-header-row">
-                <div class="wcu-icon-circle">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z" />
-                    <line x1="16" y1="8" x2="2" y2="22" />
-                    <line x1="17.5" y1="15" x2="9" y2="15" />
-                  </svg>
-                </div>
-                <h4>Soft & Gentle</h4>
-              </div>
-              <p>Ultra-soft tips designed for sensitive skin and delicate cleaning.</p>
-            </div>
-          </div>
-
-          <!-- Center Column (3D Viewer on Podium) -->
-          <div class="wcu-center-col scroll-reveal reveal-scale">
-            <div class="wcu-podium-wrap">
-              <!-- Floating Badge -->
-              <div class="wcu-floating-badge scroll-reveal reveal-scale">
-                <div class="badge-inner">
-                  <span class="badge-pct">100%</span>
-                  <span class="badge-text">Gentle Care,<br>Every Time</span>
-                </div>
-              </div>
-
-              <!-- Decorative Cotton flower boll -->
-              <div class="wcu-cotton-deco">
-                <img src="image&video/cotton_flower.png" alt="Natural Cotton Flower" />
-              </div>
-
-              <!-- Circular Marble Podium Base -->
-              <div class="podium-base">
-                <div class="podium-top"></div>
-                <div class="podium-side"></div>
-                <div class="podium-reflection"></div>
-              </div>
-
-              <!-- 3D Cardboard Box Viewer (Why Choose Us section) -->
-              <div class="product-3d-viewer" id="wcuViewerContainer">
-                <div class="viewer-instruction" id="wcuViewerInstruction">
-                  <svg class="drag-icon-svg" viewBox="0 0 24 24" width="16" height="16" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path
-                      d="M12 3v18M3 12h18M12 3l3 3M12 3L9 6M12 21l3-3M12 21l-3-3M21 12l-3-3M21 12l-3 3M3 12l3-3M3 12l3 3" />
-                  </svg>
-                  <span>Drag to rotate 360°</span>
-                </div>
-
-                <div class="product-3d-scene" style="width: 320px; height: 330px;">
-                  <div id="wcuProductBox">
-                    <div class="wcu-face front"></div>
-                    <div class="wcu-face back"></div>
-                  </div>
-                  <div class="product-shadow" id="wcuProductShadow"></div>
-                </div>
-
-                <div class="viewer-controls">
-                  <button class="control-btn" id="btnWcuRotateLeft" aria-label="Rotate Left">
-                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
-                    </svg>
-                    Left
-                  </button>
-                  <button class="control-btn" id="btnWcuRotateRight" aria-label="Rotate Right">
-                    Right
-                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M2.5 2v6h6M2.66 15.57a10 10 0 1 0 .57-8.38L2.5 8" />
-                    </svg>
-                  </button>
-                  <button class="control-btn" id="btnWcuFlip" aria-label="Flip 180°">
-                    Flip 180°
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column (4 Cards) -->
-          <div class="wcu-side-col right-col">
-            <!-- Card 3: Finest Cotton Quality -->
-            <div class="wcu-card scroll-reveal reveal-right card-r1" data-index="3">
-              <div class="wcu-card-glow"></div>
-              <div class="wcu-card-header-row">
-                <div class="wcu-icon-circle">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                    <path d="M12 6a6 6 0 0 1 6 6M12 8a4 4 0 0 1 4 4" />
-                  </svg>
-                </div>
-                <h4>Finest Cotton Quality</h4>
-              </div>
-              <p>Made with premium cotton for superior absorbency and care.</p>
-            </div>
-
-            <!-- Card 4: Biodegradable Paper Stems -->
-            <div class="wcu-card scroll-reveal reveal-right card-r2" data-index="4">
-              <div class="wcu-card-glow"></div>
-              <div class="wcu-card-header-row">
-                <div class="wcu-icon-circle">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
-                  </svg>
-                </div>
-                <h4>Biodegradable Paper Stems</h4>
-              </div>
-              <p>Eco-friendly choice that's better for you and the planet.</p>
-            </div>
-
-            <!-- Card 5: Hygienic Packaging -->
-            <div class="wcu-card scroll-reveal reveal-right card-r3" data-index="5">
-              <div class="wcu-card-glow"></div>
-              <div class="wcu-card-header-row">
-                <div class="wcu-icon-circle">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  </svg>
-                </div>
-                <h4>Hygienic Packaging</h4>
-              </div>
-              <p>Sealed pack to ensure cleanliness and protection every time.</p>
-            </div>
-
-            <!-- Card 6: Ideal for Delicate Cleaning -->
-            <div class="wcu-card scroll-reveal reveal-right card-r4" data-index="6">
-              <div class="wcu-card-glow"></div>
-              <div class="wcu-card-header-row">
-                <div class="wcu-icon-circle">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polygon
-                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                </div>
-                <h4>Ideal for Delicate Cleaning</h4>
-              </div>
-              <p>Perfect for ears, baby care, makeup touch-ups and more.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom Curved Ribbon Bar -->
-        <div class="wcu-bottom-bar scroll-reveal reveal-scale">
-          <div class="wcu-bottom-item">
-            <span class="wcu-bullet">•</span>
-            <span>Custom Brand Packaging</span>
-          </div>
-          <div class="wcu-bottom-divider">|</div>
-          <div class="wcu-bottom-item">
-            <span class="wcu-bullet">•</span>
-            <span>Finest Cotton Quality</span>
-          </div>
-          <div class="wcu-bottom-divider">|</div>
-          <div class="wcu-bottom-item">
-            <span class="wcu-bullet">•</span>
-            <span>Biodegradable Paper Stems</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
 
     <!-- Premium CTA Section -->
@@ -3952,7 +3792,7 @@
               </svg>
             </div>
             <h5>100% Organic Cotton</h5>
-            <p>Pure, sterile, hypoallergenic care</p>
+            <p>Pure, hygienic, hypoallergenic care</p>
           </div>
           <div class="cta-badge-item">
             <div class="cta-badge-icon">
@@ -4064,8 +3904,8 @@
         <ul class="footer-menu">
           <li><a href="products.html">Paper Stick Cotton Buds</a></li>
           <li><a href="products.html">Bamboo Stick Cotton Buds</a></li>
-          <li><a href="products.html">Organic Cotton Balls</a></li>
           <li><a href="products.html">Organic Toothbrush</a></li>
+          <li><a href="products.html">Organic Cotton Balls</a></li>
         </ul>
       </div>
 
@@ -4125,337 +3965,41 @@
       heroImageWrap.style.transform = `scale(1.02) translate3d(${x}px, ${y}px, 0)`;
     });
 
+    // 1. Hero Carousel Logic
+    const heroSlides = document.querySelectorAll(".hero-carousel-slide");
+    const heroDots = document.querySelectorAll(".hero-carousel-dot");
+    let currentHeroSlide = 0;
+    let heroInterval;
 
-
-    function drawWcuConnectingLines() {
-      const svg = document.getElementById("wcuConnectorSvg");
-      if (!svg) return;
-
-      const cards = document.querySelectorAll(".wcu-card");
-      const viewer = document.getElementById("wcuViewerContainer");
-      if (!viewer || cards.length === 0) return;
-
-      if (window.innerWidth <= 1024) {
-        for (let i = 1; i <= 6; i++) {
-          const path = document.getElementById(`wcuPath${i}`);
-          if (path) path.setAttribute("d", "");
-        }
-        return;
+    function showHeroSlide(index) {
+      if (heroSlides.length === 0) return;
+      heroSlides[currentHeroSlide].classList.remove("active");
+      if (heroDots.length > currentHeroSlide) {
+        heroDots[currentHeroSlide].classList.remove("active");
       }
-
-      const svgRect = svg.getBoundingClientRect();
-      const viewerRect = viewer.getBoundingClientRect();
-
-      // Core anchor point inside the viewer (center-ish)
-      const pX = (viewerRect.left + viewerRect.right) / 2 - svgRect.left;
-      const pY = (viewerRect.top + viewerRect.bottom) / 2 - svgRect.top - 20;
-
-      cards.forEach(card => {
-        const index = parseInt(card.getAttribute("data-index"), 10);
-        const path = document.getElementById(`wcuPath${index}`);
-        const iconCircle = card.querySelector(".wcu-icon-circle");
-        if (!path || !iconCircle) return;
-
-        const iconRect = iconCircle.getBoundingClientRect();
-
-        let startX, startY, tX, tY;
-        const isLeft = index <= 2;
-
-        if (isLeft) {
-          startX = iconRect.right - svgRect.left;
-          startY = (iconRect.top + iconRect.bottom) / 2 - svgRect.top;
-          tX = pX - 110;
-          tY = index === 1 ? pY - 30 : pY + 25;
-        } else {
-          startX = iconRect.left - svgRect.left;
-          startY = (iconRect.top + iconRect.bottom) / 2 - svgRect.top;
-          tX = pX + 110;
-          if (index === 3) tY = pY - 60;
-          else if (index === 4) tY = pY - 20;
-          else if (index === 5) tY = pY + 20;
-          else tY = pY + 60;
-        }
-
-        // Draw curved Bezier path
-        const ctrlX = (startX + tX) / 2;
-        const d = `M ${startX} ${startY} C ${ctrlX} ${startY}, ${ctrlX} ${tY}, ${tX} ${tY}`;
-        path.setAttribute("d", d);
-      });
-    }
-
-    // Set up hover triggers for connectors
-    const wcuCardsForLines = document.querySelectorAll(".wcu-card");
-    wcuCardsForLines.forEach(card => {
-      const index = card.getAttribute("data-index");
-      const path = document.getElementById(`wcuPath${index}`);
-      card.addEventListener("mouseenter", () => {
-        if (path) path.classList.add("active");
-      });
-      card.addEventListener("mouseleave", () => {
-        if (path) path.classList.remove("active");
-      });
-    });
-
-    function updateAllLines() {
-      drawWcuConnectingLines();
-    }
-
-    window.addEventListener("load", updateAllLines);
-    window.addEventListener("resize", updateAllLines);
-    window.addEventListener("scroll", updateAllLines);
-
-    // 1. About Us 3D Pouch Viewer Logic
-    const aboutBox = document.getElementById("aboutProductBox");
-    const aboutShadow = document.getElementById("aboutProductShadow");
-    const aboutViewer = document.getElementById("aboutViewerContainer");
-    const aboutInstruction = document.getElementById("aboutViewerInstruction");
-    const btnAboutRotateLeft = document.getElementById("btnAboutRotateLeft");
-    const btnAboutRotateRight = document.getElementById("btnAboutRotateRight");
-    const btnAboutFlip = document.getElementById("btnAboutFlip");
-
-    let aboutDragging = false;
-    let aboutStartX = 0, aboutStartY = 0;
-    let aboutCurrentX = 0;    // rotateY
-    let aboutCurrentY = -15;  // rotateX
-    let aboutTargetX = 0;
-    let aboutTargetY = -15;
-    let aboutSpinActive = true;
-    let aboutSpinSpeed = 0.3;
-    let aboutResumeTimeout = null;
-
-    function animateAbout3D() {
-      if (aboutSpinActive && !aboutDragging) {
-        aboutTargetX += aboutSpinSpeed;
+      currentHeroSlide = index;
+      heroSlides[currentHeroSlide].classList.add("active");
+      if (heroDots.length > currentHeroSlide) {
+        heroDots[currentHeroSlide].classList.add("active");
       }
-      aboutCurrentX += (aboutTargetX - aboutCurrentX) * 0.1;
-      aboutCurrentY += (aboutTargetY - aboutCurrentY) * 0.1;
-
-      if (aboutBox) {
-        aboutBox.style.transform = `rotateX(${aboutCurrentY}deg) rotateY(${aboutCurrentX}deg)`;
-      }
-      if (aboutShadow) {
-        const scaleVal = 1 - Math.abs(aboutCurrentY) / 180;
-        const opacityVal = 0.9 - Math.abs(aboutCurrentY) / 100;
-        aboutShadow.style.transform = `rotateX(90deg) translateZ(-215px) scale(${scaleVal})`;
-        aboutShadow.style.opacity = Math.max(0.2, opacityVal);
-      }
-      requestAnimationFrame(animateAbout3D);
-    }
-    requestAnimationFrame(animateAbout3D);
-
-    function stopAboutSpin() {
-      aboutSpinActive = false;
-      if (aboutInstruction) aboutInstruction.style.opacity = "0";
-      if (aboutResumeTimeout) clearTimeout(aboutResumeTimeout);
-    }
-    function startAboutSpinDelay() {
-      aboutResumeTimeout = setTimeout(() => {
-        if (!aboutDragging) aboutSpinActive = true;
-      }, 3000);
     }
 
-    if (aboutViewer) {
-      aboutViewer.addEventListener("mousedown", (e) => {
-        if (e.target.closest(".viewer-controls")) return;
-        aboutDragging = true;
-        stopAboutSpin();
-        aboutStartX = e.clientX;
-        aboutStartY = e.clientY;
-        e.preventDefault();
-      });
-
-      window.addEventListener("mousemove", (e) => {
-        if (!aboutDragging) return;
-        const deltaX = e.clientX - aboutStartX;
-        const deltaY = e.clientY - aboutStartY;
-        aboutTargetX += deltaX * 0.6;
-        aboutTargetY -= deltaY * 0.6;
-        aboutTargetY = Math.max(-45, Math.min(45, aboutTargetY));
-        aboutStartX = e.clientX;
-        aboutStartY = e.clientY;
-      });
-
-      window.addEventListener("mouseup", () => {
-        if (aboutDragging) {
-          aboutDragging = false;
-          startAboutSpinDelay();
-        }
-      });
-
-      aboutViewer.addEventListener("touchstart", (e) => {
-        if (e.target.closest(".viewer-controls")) return;
-        aboutDragging = true;
-        stopAboutSpin();
-        aboutStartX = e.touches[0].clientX;
-        aboutStartY = e.touches[0].clientY;
-      });
-
-      window.addEventListener("touchmove", (e) => {
-        if (!aboutDragging) return;
-        const deltaX = e.touches[0].clientX - aboutStartX;
-        const deltaY = e.touches[0].clientY - aboutStartY;
-        aboutTargetX += deltaX * 0.6;
-        aboutTargetY -= deltaY * 0.6;
-        aboutTargetY = Math.max(-45, Math.min(45, aboutTargetY));
-        aboutStartX = e.touches[0].clientX;
-        aboutStartY = e.touches[0].clientY;
-      });
-
-      window.addEventListener("touchend", () => {
-        if (aboutDragging) {
-          aboutDragging = false;
-          startAboutSpinDelay();
-        }
-      });
+    function startHeroCarousel() {
+      if (heroSlides.length <= 1) return;
+      heroInterval = setInterval(() => {
+        let next = (currentHeroSlide + 1) % heroSlides.length;
+        showHeroSlide(next);
+      }, 4000);
     }
 
-    if (btnAboutRotateLeft) {
-      btnAboutRotateLeft.addEventListener("click", () => {
-        stopAboutSpin();
-        aboutTargetX -= 45;
-        startAboutSpinDelay();
-      });
-    }
-    if (btnAboutRotateRight) {
-      btnAboutRotateRight.addEventListener("click", () => {
-        stopAboutSpin();
-        aboutTargetX += 45;
-        startAboutSpinDelay();
-      });
-    }
-    if (btnAboutFlip) {
-      btnAboutFlip.addEventListener("click", () => {
-        stopAboutSpin();
-        aboutTargetX += 180;
-        startAboutSpinDelay();
-      });
+    window.setHeroSlide = function (index) {
+      if (heroInterval) clearInterval(heroInterval);
+      showHeroSlide(index);
+      startHeroCarousel();
     }
 
-    // 2. Why Choose Us 3D Cardboard Box Viewer Logic
-    const wcuBox = document.getElementById("wcuProductBox");
-    const wcuShadow = document.getElementById("wcuProductShadow");
-    const wcuViewer = document.getElementById("wcuViewerContainer");
-    const wcuInstruction = document.getElementById("wcuViewerInstruction");
-    const btnWcuRotateLeft = document.getElementById("btnWcuRotateLeft");
-    const btnWcuRotateRight = document.getElementById("btnWcuRotateRight");
-    const btnWcuFlip = document.getElementById("btnWcuFlip");
-
-    let wcuDragging = false;
-    let wcuStartX = 0, wcuStartY = 0;
-    let wcuCurrentX = 0;    // rotateY
-    let wcuCurrentY = -15;  // rotateX
-    let wcuTargetX = 0;
-    let wcuTargetY = -15;
-    let wcuSpinActive = true;
-    let wcuSpinSpeed = 0.3;
-    let wcuResumeTimeout = null;
-
-    function animateWcu3D() {
-      if (wcuSpinActive && !wcuDragging) {
-        wcuTargetX += wcuSpinSpeed;
-      }
-      wcuCurrentX += (wcuTargetX - wcuCurrentX) * 0.1;
-      wcuCurrentY += (wcuTargetY - wcuCurrentY) * 0.1;
-
-      if (wcuBox) {
-        wcuBox.style.transform = `rotateX(${wcuCurrentY}deg) rotateY(${wcuCurrentX}deg)`;
-      }
-      if (wcuShadow) {
-        const scaleVal = 1 - Math.abs(wcuCurrentY) / 180;
-        const opacityVal = 0.9 - Math.abs(wcuCurrentY) / 100;
-        wcuShadow.style.transform = `rotateX(90deg) translateZ(-155px) scale(${scaleVal})`;
-        wcuShadow.style.opacity = Math.max(0.2, opacityVal);
-      }
-      requestAnimationFrame(animateWcu3D);
-    }
-    requestAnimationFrame(animateWcu3D);
-
-    function stopWcuSpin() {
-      wcuSpinActive = false;
-      if (wcuInstruction) wcuInstruction.style.opacity = "0";
-      if (wcuResumeTimeout) clearTimeout(wcuResumeTimeout);
-    }
-    function startWcuSpinDelay() {
-      wcuResumeTimeout = setTimeout(() => {
-        if (!wcuDragging) wcuSpinActive = true;
-      }, 3000);
-    }
-
-    if (wcuViewer) {
-      wcuViewer.addEventListener("mousedown", (e) => {
-        if (e.target.closest(".viewer-controls")) return;
-        wcuDragging = true;
-        stopWcuSpin();
-        wcuStartX = e.clientX;
-        wcuStartY = e.clientY;
-        e.preventDefault();
-      });
-
-      window.addEventListener("mousemove", (e) => {
-        if (!wcuDragging) return;
-        const deltaX = e.clientX - wcuStartX;
-        const deltaY = e.clientY - wcuStartY;
-        wcuTargetX += deltaX * 0.6;
-        wcuTargetY -= deltaY * 0.6;
-        wcuTargetY = Math.max(-45, Math.min(45, wcuTargetY));
-        wcuStartX = e.clientX;
-        wcuStartY = e.clientY;
-      });
-
-      window.addEventListener("mouseup", () => {
-        if (wcuDragging) {
-          wcuDragging = false;
-          startWcuSpinDelay();
-        }
-      });
-
-      wcuViewer.addEventListener("touchstart", (e) => {
-        if (e.target.closest(".viewer-controls")) return;
-        wcuDragging = true;
-        stopWcuSpin();
-        wcuStartX = e.touches[0].clientX;
-        wcuStartY = e.touches[0].clientY;
-      });
-
-      window.addEventListener("touchmove", (e) => {
-        if (!wcuDragging) return;
-        const deltaX = e.touches[0].clientX - wcuStartX;
-        const deltaY = e.touches[0].clientY - wcuStartY;
-        wcuTargetX += deltaX * 0.6;
-        wcuTargetY -= deltaY * 0.6;
-        wcuTargetY = Math.max(-45, Math.min(45, wcuTargetY));
-        wcuStartX = e.touches[0].clientX;
-        wcuStartY = e.touches[0].clientY;
-      });
-
-      window.addEventListener("touchend", () => {
-        if (wcuDragging) {
-          wcuDragging = false;
-          startWcuSpinDelay();
-        }
-      });
-    }
-
-    if (btnWcuRotateLeft) {
-      btnWcuRotateLeft.addEventListener("click", () => {
-        stopWcuSpin();
-        wcuTargetX -= 45;
-        startWcuSpinDelay();
-      });
-    }
-    if (btnWcuRotateRight) {
-      btnWcuRotateRight.addEventListener("click", () => {
-        stopWcuSpin();
-        wcuTargetX += 45;
-        startWcuSpinDelay();
-      });
-    }
-    if (btnWcuFlip) {
-      btnWcuFlip.addEventListener("click", () => {
-        stopWcuSpin();
-        wcuTargetX += 180;
-        startWcuSpinDelay();
-      });
+    if (heroSlides.length > 0) {
+      startHeroCarousel();
     }
 
     // Intersection Observer for scroll reveal animations
@@ -4474,18 +4018,6 @@
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
-
-    // Mouse glow trail effect for cards
-    const glowCards = document.querySelectorAll(".wcu-card");
-    glowCards.forEach(card => {
-      card.addEventListener("mousemove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty("--mouse-x", `${x}px`);
-        card.style.setProperty("--mouse-y", `${y}px`);
-      });
-    });
 
     // Private Label Live Preview Binder
     const brandNameInput = document.getElementById("brandNameInput");

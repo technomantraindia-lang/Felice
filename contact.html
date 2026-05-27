@@ -19,6 +19,7 @@
       --felice-gold: #ffb31a;
       --text-ink: #1d1d1b;
       --text-soft: #5b5b53;
+      --text-heading: #4a8528;
       --white: #ffffff;
       --shadow-soft: 0 12px 38px rgba(29, 29, 27, 0.12);
       --shadow-card: 0 22px 42px rgba(29, 29, 27, 0.15);
@@ -43,6 +44,21 @@
       background: #f5f7fa;
       min-height: 100vh;
       overflow-x: hidden;
+    }
+    main h1,
+    main h2,
+    main h3,
+    main h4,
+    main h5,
+    main h6 {
+      color: var(--text-heading);
+    }
+
+    main h1 span,
+    main h2 span,
+    main h3 span,
+    main h4 span {
+      color: var(--felice-green-deep);
     }
 
     /* Fixed floating background shapes */
@@ -251,9 +267,9 @@
 
     .contact-page-title {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-size: clamp(2rem, 3.5vw, 3rem);
       line-height: 1.1;
-      color: var(--text-ink);
+      color: var(--text-heading);
     }
 
     /* Split Section Layout */
@@ -343,7 +359,7 @@
     .info-details h3 {
       font-family: "DM Serif Display", serif;
       font-size: 1.35rem;
-      color: var(--text-ink);
+      color: var(--text-heading);
     }
 
     .info-details p,
@@ -384,7 +400,7 @@
     .inquiry-highlight-card h3 {
       font-family: "DM Serif Display", serif;
       font-size: 1.65rem;
-      color: var(--text-ink);
+      color: var(--text-heading);
       margin-bottom: 10px;
       position: relative;
     }
@@ -444,7 +460,7 @@
     .form-header h2 {
       font-family: "DM Serif Display", serif;
       font-size: clamp(1.8rem, 3.2vw, 2.3rem);
-      color: var(--text-ink);
+      color: var(--text-heading);
       margin-bottom: 8px;
     }
 
@@ -629,7 +645,7 @@
     .toast-details h4 {
       font-weight: 800;
       font-size: 0.95rem;
-      color: var(--text-ink);
+      color: var(--text-heading);
     }
 
     .toast-details p {
@@ -966,8 +982,8 @@
             </svg>
           </div>
           <div class="info-details">
-            <span>Our Current Location</span>
-            <h3>Visit Our Office</h3>
+            
+            <h3> Our Office</h3>
             <p>Shubham Industrial Estates Mankada Villege, Kamrej Surat - 394310</p>
           </div>
         </article>
@@ -982,8 +998,7 @@
             </svg>
           </div>
           <div class="info-details">
-            <span>Phone Number</span>
-            <h3>Call Us Direct</h3>
+            <h3>Phone Number</h3>
             <a href="tel:+919016661725">+91 90 16 66 17 25</a>
           </div>
         </article>
@@ -998,8 +1013,8 @@
             </svg>
           </div>
           <div class="info-details">
-            <span>Email Address</span>
-            <h3>Send An Email</h3>
+            
+            <h3>Email Address</h3>
             <a href="mailto:Sales@felice.co.in">Sales@felice.co.in</a>
           </div>
         </article>

@@ -19,6 +19,7 @@
       --felice-gold: #ffb31a;
       --text-ink: #1d1d1b;
       --text-soft: #5b5b53;
+      --text-heading: #4a8528;
       --white: #ffffff;
       --shadow-soft: 0 12px 38px rgba(29, 29, 27, 0.12);
       --shadow-card: 0 22px 42px rgba(29, 29, 27, 0.15);
@@ -43,6 +44,22 @@
       background: #f5f7fa;
       min-height: 100vh;
       overflow-x: hidden;
+    }
+
+    main h1,
+    main h2,
+    main h3,
+    main h4,
+    main h5,
+    main h6 {
+      color: var(--text-heading);
+    }
+
+    main h1 span,
+    main h2 span,
+    main h3 span,
+    main h4 span {
+      color: var(--felice-green-deep);
     }
 
     /* Fixed floating background shapes */
@@ -256,16 +273,27 @@
       overflow: hidden;
       transform: none;
       transition: none;
-      background: #ffffff;
+      background: #f5f2eb;
+    }
+
+    .hero-image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(245, 242, 235, 0.15) 0%, rgba(30, 45, 22, 0.12) 100%);
+      pointer-events: none;
+      z-index: 1;
     }
 
     .hero-image-wrap img {
+      position: relative;
+      z-index: 0;
       width: 100%;
       height: auto;
       display: block;
       object-fit: contain;
       object-position: center center;
-      filter: brightness(1.08) contrast(1.02) saturate(1.04);
+      filter: brightness(0.88) contrast(0.96) saturate(0.92);
     }
 
     .hero-image-wrap::before {
@@ -444,8 +472,8 @@
 
     .about-content-card h2 {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(1.8rem, 2.5vw, 2.4rem);
-      color: var(--text-ink);
+      font-size: clamp(1.45rem, 2.1vw, 1.85rem);
+      color: var(--text-heading);
       line-height: 1.25;
       margin-bottom: 24px;
     }
@@ -520,7 +548,7 @@
     .highlight-details h4 {
       font-size: 1.05rem;
       font-weight: 700;
-      color: var(--text-ink);
+      color: var(--text-heading);
       margin-bottom: 4px;
     }
 
@@ -533,7 +561,7 @@
     /* Stats Grid */
     .intro-stats-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
       border-top: 1px solid rgba(29, 29, 27, 0.08);
       padding-top: 24px;
@@ -572,10 +600,10 @@
 
     .section-header-center h2 {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      font-size: clamp(1.45rem, 2.1vw, 1.85rem);
       line-height: 1.15;
       margin-bottom: 14px;
-      color: var(--text-ink);
+      color: var(--text-heading);
     }
 
     .section-header-center h2 span {
@@ -704,7 +732,7 @@
     .center-content h4 {
       font-family: "DM Serif Display", serif;
       font-size: clamp(1.1rem, 2vw, 1.4rem);
-      color: var(--text-ink);
+      color: var(--text-heading);
       margin-bottom: 8px;
       font-weight: 800;
     }
@@ -819,7 +847,7 @@
     .mobile-value-content h3 {
       font-family: "DM Serif Display", serif;
       font-size: 1.15rem;
-      color: var(--text-ink);
+      color: var(--text-heading);
       margin-bottom: 6px;
     }
 
@@ -859,9 +887,9 @@
 
     .mv-title {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      font-size: clamp(1.45rem, 2.1vw, 1.85rem);
       line-height: 1.15;
-      color: var(--text-ink);
+      color: var(--text-heading);
       margin: 0;
     }
 
@@ -1169,9 +1197,9 @@
 
     .mv-card-title {
       font-family: "DM Serif Display", serif;
-      font-size: 1.8rem;
+      font-size: 1.25rem;
       margin: 8px 0 12px;
-      color: var(--text-ink);
+      color: var(--text-heading);
       position: relative;
       z-index: 2;
     }
@@ -1480,7 +1508,7 @@
     .timeline-content h4 {
       font-family: "DM Serif Display", serif;
       font-size: 1.25rem;
-      color: var(--text-ink);
+      color: var(--text-heading);
       margin-bottom: 8px;
     }
 
@@ -1852,7 +1880,7 @@
   <section class="hero" id="about-hero">
     <div class="hero-card">
       <div class="hero-image-wrap" id="heroImageWrap">
-        <img src="image%26video/new%20hero%20about.png" alt="About Felice Hero" />
+        <img src="image&amp;video/final about .png" alt="About Felice Hero" />
       </div>
       <!-- No overlay content (removed text and background card per feedback) -->
     </div>
@@ -1953,13 +1981,7 @@
           </div>
           <div class="stat-item">
             <div class="stat-num-wrap">
-              <span class="stat-num" data-target="100">0</span><span>%</span>
-            </div>
-            <span class="stat-label">Sterility assured</span>
-          </div>
-          <div class="stat-item">
-            <div class="stat-num-wrap">
-              <span class="stat-num" data-target="15">0</span><span>+</span>
+              <span class="stat-num" data-target="8">0</span><span>+</span>
             </div>
             <span class="stat-label">Countries supplied</span>
           </div>

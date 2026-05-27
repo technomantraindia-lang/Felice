@@ -19,6 +19,7 @@
       --felice-gold: #ffb31a;
       --text-ink: #1d1d1b;
       --text-soft: #5b5b53;
+      --text-heading: #4a8528;
       --white: #ffffff;
       --shadow-soft: 0 12px 38px rgba(29, 29, 27, 0.12);
       --shadow-card: 0 22px 42px rgba(29, 29, 27, 0.15);
@@ -43,6 +44,21 @@
       background: #f5f7fa;
       min-height: 100vh;
       overflow-x: hidden;
+    }
+    main h1,
+    main h2,
+    main h3,
+    main h4,
+    main h5,
+    main h6 {
+      color: var(--text-heading);
+    }
+
+    main h1 span,
+    main h2 span,
+    main h3 span,
+    main h4 span {
+      color: var(--felice-green-deep);
     }
 
     .shape {
@@ -237,9 +253,10 @@
       right: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
-      margin-bottom: 108px;
-      aspect-ratio: 1672 / 941;
-      min-height: 0;
+      margin-bottom: 96px;
+      height: clamp(480px, 58vw, 780px);
+      max-height: 780px;
+      min-height: 480px;
       overflow: hidden;
       border-bottom: 3px solid var(--felice-gold);
       animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -317,12 +334,12 @@
 
     .hero-title {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.3rem, 5.1vw, 4.5rem);
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
       line-height: 1.06;
       letter-spacing: -0.01em;
       margin-bottom: 8px;
       font-weight: 400;
-      color: #12281a;
+      color: var(--text-heading);
       text-shadow: 0 2px 10px rgba(255, 255, 255, 0.65);
     }
 
@@ -360,10 +377,10 @@
 
     .showcase-header h2 {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.35rem, 4.4vw, 4rem);
+      font-size: clamp(2rem, 3.5vw, 3rem);
       line-height: 1.1;
       margin-bottom: 16px;
-      color: var(--text-ink);
+      color: var(--text-heading);
       letter-spacing: -0.5px;
       font-weight: 400;
     }
@@ -440,7 +457,7 @@
       font-family: "DM Serif Display", serif;
       font-size: clamp(1.8rem, 3.2vw, 2.5rem);
       line-height: 1.2;
-      color: var(--text-ink);
+      color: var(--text-heading);
       margin-bottom: 8px;
     }
 
@@ -630,10 +647,10 @@
 
     .catalog-header h2 {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
       line-height: 1.15;
       margin-bottom: 14px;
-      color: var(--text-ink);
+      color: var(--text-heading);
     }
 
     .catalog-header h2 span {
@@ -726,7 +743,7 @@
     .catalog-text-box h3 {
       font-family: "Lora", serif;
       font-size: clamp(1.8rem, 2.8vw, 2.4rem);
-      color: var(--text-ink);
+      color: var(--text-heading);
       line-height: 1.25;
     }
 
@@ -829,9 +846,9 @@
 
     .cta-title {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.3rem, 4.2vw, 3.5rem);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
       line-height: 1.15;
-      color: #12281a;
+      color: var(--text-heading);
       margin-bottom: 20px;
     }
 
@@ -1013,7 +1030,7 @@
       }
 
       .hero-title {
-        font-size: clamp(2rem, 5.8vw, 3.2rem);
+        font-size: clamp(1.8rem, 4.5vw, 2.7rem);
       }
 
       .showcase-header {
@@ -1050,6 +1067,13 @@
     }
 
     @media (max-width: 760px) {
+      .hero-slideshow {
+        height: clamp(340px, 58vw, 540px);
+        max-height: 540px;
+        min-height: 340px;
+        margin-bottom: 80px;
+      }
+
       .hero-overlay {
         top: 26%;
         left: 18px;
@@ -1238,7 +1262,7 @@
 
       <div class="hero-overlay">
         <span class="hero-kicker">Our Product</span>
-        <h1 class="hero-title"><span>Premium</span> Product Collection</h1>
+        <h1 class="hero-title"><span>Product</span>Range</h1>
       </div>
 
     </section>
@@ -1264,7 +1288,7 @@
               <span class="feature-tag">Dual Tips</span>
             </div>
             <a href="product-paper-buds.html" class="view-details-btn">
-              View Details
+              View Specification
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -1293,7 +1317,7 @@
               <span class="feature-tag">Lint-Free</span>
             </div>
             <a href="product-bamboo-buds.html" class="view-details-btn">
-              View Details
+              View Specification
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -1309,39 +1333,10 @@
           </div>
         </div>
 
-        <!-- Product 3: Cotton Balls -->
+        <!-- Product 3: Toothbrush -->
         <div class="horizontal-product-card">
           <div class="card-content-stage">
             <div class="card-number-badge">03</div>
-            <h3 class="product-title">Organic Cotton Balls</h3>
-            <p class="product-desc">Feather-soft, sterilized pure cotton spheres for delicate facial cleansing and pediatric skincare.</p>
-            <div class="product-features" style="margin-bottom: 20px;">
-              <span class="feature-tag">100% Pure</span>
-              <span class="feature-tag">Sterilized</span>
-              <span class="feature-tag">Baby Safe</span>
-              <span class="feature-tag">Hypoallergenic</span>
-            </div>
-            <a href="product-cotton-balls.html" class="view-details-btn">
-              View Details
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
-          
-          <div class="card-visual-stage">
-            <div class="visual-glow-circle"></div>
-            <div class="product-image-container">
-              <img src="image&amp;video/product cotton balls.png" alt="Organic Cotton Balls" />
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 4: Toothbrush -->
-        <div class="horizontal-product-card">
-          <div class="card-content-stage">
-            <div class="card-number-badge">04</div>
             <h3 class="product-title">Organic Toothbrush</h3>
             <p class="product-desc">Premium ergonomic design with soft, BPA-free bristles for effective oral care and gum health.</p>
             <div class="product-features" style="margin-bottom: 20px;">
@@ -1351,7 +1346,7 @@
               <span class="feature-tag">Dentist OK</span>
             </div>
             <a href="product-toothbrush.html" class="view-details-btn">
-              View Details
+              View Specification
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -1363,6 +1358,35 @@
             <div class="visual-glow-circle"></div>
             <div class="product-image-container">
               <img src="image&amp;video/product brush.png" alt="Organic Toothbrush" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: Cotton Balls -->
+        <div class="horizontal-product-card">
+          <div class="card-content-stage">
+            <div class="card-number-badge">04</div>
+            <h3 class="product-title">Organic Cotton Balls</h3>
+            <p class="product-desc">Feather-soft, sterilized pure cotton spheres for delicate facial cleansing and pediatric skincare.</p>
+            <div class="product-features" style="margin-bottom: 20px;">
+              <span class="feature-tag">100% Pure</span>
+              <span class="feature-tag">Sterilized</span>
+              <span class="feature-tag">Baby Safe</span>
+              <span class="feature-tag">Hypoallergenic</span>
+            </div>
+            <a href="product-cotton-balls.html" class="view-details-btn">
+              View Specification
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+          
+          <div class="card-visual-stage">
+            <div class="visual-glow-circle"></div>
+            <div class="product-image-container">
+              <img src="image&amp;video/product cotton balls.png" alt="Organic Cotton Balls" />
             </div>
           </div>
         </div>
@@ -1463,8 +1487,8 @@
         <ul class="footer-menu">
           <li><a href="products.html">Paper Stick Cotton Buds</a></li>
           <li><a href="products.html">Bamboo Stick Cotton Buds</a></li>
-          <li><a href="products.html">Organic Cotton Balls</a></li>
           <li><a href="products.html">Organic Toothbrush</a></li>
+          <li><a href="products.html">Organic Cotton Balls</a></li>
         </ul>
       </div>
 

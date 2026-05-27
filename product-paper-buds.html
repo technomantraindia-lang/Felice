@@ -19,6 +19,7 @@
       --felice-gold: #ffb31a;
       --text-ink: #1d1d1b;
       --text-soft: #5b5b53;
+      --text-heading: #4a8528;
       --white: #ffffff;
       --shadow-soft: 0 12px 38px rgba(29, 29, 27, 0.08);
       --shadow-card: 0 22px 42px rgba(29, 29, 27, 0.12);
@@ -43,6 +44,21 @@
       background: #f5f7fa;
       min-height: 100vh;
       overflow-x: hidden;
+    }
+    main h1,
+    main h2,
+    main h3,
+    main h4,
+    main h5,
+    main h6 {
+      color: var(--text-heading);
+    }
+
+    main h1 span,
+    main h2 span,
+    main h3 span,
+    main h4 span {
+      color: var(--felice-green-deep);
     }
 
     /* Header styling */
@@ -249,9 +265,9 @@
 
     .product-headline {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.3rem, 4vw, 3.6rem);
+      font-size: clamp(2rem, 3vw, 2.8rem);
       line-height: 1.15;
-      color: #12281a;
+      color: var(--text-heading);
       font-weight: 400;
     }
 
@@ -530,8 +546,8 @@
 
     .section-header h3 {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      color: #12281a;
+      font-size: clamp(1.8rem, 2.8vw, 2.3rem);
+      color: var(--text-heading);
       margin-bottom: 12px;
       font-weight: 400;
     }
@@ -591,13 +607,181 @@
     .commit-card h4 {
       font-size: 1rem;
       font-weight: 800;
-      color: var(--text-ink);
+      color: var(--text-heading);
     }
 
     .commit-card p {
       font-size: 0.85rem;
       line-height: 1.5;
       color: var(--text-soft);
+    }
+
+
+    /* Care You Can Trust Section */
+    .care-trust-section {
+      margin: 48px 0 56px;
+    }
+
+    .care-trust-wrap {
+      position: relative;
+      background: linear-gradient(180deg, #faf8f2 0%, #f0ebe2 100%);
+      border: 1px solid rgba(139, 197, 63, 0.22);
+      border-radius: var(--radius-xl);
+      padding: clamp(28px, 4vw, 48px) clamp(18px, 3vw, 36px) clamp(30px, 4vw, 40px);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .care-trust-top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px 24px;
+      background: var(--white);
+      border: 1px solid rgba(139, 197, 63, 0.2);
+      border-radius: 999px;
+      padding: 12px 22px;
+      margin: 0 auto 26px;
+      max-width: 700px;
+      box-shadow: 0 4px 14px rgba(29, 29, 27, 0.04);
+    }
+
+    .care-trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-heading);
+    }
+
+    .care-trust-pill svg {
+      color: var(--felice-green-deep);
+      flex-shrink: 0;
+    }
+
+    .care-trust-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .care-leaf-icon {
+      color: var(--felice-green);
+      flex-shrink: 0;
+    }
+
+    .care-trust-title {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+      font-weight: 400;
+      color: var(--text-heading);
+      line-height: 1.15;
+      text-align: center;
+    }
+
+    .care-trust-title span {
+      color: var(--felice-green-deep);
+    }
+
+    .care-trust-intro {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 28px;
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: var(--text-soft);
+    }
+
+    .care-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .care-trust-card {
+      background: var(--white);
+      border: 1px solid rgba(139, 197, 63, 0.18);
+      border-radius: var(--radius-md);
+      padding: 20px 14px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(29, 29, 27, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .care-trust-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(139, 197, 63, 0.12);
+      border-color: rgba(139, 197, 63, 0.35);
+    }
+
+    .care-trust-card-icon {
+      width: 46px;
+      height: 46px;
+      margin: 0 auto 10px;
+      border-radius: 50%;
+      background: rgba(139, 197, 63, 0.1);
+      color: var(--felice-green-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .care-trust-card h4 {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--text-heading);
+      margin-bottom: 6px;
+    }
+
+    .care-trust-card p {
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: var(--text-soft);
+    }
+
+    .care-trust-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      margin-top: 26px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--felice-green-deep);
+    }
+
+    .care-trust-footer svg {
+      color: var(--felice-green);
+    }
+
+    @media (max-width: 1024px) {
+      .care-trust-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .care-trust-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .care-trust-top-bar {
+        border-radius: var(--radius-md);
+        padding: 14px 16px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .care-trust-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Footer styling */
@@ -927,105 +1111,74 @@
       </div>
     </section>
 
-    <!-- Packaging Specs Detail Section -->
-    <section class="packaging-detail-card">
-      <h3 style="font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: #12281a; margin-bottom: 8px;">Product Specifications</h3>
-      <p style="color: var(--text-soft); font-size: 0.95rem; margin-bottom: 20px;" id="selectedPackagingDesc">Specifications for the selected 200 Buds Zip Pouch packaging option. Our pouches are double-sealed to keep out moisture and bacteria.</p>
-      
-      <div class="spec-grid">
-        <div class="spec-item">
-          <span class="spec-label">Stem Material</span>
-          <span class="spec-value" id="specStem">Food-Grade Sturdy Paper</span>
+    <!-- Care You Can Trust Section -->
+    <section class="care-trust-section" aria-labelledby="care-trust-heading">
+      <div class="care-trust-wrap">
+        <div class="care-trust-header">
+          <svg class="care-leaf-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12z" />
+          </svg>
+          <h2 class="care-trust-title" id="care-trust-heading">Care You Can <span>Trust</span></h2>
+          <svg class="care-leaf-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12z" />
+          </svg>
         </div>
-        <div class="spec-item">
-          <span class="spec-label">Cotton Quality</span>
-          <span class="spec-value">100% Pure, Organic, Lint-Free</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Sterilization Method</span>
-          <span class="spec-value" id="specSterile">Gamma Ray / ETO Sterilized</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Quantity per Pack</span>
-          <span class="spec-value" id="specQty">200 Buds</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Packaging Type</span>
-          <span class="spec-value" id="specPackType">Hygienic Zip-Lock Pouch</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Usage Suitability</span>
-          <span class="spec-value">Baby Care, Cosmetics, Ear Cleaning</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Biodegradability</span>
-          <span class="spec-value">100% Compostable & Biodegradable</span>
-        </div>
-        <div class="spec-item">
-          <span class="spec-label">Certifications</span>
-          <span class="spec-value">ISO 9001, CE, GMP Compliant</span>
-        </div>
-        <div class="spec-item full-width">
-          <span class="spec-label">Detailed Description</span>
-          <span class="spec-value" id="specFullDesc" style="font-weight: 500; font-size: 0.95rem; line-height: 1.6; color: var(--text-soft); display: block; margin-top: 4px;">
-            The 200 buds zipper pouch is our best-selling daily packaging. The pouch is designed with a premium airtight zip lock that ensures the buds remain completely clean and sterile after opening. Sturdy paper stems are reinforced to prevent bending, while the double cotton tips are rolled firmly to eliminate loose lint.
-          </span>
+
+        <p class="care-trust-intro">Felice Cotton Buds are made with love and responsibility, because your well-being and our planet matter.</p>
+
+        <div class="care-trust-grid">
+          <article class="care-trust-card">
+            <div class="care-trust-card-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M12 2v3M12 19v3M5 5l2 2M17 17l2 2M2 12h3M19 12h3M5 19l2-2M17 7l2-2" />
+              </svg>
+            </div>
+            <h4>Pure Cotton</h4>
+            <p>100% natural cotton for a gentle touch.</p>
+          </article>
+          <article class="care-trust-card">
+            <div class="care-trust-card-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22c4-4 8-7.5 8-12a8 8 0 1 0-16 0c0 4.5 4 8 8 12z" />
+              </svg>
+            </div>
+            <h4>Eco-Friendly</h4>
+            <p>Paper stems that care for the planet.</p>
+          </article>
+          <article class="care-trust-card">
+            <div class="care-trust-card-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <h4>Hygienic &amp; Safe</h4>
+            <p>Sealed packaging ensures cleanliness.</p>
+          </article>
+          <article class="care-trust-card">
+            <div class="care-trust-card-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </div>
+            <h4>Gentle Care</h4>
+            <p>Perfect for delicate cleaning needs.</p>
+          </article>
+          <article class="care-trust-card">
+            <div class="care-trust-card-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </div>
+            <h4>Sustainable Choice</h4>
+            <p>Small steps today for a better tomorrow.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- 100% Sterile Commitments Section -->
-    <section class="hygiene-section">
-      <div class="section-header">
-        <h3>100% Sterile & <span>Hygienically Manufactured</span></h3>
-        <p>Our commitment to purity means that your skin and body receive only the cleanest care. We employ industry-leading sterile procedures from raw cotton processing to final shipping.</p>
-      </div>
-
-      <div class="commitments-grid">
-        <div class="commit-card">
-          <div class="commit-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h4>Zero Human Contact</h4>
-          <p>Our fully automated lines ensure that not a single cotton bud is touched by human hands during manufacture.</p>
-        </div>
-
-        <div class="commit-card">
-          <div class="commit-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-            </svg>
-          </div>
-          <h4>Gamma Sterilization</h4>
-          <p>After sealing, each carton undergoes medical-grade sterilization to guarantee a completely germ-free product.</p>
-        </div>
-
-        <div class="commit-card">
-          <div class="commit-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="12" y1="8" x2="12" y2="12" />
-              <line x1="12" y1="16" x2="12.01" y2="16" />
-            </svg>
-          </div>
-          <h4>Class 100k Cleanroom</h4>
-          <p>All packaging occurs in a Class 100,000 cleanroom with continuous air filtration and humidity controls.</p>
-        </div>
-
-        <div class="commit-card">
-          <div class="commit-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-            </svg>
-          </div>
-          <h4>Hermetic Double Seal</h4>
-          <p>We wrap our boxes and zip our packets hermetically to prevent moisture and microbial contamination.</p>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- Footer -->
@@ -1175,10 +1328,10 @@
           mainProductImg.alt = card.querySelector("img").alt;
           
           // Update spec table & descriptions
-          selectedPackagingDesc.textContent = data.desc;
-          specQty.textContent = data.qty;
-          specPackType.textContent = data.packType;
-          specFullDesc.textContent = data.fullDesc;
+          if (selectedPackagingDesc) selectedPackagingDesc.textContent = data.desc;
+          if (specQty) specQty.textContent = data.qty;
+          if (specPackType) specPackType.textContent = data.packType;
+          if (specFullDesc) specFullDesc.textContent = data.fullDesc;
 
           mainDisplay.classList.remove("fade-out");
         }, 300);
