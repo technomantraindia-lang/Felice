@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organic Cotton Balls | Felice | Premium Cotton Care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg-cream: #f5efe4;
+      --bg-champagne: #e9dbc1;
+      --felice-green: #8bc53f;
+      --felice-green-deep: #5f9a21;
+      --felice-gold: #ffb31a;
+      --text-ink: #1d1d1b;
+      --text-soft: #5b5b53;
+      --white: #ffffff;
+      --shadow-soft: 0 12px 38px rgba(29, 29, 27, 0.08);
+      --shadow-card: 0 22px 42px rgba(29, 29, 27, 0.12);
+      --radius-xl: 28px;
+      --radius-md: 16px;
+      --container: min(1560px, 94vw);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--text-ink);
+      background: #f5f7fa;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Header styling */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: rgba(250, 247, 240, 0.78);
+      border-bottom: 1px solid rgba(29, 29, 27, 0.08);
+    }
+
+    .header-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      min-height: 100px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 18px;
+      padding: 5px 0;
+    }
+
+    .brand {
+      justify-self: start;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      width: 306px;
+      height: 106px;
+      overflow: hidden;
+      margin: 0 0 0 -8px;
+      padding: 0;
+    }
+
+    .brand img {
+      position: absolute;
+      width: 306px;
+      height: 306px;
+      max-width: none;
+      max-height: none;
+      top: -85px;
+      left: 0;
+      display: block;
+      margin: 0;
+      padding: 0;
+      filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.18));
+      object-fit: contain;
+    }
+
+    .menu {
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .menu a {
+      color: var(--text-ink);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      padding: 6px 12px;
+      border-radius: 999px;
+      transition: transform 0.26s ease, color 0.26s ease, background 0.26s ease;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      color: var(--felice-green-deep);
+      background: rgba(139, 197, 63, 0.14);
+      transform: translateY(-2px);
+    }
+
+    .menu a.active {
+      background: rgba(139, 197, 63, 0.2);
+    }
+
+    .header-right {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-quote {
+      background: linear-gradient(135deg, var(--felice-green) 0%, var(--felice-green-deep) 100%);
+      color: var(--white);
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(139, 197, 63, 0.3);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-quote:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 197, 63, 0.45);
+      filter: brightness(1.05);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: rgba(139, 197, 63, 0.14);
+      color: var(--text-ink);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    main {
+      width: var(--container);
+      margin: 0 auto;
+      padding-bottom: 80px;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-top: 24px;
+      margin-bottom: 24px;
+      animation: rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .breadcrumbs a {
+      color: var(--felice-green-deep);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumbs a:hover {
+      color: var(--felice-gold);
+    }
+
+    .breadcrumbs span {
+      color: var(--text-soft);
+    }
+
+    /* Product Page Hero Section */
+    .product-hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 50px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(246, 238, 224, 0.92));
+      border: 1.5px solid rgba(139, 197, 63, 0.25);
+      border-radius: var(--radius-xl);
+      padding: 60px;
+      margin-bottom: 60px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-hero::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 197, 63, 0.15) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    .hero-info-column {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .product-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(95, 154, 33, 0.1);
+      border: 1px solid rgba(95, 154, 33, 0.25);
+      color: var(--felice-green-deep);
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .product-headline {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2.3rem, 4vw, 3.6rem);
+      line-height: 1.15;
+      color: #12281a;
+      font-weight: 400;
+    }
+
+    .product-headline span {
+      color: var(--felice-green-deep);
+    }
+
+    .product-intro {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-soft);
+    }
+
+    .product-intro strong {
+      color: var(--text-ink);
+    }
+
+    .product-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .btn-hero-primary {
+      background: linear-gradient(135deg, var(--felice-green) 0%, var(--felice-green-deep) 100%);
+      color: var(--white);
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(139, 197, 63, 0.3);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-hero-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(139, 197, 63, 0.45);
+      filter: brightness(1.05);
+    }
+
+    .btn-hero-secondary {
+      background: var(--white);
+      color: var(--text-ink);
+      font-weight: 700;
+      padding: 12px 30px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: 2px solid rgba(29, 29, 27, 0.15);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-hero-secondary:hover {
+      background: rgba(29, 29, 27, 0.04);
+      border-color: var(--text-ink);
+      transform: translateY(-3px);
+    }
+
+    .hero-features-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .hero-features-list li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-ink);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-features-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--felice-green-deep);
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    /* Product Interactive Gallery Column */
+    .hero-gallery-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      width: 100%;
+    }
+
+    .main-display-box {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 1 / 1;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff; /* White background to blend with white product images */
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(29, 29, 27, 0.08); /* clean subtle border */
+      position: relative;
+      overflow: hidden;
+      padding: 10px; /* small padding so the image doesn't touch the borders */
+      box-shadow: var(--shadow-soft);
+    }
+
+    .main-display-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 15px 30px rgba(0,0,0,0.08));
+      transition: transform 0.5s ease, opacity 0.3s ease;
+      animation: float-y 6s ease-in-out infinite;
+    }
+
+    .main-display-box.fade-out img {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    @keyframes float-y {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* Interactive Selector Thumbnails */
+    .packaging-selector-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-soft);
+      margin-top: 10px;
+    }
+
+    .thumbnails-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .thumb-card {
+      flex: 1;
+      max-width: 120px;
+      aspect-ratio: 1;
+      border: 2px solid rgba(29, 29, 27, 0.08);
+      border-radius: 12px;
+      background: var(--white);
+      padding: 10px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+
+    .thumb-card img {
+      max-width: 80%;
+      max-height: 60%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.05));
+      transition: transform 0.3s ease;
+    }
+
+    .thumb-card span {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--text-soft);
+      text-align: center;
+    }
+
+    .thumb-card:hover {
+      border-color: var(--felice-green);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(139,197,63,0.1);
+    }
+
+    .thumb-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .thumb-card.active {
+      border-color: var(--felice-green-deep);
+      background: rgba(139, 197, 63, 0.06);
+      box-shadow: 0 8px 20px rgba(139,197,63,0.14);
+    }
+
+    .thumb-card.active span {
+      color: var(--felice-green-deep);
+    }
+
+    /* Product Packaging Detail Card */
+    .packaging-detail-card {
+      background: var(--white);
+      border: 1px solid rgba(29, 29, 27, 0.08);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      width: 100%;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 60px;
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(29, 29, 27, 0.06);
+    }
+
+    .spec-item.full-width {
+      grid-column: span 4;
+      border-bottom: none;
+    }
+
+    .spec-label {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .spec-value {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-ink);
+    }
+
+    /* commitments / manufacturing section */
+    .hygiene-section {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 244, 235, 0.9));
+      border: 1px solid rgba(139, 197, 63, 0.2);
+      border-radius: var(--radius-xl);
+      padding: 60px;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-header {
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+
+    .section-header h3 {
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: #12281a;
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+
+    .section-header h3 span {
+      color: var(--felice-green-deep);
+    }
+
+    .section-header p {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .commitments-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .commit-card {
+      background: var(--white);
+      border: 1px solid rgba(29, 29, 27, 0.06);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+      transition: all 0.3s ease;
+    }
+
+    .commit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(139,197,63,0.08);
+      border-color: rgba(139, 197, 63, 0.3);
+    }
+
+    .commit-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(139, 197, 63, 0.08);
+      color: var(--felice-green-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .commit-card:hover .commit-icon {
+      background: var(--felice-green-deep);
+      color: var(--white);
+    }
+
+    .commit-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-ink);
+    }
+
+    .commit-card p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--text-soft);
+    }
+
+    /* Footer styling */
+    .footer {
+      background:
+        linear-gradient(160deg, rgba(29, 29, 27, 0.97), rgba(24, 33, 12, 0.95)),
+        radial-gradient(circle at 80% 20%, rgba(139, 197, 63, 0.28), transparent 45%);
+      color: #ededeb;
+      padding: 58px 0 28px;
+      border-top: 2px solid rgba(139, 197, 63, 0.35);
+      position: relative;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+    }
+
+    .footer-wrap {
+      width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      gap: 36px;
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+    }
+
+    .footer h4 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .footer p,
+    .footer a,
+    .footer li {
+      color: rgba(237, 237, 235, 0.9);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      text-decoration: none;
+      list-style: none;
+    }
+
+    .footer a:hover {
+      color: #c6f07d;
+    }
+
+    .footer-menu {
+      display: grid;
+      gap: 4px;
+    }
+
+    .social {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .social a {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      color: rgba(237, 237, 235, 0.85);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0;
+    }
+
+    .social a:hover {
+      background: var(--felice-green);
+      border-color: var(--felice-green);
+      color: var(--white);
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(139, 197, 63, 0.3);
+    }
+
+    .social a svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .social a:hover svg {
+      transform: scale(1.15);
+    }
+
+    .copyright {
+      width: var(--container);
+      margin: 22px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.87rem;
+      color: rgba(237, 237, 235, 0.75);
+      line-height: 1.6;
+    }
+
+    /* Scroll reveal base classes */
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .commitments-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .product-hero {
+        grid-template-columns: 1fr;
+        padding: 40px;
+        gap: 40px;
+      }
+      .spec-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+      .spec-item.full-width {
+        grid-column: span 2;
+      }
+      .footer-wrap {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .header-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 68px;
+        width: 100%;
+        padding: 0 10px;
+      }
+
+      .brand {
+        width: 208px;
+        height: 78px;
+        overflow: hidden;
+        margin-left: -4px;
+        flex-shrink: 0;
+      }
+
+      .brand img {
+        position: absolute;
+        width: 208px;
+        height: 208px;
+        max-width: none;
+        max-height: none;
+        top: -58px;
+        left: 0;
+      }
+
+      .btn-quote {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .menu {
+        position: absolute;
+        right: 10px;
+        top: 64px;
+        width: min(260px, calc(100vw - 20px));
+        flex-direction: column;
+        align-items: stretch;
+        background: rgba(252, 249, 243, 0.97);
+        border: 1px solid rgba(29, 29, 27, 0.08);
+        border-radius: 16px;
+        box-shadow: var(--shadow-soft);
+        padding: 10px;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: 0.28s ease;
+        z-index: 50;
+      }
+
+      .menu.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .menu a {
+        padding: 12px 14px;
+      }
+
+      .product-hero {
+        padding: 30px 20px;
+      }
+      .main-display-box {
+        max-width: 280px;
+        height: auto;
+      }
+      .commitments-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .spec-grid {
+        grid-template-columns: 1fr;
+      }
+      .spec-item.full-width {
+        grid-column: span 1;
+      }
+      .thumbnails-row {
+        flex-wrap: wrap;
+      }
+      .thumb-card {
+        flex: 0 0 calc(50% - 8px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-wrap">
+      <a class="brand" href="index.html#home" aria-label="Felice Home">
+        <img src="image&video/new%20logo%20%20in%20white.png" alt="Felice logo" />
+      </a>
+
+      <ul class="menu" id="menu">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="private-label.html">Private Label / Job Work</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+
+      <div class="header-right">
+        <a href="contact.html" class="btn-quote">Get a Quote</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs" aria-label="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>&gt;</span>
+      <a href="products.html">Products</a>
+      <span>&gt;</span>
+      <span>Organic Cotton Balls</span>
+    </nav>
+
+    <!-- Product Hero Section -->
+    <section class="product-hero">
+      <div class="hero-info-column">
+        <div class="product-badge">100% Sterile Purity</div>
+        <h1 class="product-headline">Organic <br><span>Cotton Balls</span></h1>
+        <p class="product-intro">
+          Felice Organic Cotton Balls are designed to provide ultra-soft, gentle care for all skincare, cosmetic, and pediatric applications. Crafted from <strong>100% pure organic cotton fibers</strong>, they are highly absorbent, completely sterile, and hypoallergenic.
+        </p>
+        <p class="product-intro">
+          Processed under strict clinical cleanliness controls in our automated facility, these cotton spheres are ideal for makeup removal, baby skin cleaning, wound dressing, and clinical applications.
+        </p>
+
+        <ul class="hero-features-list">
+          <li>100% Organic Pure Cotton</li>
+          <li>Ultra Soft & Highly Absorbent</li>
+          <li>Sterile Touch-Free Manufacture</li>
+          <li>Chemical & Chlorine Free</li>
+        </ul>
+
+        <div class="product-actions">
+          <a href="products.html" class="btn-hero-primary">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" style="transform: rotate(180deg); margin-right: 8px;">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+            Back to Product Page
+          </a>
+          <a href="contact.html" class="btn-hero-secondary">Request Samples</a>
+        </div>
+      </div>
+
+      <div class="hero-gallery-column">
+        <!-- Main Product Display -->
+        <div class="main-display-box" id="mainDisplay">
+          <img src="image&video/new product cooton balls .png" alt="Organic Cotton Balls Pouch Pack" id="mainProductImg" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Packaging Specs Detail Section -->
+    <section class="packaging-detail-card">
+      <h3 style="font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: #12281a; margin-bottom: 8px;">Product Specifications</h3>
+      <p style="color: var(--text-soft); font-size: 0.95rem; margin-bottom: 20px;" id="selectedPackagingDesc">Specifications for the selected Premium Zipper Pouch packaging. Designed to maintain sterility and freshness.</p>
+      
+      <div class="spec-grid">
+        <div class="spec-item">
+          <span class="spec-label">Cotton Quality</span>
+          <span class="spec-value">100% Organic, Bleach-Free, Lint-Free</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Absorbency Rate</span>
+          <span class="spec-value">Instant High Absorbency</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Sterilization Method</span>
+          <span class="spec-value" id="specSterile">Gamma Ray Sterilization</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Packaging Type</span>
+          <span class="spec-value" id="specPackType">Hygienic Drawstring/Zip Pouch</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Suitability</span>
+          <span class="spec-value">All skin types, including sensitive skin</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Eco Friendly</span>
+          <span class="spec-value">100% Biodegradable & Compostable</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Quantity per Pack</span>
+          <span class="spec-value" id="specQty">50 / 100 Balls per Pouch</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Certifications</span>
+          <span class="spec-value">ISO 9001, GOTS Organic Certified</span>
+        </div>
+        <div class="spec-item full-width">
+          <span class="spec-label">Detailed Description</span>
+          <span class="spec-value" id="specFullDesc" style="font-weight: 500; font-size: 0.95rem; line-height: 1.6; color: var(--text-soft); display: block; margin-top: 4px;">
+            Our Premium Pouch is sealed using medical grade barrier materials that prevent entry of moisture, dust, or airborne elements. Featuring a resealable drawstring system, it allows clean extraction of individual cotton balls while keeping the remaining spheres sterile and protected.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 100% Sterile Commitments Section -->
+    <section class="hygiene-section">
+      <div class="section-header">
+        <h3>100% Sterile & <span>Hygienically Manufactured</span></h3>
+        <p>Our commitment to purity means that your skin and body receive only the cleanest care. We employ industry-leading sterile procedures from raw cotton processing to final shipping.</p>
+      </div>
+
+      <div class="commitments-grid">
+        <div class="commit-card">
+          <div class="commit-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h4>Zero Human Contact</h4>
+          <p>Our fully automated lines ensure that not a single cotton bud is touched by human hands during manufacture.</p>
+        </div>
+
+        <div class="commit-card">
+          <div class="commit-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+          </div>
+          <h4>Gamma Sterilization</h4>
+          <p>After sealing, each carton undergoes medical-grade sterilization to guarantee a completely germ-free product.</p>
+        </div>
+
+        <div class="commit-card">
+          <div class="commit-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+          </div>
+          <h4>Class 100k Cleanroom</h4>
+          <p>All packaging occurs in a Class 100,000 cleanroom with continuous air filtration and humidity controls.</p>
+        </div>
+
+        <div class="commit-card">
+          <div class="commit-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          <h4>Hermetic Double Seal</h4>
+          <p>We wrap our boxes and zip our packets hermetically to prevent moisture and microbial contamination.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-wrap">
+      <div>
+        <div class="footer-logo-wrap" style="margin-bottom: 6px; width: 240px; height: 95px; overflow: hidden; position: relative;">
+          <img src="image&video/new%20logo%20%20in%20white.png" alt="Felice new logo"
+            style="position: absolute; width: 240px; height: 240px; top: -58px; left: 0; display: block; filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.15));" />
+        </div>
+        <p style="margin-bottom: 14px; line-height: 1.6; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
+          PASSION FOR CONSISTENT QUALITY AND CUSTOMER SATISFACTION-Building long-term relationships based on trust &amp; transparency
+        </p>
+        <p style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="color: var(--felice-green);">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          <a href="tel:+919016661725" style="color: rgba(237, 237, 235, 0.9); text-decoration: none;">+91 9016661725</a>
+        </p>
+        <p style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="color: var(--felice-green);">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          <a href="mailto:Sales@felice.co.in" style="color: rgba(237, 237, 235, 0.9); text-decoration: none;">Sales@felice.co.in</a>
+        </p>
+        <p style="margin-bottom: 14px; display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="color: var(--felice-green); flex-shrink: 0; margin-top: 3px;">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Shubham Industrial Estates Mankada Villege, Kamrej Surat - 394310</span>
+        </p>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          Products Links
+          <span style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="product-paper-buds.html">Paper Stick Cotton Buds</a></li>
+          <li><a href="product-bamboo-buds.html">Bamboo Stick Cotton Buds</a></li>
+          <li><a href="product-cotton-balls.html">Organic Cotton Balls</a></li>
+          <li><a href="product-toothbrush.html">Organic Toothbrush</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          Support
+          <span style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="private-label.html">Private Label / Job Work</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
+          Corporate Office
+          <span style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
+        </h4>
+        <ul class="footer-menu">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      Copyright @2026, All Rights Reserved. Design By Technomantra India
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Drawer Toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("menu");
+
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("open");
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => menu.classList.remove("open"));
+    });
+
+
+  </script>
+</body>
+
+</html>

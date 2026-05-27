@@ -40,21 +40,13 @@
     body {
       font-family: "Manrope", sans-serif;
       color: var(--text-ink);
-      background:
-        radial-gradient(circle at 15% 10%, rgba(139, 197, 63, 0.2), transparent 32%),
-        radial-gradient(circle at 85% 22%, rgba(255, 179, 26, 0.2), transparent 38%),
-        linear-gradient(135deg, var(--bg-cream), #f8f4ec 55%, var(--bg-champagne));
+      background: #f5f7fa;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
     .shape {
-      position: fixed;
-      z-index: -1;
-      border-radius: 50%;
-      filter: blur(0.4px);
-      animation: float 10s ease-in-out infinite;
-      pointer-events: none;
+      display: none !important;
     }
 
     .shape.one {

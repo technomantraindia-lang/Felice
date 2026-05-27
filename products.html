@@ -40,21 +40,13 @@
     body {
       font-family: "Manrope", sans-serif;
       color: var(--text-ink);
-      background:
-        radial-gradient(circle at 15% 10%, rgba(139, 197, 63, 0.2), transparent 32%),
-        radial-gradient(circle at 85% 22%, rgba(255, 179, 26, 0.2), transparent 38%),
-        linear-gradient(135deg, var(--bg-cream), #f8f4ec 55%, var(--bg-champagne));
+      background: #f5f7fa;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
     .shape {
-      position: fixed;
-      z-index: -1;
-      border-radius: 50%;
-      filter: blur(0.4px);
-      animation: float 10s ease-in-out infinite;
-      pointer-events: none;
+      display: none !important;
     }
 
     .shape.one {
@@ -1265,12 +1257,19 @@
             <div class="card-number-badge">01</div>
             <h3 class="product-title">Paper Stick Cotton Buds</h3>
             <p class="product-desc">100% biodegradable everyday essentials with pure organic cotton tips and eco-friendly paper stems. Available in different packings of 100 and 200 sticks.</p>
-            <div class="product-features">
+            <div class="product-features" style="margin-bottom: 20px;">
               <span class="feature-tag">Pure Cotton</span>
               <span class="feature-tag">Eco-Friendly</span>
               <span class="feature-tag">100/200 Sticks</span>
               <span class="feature-tag">Dual Tips</span>
             </div>
+            <a href="product-paper-buds.html" class="view-details-btn">
+              View Details
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
           </div>
           
           <div class="card-visual-stage">
@@ -1287,12 +1286,19 @@
             <div class="card-number-badge">02</div>
             <h3 class="product-title">Bamboo Stick Cotton Buds</h3>
             <p class="product-desc">Naturally sturdy bamboo stems with premium organic cotton and zero-plastic footprint for conscious care. Available in different packings of 100 and 200 sticks.</p>
-            <div class="product-features">
+            <div class="product-features" style="margin-bottom: 20px;">
               <span class="feature-tag">Bamboo Core</span>
               <span class="feature-tag">Zero Plastic</span>
               <span class="feature-tag">100/200 Packs</span>
               <span class="feature-tag">Lint-Free</span>
             </div>
+            <a href="product-bamboo-buds.html" class="view-details-btn">
+              View Details
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
           </div>
           
           <div class="card-visual-stage">
@@ -1309,12 +1315,19 @@
             <div class="card-number-badge">03</div>
             <h3 class="product-title">Organic Cotton Balls</h3>
             <p class="product-desc">Feather-soft, sterilized pure cotton spheres for delicate facial cleansing and pediatric skincare.</p>
-            <div class="product-features">
+            <div class="product-features" style="margin-bottom: 20px;">
               <span class="feature-tag">100% Pure</span>
               <span class="feature-tag">Sterilized</span>
               <span class="feature-tag">Baby Safe</span>
               <span class="feature-tag">Hypoallergenic</span>
             </div>
+            <a href="product-cotton-balls.html" class="view-details-btn">
+              View Details
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
           </div>
           
           <div class="card-visual-stage">
@@ -1331,12 +1344,19 @@
             <div class="card-number-badge">04</div>
             <h3 class="product-title">Organic Toothbrush</h3>
             <p class="product-desc">Premium ergonomic design with soft, BPA-free bristles for effective oral care and gum health.</p>
-            <div class="product-features">
+            <div class="product-features" style="margin-bottom: 20px;">
               <span class="feature-tag">Soft Bristles</span>
               <span class="feature-tag">Ergonomic</span>
               <span class="feature-tag">Eco-Friendly</span>
               <span class="feature-tag">Dentist OK</span>
             </div>
+            <a href="product-toothbrush.html" class="view-details-btn">
+              View Details
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
           </div>
           
           <div class="card-visual-stage">
@@ -1547,8 +1567,8 @@
     }
 
     const slideshowSection = document.getElementById("slideshowSection");
-    slideshowSection.addEventListener("mouseenter", stopAutoRotation);
-    slideshowSection.addEventListener("mouseleave", startAutoRotation);
+    // slideshowSection.addEventListener("mouseenter", stopAutoRotation);
+    // slideshowSection.addEventListener("mouseleave", startAutoRotation);
 
     renderSlides();
     startAutoRotation();

@@ -40,21 +40,13 @@
     body {
       font-family: "Manrope", sans-serif;
       color: var(--text-ink);
-      background:
-        radial-gradient(circle at 15% 10%, rgba(139, 197, 63, 0.2), transparent 32%),
-        radial-gradient(circle at 85% 22%, rgba(255, 179, 26, 0.2), transparent 38%),
-        linear-gradient(135deg, var(--bg-cream), #f8f4ec 55%, var(--bg-champagne));
+      background: #f5f7fa;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
     .shape {
-      position: fixed;
-      z-index: -1;
-      border-radius: 50%;
-      filter: blur(0.4px);
-      animation: float 10s ease-in-out infinite;
-      pointer-events: none;
+      display: none !important;
     }
 
     .shape.one {
@@ -290,11 +282,12 @@
     }
 
     .about-title {
-      font-family: "Lora", serif;
-      font-size: clamp(2.2rem, 3.5vw, 3rem);
-      line-height: 1.15;
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+      font-weight: 400;
+      line-height: 1.2;
       margin-bottom: 20px;
-      color: var(--text-ink);
+      color: #1b3322; /* Soft elegant dark green-charcoal */
     }
 
     .about-copy {
@@ -701,10 +694,11 @@
 
     .wcu-title {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-      line-height: 1.15;
+      font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+      font-weight: 400;
+      line-height: 1.2;
       margin-bottom: 14px;
-      color: #12281a;
+      color: #1b3322; /* Soft elegant dark green-charcoal */
     }
 
     .wcu-title span {
@@ -1088,10 +1082,11 @@
 
     .products-header h3 {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-      line-height: 1.15;
+      font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+      font-weight: 400;
+      line-height: 1.2;
       margin-bottom: 14px;
-      color: #12281a;
+      color: #1b3322; /* Soft elegant dark green-charcoal */
     }
 
     .products-header h3 span {
@@ -1296,9 +1291,10 @@
 
     .cta-title {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.3rem, 4.2vw, 3.5rem);
-      line-height: 1.15;
-      color: #12281a;
+      font-size: clamp(1.6rem, 2.4vw, 2.1rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #1b3322; /* Soft elegant dark green-charcoal */
       margin-bottom: 20px;
     }
 
