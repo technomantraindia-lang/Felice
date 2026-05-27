@@ -2130,15 +2130,15 @@
       width: 100vw;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
-      min-height: calc(100vh - 100px);
-      padding: clamp(40px, 5vw, 74px) clamp(22px, 5vw, 88px);
+      min-height: clamp(610px, calc(100vh - 100px), 820px);
+      padding: clamp(34px, 4.2vw, 64px) clamp(18px, 5vw, 84px);
       overflow: hidden;
       isolation: isolate;
       border-bottom: 3px solid var(--felice-green);
       background:
-        radial-gradient(circle at 82% 14%, rgba(139, 197, 63, 0.20), transparent 25%),
-        radial-gradient(circle at 58% 85%, rgba(255, 179, 26, 0.14), transparent 28%),
-        linear-gradient(115deg, #fffdf7 0%, #fbf6ec 46%, #edf6dc 100%);
+        radial-gradient(circle at 82% 12%, rgba(139, 197, 63, 0.20), transparent 26%),
+        radial-gradient(circle at 8% 82%, rgba(255, 179, 26, 0.12), transparent 28%),
+        linear-gradient(116deg, #fffdf7 0%, #fbf6ec 47%, #edf6dc 100%);
     }
 
     .hero::before {
@@ -2147,83 +2147,85 @@
       inset: 0;
       z-index: -2;
       background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.55)),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.72) 45%, rgba(255, 255, 255, 0.36) 100%),
         url('image&video/new hero.png') center / cover no-repeat;
-      opacity: 0.18;
-      filter: blur(28px) saturate(0.8);
-      transform: scale(1.12);
+      opacity: 0.14;
+      filter: blur(30px) saturate(0.9);
+      transform: scale(1.13);
+      pointer-events: none;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      width: 520px;
-      height: 520px;
-      right: -190px;
+      width: min(520px, 42vw);
+      aspect-ratio: 1;
+      right: -150px;
       top: -150px;
       z-index: -1;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(139, 197, 63, 0.24), rgba(139, 197, 63, 0.05) 55%, transparent 72%);
+      background: radial-gradient(circle, rgba(139, 197, 63, 0.24), rgba(139, 197, 63, 0.04) 58%, transparent 74%);
       pointer-events: none;
     }
 
     .hero-card {
       position: relative;
       z-index: 2;
-      width: min(1480px, 94vw);
-      min-height: 620px;
+      width: min(1460px, 94vw);
+      min-height: 560px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(360px, 0.86fr) minmax(520px, 1.14fr);
+      grid-template-columns: minmax(330px, 0.82fr) minmax(540px, 1.18fr);
       align-items: center;
-      gap: clamp(26px, 5vw, 80px);
+      gap: clamp(28px, 4.5vw, 78px);
       animation: rise 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
 
     .hero-content {
       position: relative;
       z-index: 5;
-      max-width: 560px;
+      max-width: 520px;
     }
 
     .hero-kicker {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      padding: 8px 15px;
+      gap: 8px;
+      padding: 7px 14px;
       border-radius: 999px;
       color: var(--felice-green-deep);
       background: rgba(139, 197, 63, 0.12);
       border: 1px solid rgba(139, 197, 63, 0.22);
       font-family: "Outfit", sans-serif;
-      font-size: 0.92rem;
+      font-size: clamp(0.76rem, 0.92vw, 0.9rem);
       font-weight: 700;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
+      white-space: nowrap;
     }
 
     .hero-title {
       font-family: "DM Serif Display", serif;
-      font-size: clamp(2.55rem, 4.45vw, 4.85rem);
-      line-height: 1.02;
-      letter-spacing: -0.035em;
+      font-size: clamp(2.18rem, 3.35vw, 3.92rem);
+      line-height: 1.04;
+      letter-spacing: -0.026em;
       font-weight: 400;
       color: #202522;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .hero-title span {
       display: block;
       color: var(--felice-green-deep);
-      text-shadow: 0 8px 24px rgba(95, 154, 33, 0.10);
+      text-shadow: 0 8px 22px rgba(95, 154, 33, 0.09);
     }
 
     .hero-copy {
-      max-width: 510px;
+      max-width: 480px;
       font-family: "Outfit", sans-serif;
-      font-size: clamp(0.98rem, 1.08vw, 1.12rem);
-      line-height: 1.68;
+      font-size: clamp(0.92rem, 1vw, 1.06rem);
+      line-height: 1.62;
       color: var(--text-soft);
-      margin-bottom: 26px;
+      margin-bottom: 22px;
     }
 
     .hero-copy strong {
@@ -2234,21 +2236,21 @@
     .hero-actions {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      margin-bottom: 22px;
     }
 
     .hero-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      min-height: 48px;
-      padding: 13px 24px;
+      gap: 9px;
+      min-height: 44px;
+      padding: 12px 22px;
       border-radius: 13px;
       font-family: "Outfit", sans-serif;
-      font-size: 0.93rem;
+      font-size: 0.9rem;
       font-weight: 800;
       text-decoration: none;
       transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
@@ -2262,8 +2264,8 @@
 
     .hero-btn-secondary {
       color: var(--felice-green-deep);
-      background: rgba(255, 255, 255, 0.76);
-      border: 1.5px solid rgba(95, 154, 33, 0.36);
+      background: rgba(255, 255, 255, 0.78);
+      border: 1.5px solid rgba(95, 154, 33, 0.34);
       backdrop-filter: blur(10px);
     }
 
@@ -2273,10 +2275,10 @@
     }
 
     .hero-feature-card {
-      width: min(560px, 100%);
+      width: min(520px, 100%);
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      gap: 10px;
     }
 
     .hero-feature-item {
@@ -2284,19 +2286,19 @@
       display: grid;
       grid-template-columns: auto 1fr;
       align-items: center;
-      gap: 10px;
-      padding: 13px 14px;
+      gap: 9px;
+      padding: 11px 12px;
       text-align: left;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.70);
-      border: 1px solid rgba(255, 255, 255, 0.86);
-      box-shadow: 0 12px 28px rgba(29, 29, 27, 0.06);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 10px 24px rgba(29, 29, 27, 0.055);
       backdrop-filter: blur(14px);
     }
 
     .hero-feature-icon {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
@@ -2306,84 +2308,103 @@
       flex-shrink: 0;
     }
 
+    .hero-feature-icon svg {
+      width: 21px;
+      height: 21px;
+    }
+
     .hero-feature-item strong {
       display: block;
-      font-size: 0.84rem;
+      font-size: 0.8rem;
       color: var(--text-ink);
-      margin-bottom: 2px;
+      margin-bottom: 1px;
     }
 
     .hero-feature-item small {
       display: block;
-      font-size: 0.72rem;
-      line-height: 1.32;
+      font-size: 0.68rem;
+      line-height: 1.28;
       color: var(--text-soft);
     }
 
     .hero-visual {
       position: relative;
       z-index: 4;
-      min-height: 560px;
+      min-height: 520px;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 22px 0;
     }
 
     .hero-visual::before {
       content: "";
       position: absolute;
-      width: 75%;
-      height: 76%;
-      right: 0;
-      bottom: 22px;
-      border-radius: 44px;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(235, 246, 216, 0.48));
-      border: 1px solid rgba(255, 255, 255, 0.88);
-      box-shadow: 0 28px 70px rgba(29, 29, 27, 0.10);
-      transform: rotate(-1.6deg);
+      width: 78%;
+      height: 72%;
+      right: 1%;
+      bottom: 30px;
+      border-radius: 42px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.80), rgba(235, 246, 216, 0.50));
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 30px 74px rgba(29, 29, 27, 0.105);
+      transform: rotate(-1.4deg);
     }
 
     .hero-image-wrap {
       position: relative;
-      width: min(100%, 790px);
+      width: min(100%, 780px);
       border-radius: 34px;
       overflow: hidden;
-      padding: 12px;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 250, 239, 0.72));
+      padding: 14px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 250, 239, 0.80));
       border: 1px solid rgba(255, 255, 255, 0.95);
-      box-shadow: 0 28px 72px rgba(29, 29, 27, 0.14);
-      transform: translateY(10px);
+      box-shadow:
+        0 30px 80px rgba(29, 29, 27, 0.15),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+      transform: translateY(6px);
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .hero-image-wrap::before {
       content: "";
       position: absolute;
-      inset: 12px;
+      inset: 14px;
       z-index: 2;
-      border-radius: 25px;
+      border-radius: 24px;
       background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.10), transparent 35%, rgba(139, 197, 63, 0.10) 100%),
-        radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.40), transparent 30%);
+        linear-gradient(90deg, rgba(255, 255, 255, 0.16), transparent 36%, rgba(139, 197, 63, 0.12) 100%),
+        radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.45), transparent 31%);
+      pointer-events: none;
+    }
+
+    .hero-image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      z-index: 3;
+      border-radius: 24px;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.42);
       pointer-events: none;
     }
 
     .hero-image-wrap img {
       width: 100%;
-      height: clamp(390px, 44vw, 510px);
+      height: clamp(360px, 38vw, 480px);
       display: block;
       object-fit: cover;
       object-position: center;
-      border-radius: 25px;
-      filter: saturate(0.98) contrast(1.02);
+      border-radius: 24px;
+      filter: saturate(0.98) contrast(1.02) brightness(1.02);
     }
 
     .hero-hygiene-badge {
       position: absolute;
-      top: 20px;
-      right: clamp(10px, 2.5vw, 42px);
+      top: clamp(10px, 2.2vw, 28px);
+      right: clamp(6px, 2vw, 34px);
       z-index: 9;
-      width: clamp(92px, 8vw, 126px);
+      width: clamp(84px, 7.2vw, 116px);
       aspect-ratio: 1;
       border-radius: 50%;
       display: flex;
@@ -2392,21 +2413,21 @@
       justify-content: center;
       text-align: center;
       color: var(--felice-green-deep);
-      background: rgba(255, 252, 239, 0.96);
+      background: rgba(255, 252, 239, 0.97);
       border: 2px dashed rgba(95, 154, 33, 0.52);
-      outline: 7px solid rgba(209, 190, 152, 0.48);
+      outline: 6px solid rgba(209, 190, 152, 0.46);
       box-shadow: 0 18px 34px rgba(29, 29, 27, 0.12);
       animation: badgeFloat 6s ease-in-out infinite alternate;
     }
 
     .hero-hygiene-badge strong {
-      font-size: clamp(1.45rem, 2vw, 2rem);
-      line-height: 0.96;
+      font-size: clamp(1.22rem, 1.65vw, 1.75rem);
+      line-height: 0.95;
       font-weight: 900;
     }
 
     .hero-hygiene-badge span {
-      font-size: clamp(0.68rem, 0.86vw, 0.86rem);
+      font-size: clamp(0.6rem, 0.76vw, 0.78rem);
       font-weight: 900;
       letter-spacing: 0.03em;
       border-bottom: 1px solid rgba(95, 154, 33, 0.42);
@@ -2415,66 +2436,125 @@
 
     .hero-product-note {
       position: absolute;
-      left: 10px;
-      bottom: 22px;
+      left: 8px;
+      bottom: 34px;
       z-index: 8;
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      padding: 11px 16px;
+      gap: 8px;
+      padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.86);
+      background: rgba(255, 255, 255, 0.88);
       color: var(--felice-green-deep);
       border: 1px solid rgba(139, 197, 63, 0.24);
       box-shadow: 0 12px 28px rgba(29, 29, 27, 0.10);
       backdrop-filter: blur(12px);
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       font-weight: 800;
+      white-space: nowrap;
     }
 
     .hero-trust-strip {
       display: none !important;
     }
 
+    @media (min-width: 1181px) and (max-width: 1366px) {
+      .hero {
+        min-height: 610px;
+        padding: 38px 46px;
+      }
+
+      .hero-card {
+        width: min(1280px, 94vw);
+        min-height: 520px;
+        grid-template-columns: minmax(320px, 0.82fr) minmax(500px, 1.18fr);
+        gap: 42px;
+      }
+
+      .hero-content {
+        max-width: 470px;
+      }
+
+      .hero-title {
+        font-size: clamp(2.25rem, 3.2vw, 3.35rem);
+      }
+
+      .hero-copy {
+        font-size: 0.96rem;
+        margin-bottom: 20px;
+      }
+
+      .hero-visual {
+        min-height: 480px;
+      }
+
+      .hero-image-wrap {
+        width: min(100%, 690px);
+      }
+
+      .hero-image-wrap img {
+        height: clamp(350px, 35vw, 430px);
+      }
+    }
+
     @media (max-width: 1180px) {
       .hero {
         min-height: auto;
+        padding: 42px 26px 48px;
       }
 
       .hero-card {
         grid-template-columns: 1fr;
+        width: min(980px, 94vw);
         min-height: auto;
         gap: 28px;
       }
 
       .hero-content {
-        max-width: 820px;
+        max-width: 760px;
+      }
+
+      .hero-title {
+        font-size: clamp(2.28rem, 5vw, 3.6rem);
       }
 
       .hero-feature-card {
-        width: min(720px, 100%);
+        width: min(680px, 100%);
       }
 
       .hero-visual {
         min-height: auto;
+        padding: 10px 0 20px;
         justify-content: center;
       }
 
       .hero-image-wrap {
-        width: min(100%, 920px);
+        width: min(100%, 860px);
+      }
+
+      .hero-image-wrap img {
+        height: clamp(330px, 48vw, 470px);
       }
     }
 
     @media (max-width: 760px) {
       .hero {
-        padding: 30px 16px 34px;
+        padding: 28px 14px 34px;
+        background:
+          radial-gradient(circle at 100% 0%, rgba(139, 197, 63, 0.16), transparent 30%),
+          linear-gradient(160deg, #fffdf7 0%, #fbf6ec 58%, #eef8df 100%);
       }
 
       .hero-card {
-        width: min(100%, 94vw);
+        width: 100%;
         display: flex;
         flex-direction: column;
+        gap: 22px;
         text-align: center;
+      }
+
+      .hero-content {
+        max-width: 100%;
       }
 
       .hero-kicker,
@@ -2482,12 +2562,135 @@
         justify-content: center;
       }
 
+      .hero-kicker {
+        max-width: 100%;
+        white-space: normal;
+        font-size: 0.76rem;
+      }
+
       .hero-title {
-        font-size: clamp(2.2rem, 11vw, 3.35rem);
+        font-size: clamp(2rem, 9vw, 2.75rem);
+        margin-bottom: 12px;
       }
 
       .hero-copy {
+        max-width: 34rem;
         margin-inline: auto;
+        margin-bottom: 20px;
+      }
+
+      .hero-actions {
+        gap: 10px;
+      }
+
+      .hero-btn {
+        min-height: 42px;
+        padding: 11px 16px;
+        font-size: 0.85rem;
+        flex: 1 1 145px;
+        max-width: 220px;
+      }
+
+      .hero-feature-card {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+      }
+
+      .hero-feature-item {
+        padding: 10px;
+        gap: 7px;
+      }
+
+      .hero-feature-icon {
+        width: 32px;
+        height: 32px;
+      }
+
+      .hero-feature-icon svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .hero-feature-item strong {
+        font-size: 0.73rem;
+      }
+
+      .hero-feature-item small {
+        font-size: 0.62rem;
+      }
+
+      .hero-visual {
+        width: 100%;
+        padding: 12px 0 18px;
+      }
+
+      .hero-visual::before {
+        width: 90%;
+        height: 78%;
+        right: 2%;
+        bottom: 12px;
+        border-radius: 26px;
+      }
+
+      .hero-image-wrap {
+        width: 100%;
+        padding: 8px;
+        border-radius: 23px;
+      }
+
+      .hero-image-wrap::before,
+      .hero-image-wrap::after {
+        inset: 8px;
+        border-radius: 17px;
+      }
+
+      .hero-image-wrap img {
+        height: clamp(235px, 58vw, 330px);
+        border-radius: 17px;
+        object-position: center;
+      }
+
+      .hero-hygiene-badge {
+        width: 76px;
+        outline-width: 5px;
+        top: -4px;
+        right: 2px;
+      }
+
+      .hero-product-note {
+        left: 50%;
+        bottom: -2px;
+        transform: translateX(-50%);
+        max-width: calc(100% - 24px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.72rem;
+        padding: 8px 11px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .hero {
+        padding: 24px 12px 32px;
+      }
+
+      .hero-title {
+        font-size: clamp(1.86rem, 10.8vw, 2.35rem);
+      }
+
+      .hero-copy {
+        font-size: 0.88rem;
+        line-height: 1.58;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-btn {
+        width: 100%;
+        max-width: none;
       }
 
       .hero-feature-card {
@@ -2495,36 +2698,576 @@
       }
 
       .hero-feature-item {
-        text-align: left;
-      }
-
-      .hero-image-wrap {
-        padding: 8px;
-        border-radius: 24px;
+        grid-template-columns: 32px 1fr;
       }
 
       .hero-image-wrap img {
-        height: 310px;
-        border-radius: 18px;
+        height: clamp(220px, 66vw, 285px);
       }
 
       .hero-hygiene-badge {
-        width: 78px;
-        outline-width: 5px;
-        top: -10px;
-        right: 6px;
+        width: 68px;
       }
 
-      .hero-product-note {
-        left: 50%;
-        bottom: -12px;
-        transform: translateX(-50%);
-        white-space: nowrap;
-        font-size: 0.76rem;
+      .hero-hygiene-badge svg {
+        width: 18px;
+        height: 18px;
       }
     }
 
+
+    /* ===== Mobile Banner Image Visibility Fix ===== */
+    @media (max-width: 760px) {
+      .hero {
+        padding: 18px 12px 30px;
+      }
+
+      .hero-card {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+      }
+
+      /* Let mobile place the product image directly below the text/buttons */
+      .hero-content {
+        display: contents;
+      }
+
+      .hero-kicker {
+        order: 1;
+        align-self: center;
+        margin-bottom: 4px;
+        padding: 6px 12px;
+        font-size: 0.72rem;
+      }
+
+      .hero-title {
+        order: 2;
+        max-width: 100%;
+        margin: 0 auto 6px;
+        font-size: clamp(1.72rem, 8.4vw, 2.25rem);
+        line-height: 1.02;
+      }
+
+      .hero-copy {
+        order: 3;
+        max-width: 21rem;
+        margin: 0 auto 10px;
+        font-size: 0.84rem;
+        line-height: 1.5;
+      }
+
+      .hero-actions {
+        order: 4;
+        width: 100%;
+        justify-content: center;
+        margin: 0 auto 4px;
+        gap: 8px;
+      }
+
+      .hero-btn {
+        flex: 1 1 138px;
+        max-width: 165px;
+        min-height: 38px;
+        padding: 9px 12px;
+        border-radius: 11px;
+        font-size: 0.78rem;
+      }
+
+      .hero-visual {
+        order: 5;
+        width: 100%;
+        min-height: 0;
+        padding: 4px 0 10px;
+        margin: 0 auto;
+      }
+
+      .hero-visual::before {
+        width: 94%;
+        height: 82%;
+        right: 3%;
+        bottom: 8px;
+        border-radius: 22px;
+      }
+
+      .hero-image-wrap {
+        width: 100%;
+        max-width: 520px;
+        padding: 7px;
+        border-radius: 22px;
+        transform: none;
+        box-shadow: 0 18px 46px rgba(29, 29, 27, 0.13);
+      }
+
+      .hero-image-wrap::before,
+      .hero-image-wrap::after {
+        inset: 7px;
+        border-radius: 15px;
+      }
+
+      .hero-image-wrap img {
+        width: 100%;
+        height: clamp(190px, 54vw, 285px);
+        object-fit: cover;
+        object-position: center center;
+        border-radius: 15px;
+      }
+
+      .hero-hygiene-badge {
+        width: 64px;
+        top: -5px;
+        right: 6px;
+        outline-width: 4px;
+      }
+
+      .hero-hygiene-badge strong {
+        font-size: 1rem;
+      }
+
+      .hero-hygiene-badge span {
+        font-size: 0.5rem;
+        margin: 2px 0 3px;
+      }
+
+      .hero-hygiene-badge svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .hero-product-note {
+        display: none;
+      }
+
+      .hero-feature-card {
+        order: 6;
+        width: 100%;
+        max-width: 520px;
+        margin: 2px auto 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .hero-feature-item {
+        padding: 8px;
+        border-radius: 13px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .hero {
+        padding: 16px 10px 28px;
+      }
+
+      .hero-title {
+        font-size: clamp(1.58rem, 8.9vw, 2rem);
+      }
+
+      .hero-copy {
+        font-size: 0.8rem;
+        max-width: 19.5rem;
+      }
+
+      .hero-actions {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .hero-btn {
+        width: auto;
+        max-width: 155px;
+        min-height: 36px;
+        padding: 8px 10px;
+      }
+
+      .hero-image-wrap img {
+        height: clamp(175px, 58vw, 245px);
+      }
+
+      .hero-feature-card {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-feature-icon {
+        width: 28px;
+        height: 28px;
+      }
+
+      .hero-feature-item strong {
+        font-size: 0.68rem;
+      }
+
+      .hero-feature-item small {
+        display: none;
+      }
+    }
+
+
+
+    /* ===== FINAL HERO RESPONSIVE FIX: image visible on mobile ===== */
+    .hero {
+      width: 100vw !important;
+      margin-left: calc(50% - 50vw) !important;
+      margin-right: calc(50% - 50vw) !important;
+      min-height: auto !important;
+      height: auto !important;
+      aspect-ratio: auto !important;
+      overflow: visible !important;
+    }
+
+    .hero-card {
+      height: auto !important;
+    }
+
+    @media (min-width: 1025px) {
+      .hero {
+        padding: clamp(42px, 5vw, 72px) clamp(34px, 5vw, 84px) !important;
+      }
+
+      .hero-card {
+        display: grid !important;
+        grid-template-columns: minmax(330px, 0.85fr) minmax(560px, 1.15fr) !important;
+        align-items: center !important;
+        gap: clamp(36px, 5vw, 78px) !important;
+        width: min(1460px, 94vw) !important;
+        margin: 0 auto !important;
+      }
+
+      .hero-content {
+        display: block !important;
+        max-width: 500px !important;
+      }
+
+      .hero-title {
+        font-size: clamp(2.3rem, 3.3vw, 3.7rem) !important;
+      }
+
+      .hero-visual {
+        display: flex !important;
+        min-height: 500px !important;
+      }
+
+      .hero-image-wrap img {
+        height: clamp(380px, 36vw, 500px) !important;
+      }
+    }
+
+    @media (min-width: 761px) and (max-width: 1024px) {
+      .hero {
+        padding: 38px 24px 44px !important;
+      }
+
+      .hero-card {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+        width: min(920px, 94vw) !important;
+        margin: 0 auto !important;
+      }
+
+      .hero-content {
+        display: block !important;
+        text-align: center !important;
+        max-width: 720px !important;
+        margin: 0 auto !important;
+      }
+
+      .hero-actions,
+      .hero-kicker {
+        justify-content: center !important;
+      }
+
+      .hero-title {
+        font-size: clamp(2.35rem, 5.2vw, 3.4rem) !important;
+      }
+
+      .hero-copy {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .hero-feature-card {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .hero-visual {
+        display: flex !important;
+        min-height: 0 !important;
+        padding: 0 0 16px !important;
+      }
+
+      .hero-image-wrap {
+        width: min(100%, 840px) !important;
+      }
+
+      .hero-image-wrap img {
+        height: clamp(330px, 46vw, 450px) !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 14px 12px 24px !important;
+        border-bottom: 3px solid var(--felice-green) !important;
+        background:
+          radial-gradient(circle at 100% 0%, rgba(139, 197, 63, .18), transparent 36%),
+          linear-gradient(160deg, #fffdf7 0%, #fbf7ee 58%, #edf8df 100%) !important;
+      }
+
+      .hero::before,
+      .hero::after {
+        display: none !important;
+      }
+
+      .hero-card {
+        width: 100% !important;
+        max-width: 520px !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+        text-align: center !important;
+      }
+
+      .hero-content {
+        display: block !important;
+        order: 1 !important;
+        max-width: 100% !important;
+      }
+
+      .hero-kicker {
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto 10px !important;
+        padding: 6px 11px !important;
+        font-size: 0.68rem !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
+      }
+
+      .hero-title {
+        margin: 0 auto 10px !important;
+        font-size: clamp(1.55rem, 8.2vw, 2.05rem) !important;
+        line-height: 1.03 !important;
+        letter-spacing: -0.02em !important;
+      }
+
+      .hero-copy {
+        max-width: 22rem !important;
+        margin: 0 auto 0 !important;
+        font-size: 0.8rem !important;
+        line-height: 1.48 !important;
+      }
+
+      /* Hide extra mobile items so product image is visible immediately */
+      .hero-actions,
+      .hero-feature-card,
+      .hero-product-note {
+        display: none !important;
+      }
+
+      .hero-visual {
+        order: 2 !important;
+        display: flex !important;
+        width: 100% !important;
+        min-height: 0 !important;
+        padding: 2px 0 4px !important;
+        margin: 0 auto !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+      }
+
+      .hero-visual::before {
+        content: "" !important;
+        display: block !important;
+        position: absolute !important;
+        width: 94% !important;
+        height: 82% !important;
+        left: 3% !important;
+        right: auto !important;
+        bottom: 1px !important;
+        border-radius: 24px !important;
+        background: linear-gradient(145deg, rgba(255, 255, 255, .85), rgba(235, 246, 216, .56)) !important;
+        box-shadow: 0 18px 42px rgba(29, 29, 27, .11) !important;
+        transform: rotate(-1deg) !important;
+        z-index: 0 !important;
+      }
+
+      .hero-image-wrap {
+        position: relative !important;
+        z-index: 2 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 500px !important;
+        padding: 7px !important;
+        border-radius: 22px !important;
+        overflow: hidden !important;
+        background: rgba(255, 255, 255, .92) !important;
+        border: 1px solid rgba(255, 255, 255, .95) !important;
+        box-shadow: 0 16px 38px rgba(29, 29, 27, .13) !important;
+        transform: none !important;
+      }
+
+      .hero-image-wrap::before,
+      .hero-image-wrap::after {
+        inset: 7px !important;
+        border-radius: 15px !important;
+      }
+
+      .hero-image-wrap img {
+        display: block !important;
+        width: 100% !important;
+        height: clamp(210px, 55vw, 270px) !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        border-radius: 15px !important;
+      }
+
+      .hero-hygiene-badge {
+        display: flex !important;
+        width: 62px !important;
+        top: -5px !important;
+        right: 6px !important;
+        outline-width: 4px !important;
+        z-index: 6 !important;
+      }
+
+      .hero-hygiene-badge strong {
+        font-size: .95rem !important;
+      }
+
+      .hero-hygiene-badge span {
+        font-size: .48rem !important;
+        margin: 2px 0 2px !important;
+      }
+
+      .hero-hygiene-badge svg {
+        width: 15px !important;
+        height: 15px !important;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .hero {
+        padding: 12px 10px 22px !important;
+      }
+
+      .hero-title {
+        font-size: clamp(1.45rem, 8vw, 1.85rem) !important;
+      }
+
+      .hero-copy {
+        font-size: 0.76rem !important;
+        line-height: 1.42 !important;
+        max-width: 20rem !important;
+      }
+
+      .hero-image-wrap img {
+        height: clamp(190px, 52vw, 235px) !important;
+      }
+
+      .hero-hygiene-badge {
+        width: 56px !important;
+      }
+    }
+
+    /* ===== End final hero responsive fix ===== */
+
+
     /* ================= End Updated Homepage Hero Banner ================= */
+
+
+
+    /* ===== FINAL REQUEST: remove hero benefit cards and increase banner image height ===== */
+    .hero-feature-card {
+      display: none !important;
+    }
+
+    @media (min-width: 1025px) {
+      .hero-card {
+        grid-template-columns: minmax(320px, 0.78fr) minmax(620px, 1.22fr) !important;
+      }
+
+      .hero-visual {
+        min-height: 590px !important;
+      }
+
+      .hero-image-wrap {
+        width: min(100%, 920px) !important;
+      }
+
+      .hero-image-wrap img {
+        height: clamp(500px, 42vw, 620px) !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+      }
+    }
+
+    @media (min-width: 761px) and (max-width: 1024px) {
+      .hero-visual {
+        padding-top: 8px !important;
+        padding-bottom: 18px !important;
+      }
+
+      .hero-image-wrap {
+        width: min(100%, 900px) !important;
+      }
+
+      .hero-image-wrap img {
+        height: clamp(430px, 56vw, 560px) !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 16px 10px 28px !important;
+      }
+
+      .hero-card {
+        max-width: 560px !important;
+        gap: 14px !important;
+      }
+
+      .hero-copy {
+        margin-bottom: 4px !important;
+      }
+
+      .hero-visual {
+        padding: 6px 0 6px !important;
+      }
+
+      .hero-image-wrap {
+        max-width: 540px !important;
+        padding: 7px !important;
+        border-radius: 22px !important;
+      }
+
+      .hero-image-wrap img {
+        height: clamp(300px, 78vw, 430px) !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+        background: #fffaf0 !important;
+      }
+
+      .hero-hygiene-badge {
+        top: -4px !important;
+        right: 6px !important;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .hero-image-wrap img {
+        height: clamp(280px, 78vw, 360px) !important;
+      }
+    }
+
+    /* ===== End final request ===== */
   </style>
 </head>
 
@@ -2597,62 +3340,6 @@
             </a>
           </div>
 
-          <div class="hero-feature-card" aria-label="Felice product benefits">
-            <div class="hero-feature-item">
-              <span class="hero-feature-icon">
-                <svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  <path d="M9 12l2 2 4-5" />
-                </svg>
-              </span>
-              <div>
-                <strong>100% Hygienic</strong>
-                <small>Hygienically packed for safety</small>
-              </div>
-            </div>
-            <div class="hero-feature-item">
-              <span class="hero-feature-icon">
-                <svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 11.5c0 5-4 8.5-8 8.5s-8-3.5-8-8.5C4 6.8 8 3 12 3s8 3.8 8 8.5Z" />
-                  <path d="M8 13c1.5 1.5 6.5 1.5 8 0" />
-                </svg>
-              </span>
-              <div>
-                <strong>Soft & Gentle</strong>
-                <small>Comfortable for daily care</small>
-              </div>
-            </div>
-            <div class="hero-feature-item">
-              <span class="hero-feature-icon">
-                <svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22V12" />
-                  <path d="M12 12c-4 0-7-2.5-7-6 4 0 7 2.5 7 6Z" />
-                  <path d="M12 12c4 0 7-2.5 7-6-4 0-7 2.5-7 6Z" />
-                  <path d="M8 20h8" />
-                </svg>
-              </span>
-              <div>
-                <strong>Pure Cotton</strong>
-                <small>Made with premium cotton</small>
-              </div>
-            </div>
-            <div class="hero-feature-item">
-              <span class="hero-feature-icon">
-                <svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path
-                    d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z" />
-                </svg>
-              </span>
-              <div>
-                <strong>Family Safe</strong>
-                <small>Ideal for everyday use</small>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="hero-visual">
@@ -2876,13 +3563,13 @@
               <h4>Paper Stick Cotton Buds</h4>
               <p>Premium cotton buds crafted with biodegradable paper stems and 100% natural organic cotton. Gentle on
                 ears, skin, and the environment.</p>
-              <button class="product-btn" aria-label="Show details about Paper Stick Cotton Buds">
+              <a class="product-btn" href="product-paper-buds.html" aria-label="Show details about Paper Stick Cotton Buds">
                 Show More
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-              </button>
+              </a>
             </div>
           </article>
 
@@ -2896,13 +3583,13 @@
               <h4>Bamboo Stick Cotton Buds</h4>
               <p>Sustainable cotton buds made with sturdy, biodegradable bamboo stems. Perfect for precise cosmetic
                 applications and daily hygiene.</p>
-              <button class="product-btn" aria-label="Show details about Bamboo Stick Cotton Buds">
+              <a class="product-btn" href="product-bamboo-buds.html" aria-label="Show details about Bamboo Stick Cotton Buds">
                 Show More
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-              </button>
+              </a>
             </div>
           </article>
 
@@ -2916,13 +3603,13 @@
               <h4>Organic Cotton Balls</h4>
               <p>Pure, soft, and highly absorbent organic cotton balls. Ideal for makeup removal, skincare routines, and
                 delicate baby care.</p>
-              <button class="product-btn" aria-label="Show details about Organic Cotton Balls">
+              <a class="product-btn" href="product-cotton-balls.html" aria-label="Show details about Organic Cotton Balls">
                 Show More
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-              </button>
+              </a>
             </div>
           </article>
 
@@ -2936,13 +3623,13 @@
               <h4>Organic Toothbrush</h4>
               <p>Ergonomic toothbrush designed with soft, gentle bristles and an organic handle for effective, clean
                 dental hygiene.</p>
-              <button class="product-btn" aria-label="Show details about Organic Toothbrush">
+              <a class="product-btn" href="product-toothbrush.html" aria-label="Show details about Organic Toothbrush">
                 Show More
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
                   stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
-              </button>
+              </a>
             </div>
           </article>
         </div>
