@@ -1119,6 +1119,20 @@
     </section>
   </main>
 
+  <!-- Thank You Popup (shown only on Contact page after successful submit) -->
+  <div class="toast-alert" id="thankYouToast" role="status" aria-live="polite">
+    <div class="toast-icon">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6L9 17l-5-5" />
+      </svg>
+    </div>
+    <div class="toast-details">
+      <h4>Thank you for your inquiry</h4>
+      <p>Your form was submitted successfully.</p>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-wrap">
@@ -1276,7 +1290,11 @@
     // Form Handling & Custom Validation
     const form = document.getElementById("contactUsForm");
 
-    form.addEventListener("submit", (e) => {
+    const thankYouToast = document.getElementById("thankYouToast");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
       const name = document.getElementById("inputName");
       const phone = document.getElementById("inputPhone");
       const email = document.getElementById("inputEmail");
@@ -1323,15 +1341,46 @@
       }
 
       if (!isValid) {
-        e.preventDefault();
         const firstInvalid = form.querySelector(".form-group.invalid input, .form-group.invalid select, .form-group.invalid textarea");
         if (firstInvalid) firstInvalid.focus();
         return;
       }
 
       const submitButton = document.getElementById("btnSubmit");
+      const originalButtonHtml = submitButton.innerHTML;
       submitButton.disabled = true;
       submitButton.textContent = "Sending Inquiry...";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || !result.success) {
+          throw new Error(result.message || "Submission failed.");
+        }
+
+        form.reset();
+        form.querySelectorAll(".form-group").forEach((group) => {
+          group.classList.remove("invalid", "valid", "shake");
+        });
+
+        if (deptSelect) {
+          deptSelect.selectedIndex = 0;
+        }
+
+        showThankYouToast();
+      } catch (error) {
+        alert("Unable to submit right now. Please try again.");
+      } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonHtml;
+      }
     });
 
     function markInvalid(element, groupId) {
@@ -1359,6 +1408,14 @@
         input.closest(".form-group").classList.remove("invalid");
       });
     });
+
+    function showThankYouToast() {
+      if (!thankYouToast) return;
+      thankYouToast.classList.add("show");
+      setTimeout(() => {
+        thankYouToast.classList.remove("show");
+      }, 3200);
+    }
   </script>
 </body>
 
