@@ -63,8 +63,7 @@
 
     /* Header styling */
     .site-header {
-      position: sticky;
-      top: 0;
+      position: relative;
       z-index: 40;
       backdrop-filter: blur(14px);
       background: rgba(250, 247, 240, 0.78);
@@ -88,26 +87,21 @@
       align-items: center;
       justify-content: flex-start;
       position: relative;
-      width: 306px;
-      height: 106px;
+      width: 275px; height: 95px;
       overflow: hidden;
       margin: 0 0 0 -8px;
       padding: 0;
     }
 
     .brand img {
-      position: absolute;
-      width: 306px;
-      height: 306px;
-      max-width: none;
-      max-height: none;
-      top: -85px;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      top: 0;
       left: 0;
       display: block;
       margin: 0;
-      padding: 0;
-      filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.18));
-      object-fit: contain;
     }
 
     .menu {
@@ -930,22 +924,22 @@
       }
 
       .brand {
-        width: 208px;
-        height: 78px;
+        width: 187px; height: 70px;
         overflow: hidden;
         margin-left: -4px;
         flex-shrink: 0;
       }
 
       .brand img {
-        position: absolute;
-        width: 208px;
-        height: 208px;
-        max-width: none;
-        max-height: none;
-        top: -58px;
-        left: 0;
-      }
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      top: 0;
+      left: 0;
+      display: block;
+      margin: 0;
+    }
 
       .btn-quote {
         display: none;
@@ -1023,7 +1017,7 @@
   <header class="site-header">
     <div class="header-wrap">
       <a class="brand" href="index.html#home" aria-label="Felice Home">
-        <img src="image&video/new%20logo%20%20in%20white.png" alt="Felice logo" />
+        <img src="image&video/products/final%20logo.png" alt="Felice logo" />
       </a>
 
       <ul class="menu" id="menu">
@@ -1085,7 +1079,7 @@
       <div class="hero-gallery-column">
         <!-- Main Product Display -->
         <div class="main-display-box" id="mainDisplay">
-          <img src="image&video/new product stick2 .png" alt="Paper Stick Cotton Buds 200 Packet" id="mainProductImg" />
+          <img src="image&video/products/paper stick product.png" alt="Paper Stick Cotton Buds 200 Packet" id="mainProductImg" />
         </div>
 
         <span class="packaging-selector-title">Select Packaging Size</span>
@@ -1094,18 +1088,18 @@
         <div class="thumbnails-row">
           <!-- Option 1 -->
           <div class="thumb-card active" data-index="0">
-            <img src="image&video/new product stick2 .png" alt="200 Buds Packet" />
+            <img src="image&video/products/paper stick product.png" alt="200 Buds Packet" />
             <span>200 Buds (Packet)</span>
           </div>
           <!-- Option 2 -->
           <div class="thumb-card" data-index="1">
-            <img src="image&video/stick2 box.png" alt="100 Buds Box" />
+            <img src="image&video/products/paper stick 1.png" alt="100 Buds Box" />
             <span>100 Buds (Box)</span>
           </div>
           <!-- Option 3 -->
           <div class="thumb-card" data-index="2">
-            <img src="image&video/stick 2 100.png" alt="Small Packet" />
-            <span>100 Buds (Packet)</span>
+            <img src="image&video/products/your brand .png" alt="Your Brand Custom Box" />
+            <span>Private Label Box</span>
           </div>
         </div>
       </div>
@@ -1185,9 +1179,9 @@
   <footer class="footer">
     <div class="footer-wrap">
       <div>
-        <div class="footer-logo-wrap" style="margin-bottom: 6px; width: 240px; height: 95px; overflow: hidden; position: relative;">
-          <img src="image&video/new%20logo%20%20in%20white.png" alt="Felice new logo"
-            style="position: absolute; width: 240px; height: 240px; top: -58px; left: 0; display: block; filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.15));" />
+        <div class="footer-logo-wrap" style="margin-bottom: 6px; width: 240px; height: 95px; overflow: hidden; position: relative; display: flex; align-items: center;">
+          <img src="image&amp;video/products/final%20logo.png" alt="Felice new logo"
+            style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.15));" />
         </div>
         <p style="margin-bottom: 14px; line-height: 1.6; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
           PASSION FOR CONSISTENT QUALITY AND CUSTOMER SATISFACTION-Building long-term relationships based on trust &amp; transparency
@@ -1289,25 +1283,25 @@
     // Packaging options database
     const packagingData = [
       {
-        image: "image&video/new product stick2 .png",
+        image: "image&video/products/paper stick product.png",
         desc: "Specifications for the selected 200 Buds Zip Pouch packaging option. Our pouches are double-sealed to keep out moisture and bacteria.",
         qty: "200 Buds",
         packType: "Hygienic Zip-Lock Pouch",
         fullDesc: "The 200 buds zipper pouch is our best-selling daily packaging. The pouch is designed with a premium airtight zip lock that ensures the buds remain completely clean and sterile after opening. Sturdy paper stems are reinforced to prevent bending, while the double cotton tips are rolled firmly to eliminate loose lint."
       },
       {
-        image: "image&video/stick2 box.png",
+        image: "image&video/products/paper stick 1.png",
         desc: "Specifications for the selected 100 Buds Box packaging option. This premium cardboard packaging features an easy-to-use slide cover.",
         qty: "100 Buds",
         packType: "Premium Slide Cardboard Box",
         fullDesc: "Our 100 buds slide-box packaging is crafted from 100% recycled biodegradable cardboard, creating a zero-plastic luxury look. Ideal for vanity tables, hotel guestrooms, and daily clean routines. The interior container slides smoothly while maintaining tight closure to protect the buds."
       },
       {
-        image: "image&video/stick 2 100.png",
-        desc: "Specifications for the selected 100 Buds Pouch option. A compact, lightweight packet designed for value and quick accessibility.",
-        qty: "100 Buds",
-        packType: "Value Packs (Heat-Sealed Pouch)",
-        fullDesc: "The 100 buds value packet is ideal for travelers or small families. It is heat-sealed under complete clinical sterile environments, featuring a compact layout. Simply tear off the top edge to access the buds. Designed for maximum portability and minimal weight."
+        image: "image&video/products/your brand .png",
+        desc: "Specifications for custom private label packaging. Tailored to your brand requirements, with customizable designs and dimensions.",
+        qty: "Custom Qty",
+        packType: "Private Label Custom Box",
+        fullDesc: "We support customized private label branding for various global market standards. Choose your own packaging layout, box size, print design, and quantity. Designed to showcase your brand with our premium quality manufacturing."
       }
     ];
 

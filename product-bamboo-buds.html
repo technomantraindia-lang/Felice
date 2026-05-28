@@ -63,8 +63,7 @@
 
     /* Header styling */
     .site-header {
-      position: sticky;
-      top: 0;
+      position: relative;
       z-index: 40;
       backdrop-filter: blur(14px);
       background: rgba(250, 247, 240, 0.78);
@@ -88,26 +87,21 @@
       align-items: center;
       justify-content: flex-start;
       position: relative;
-      width: 306px;
-      height: 106px;
+      width: 275px; height: 95px;
       overflow: hidden;
       margin: 0 0 0 -8px;
       padding: 0;
     }
 
     .brand img {
-      position: absolute;
-      width: 306px;
-      height: 306px;
-      max-width: none;
-      max-height: none;
-      top: -85px;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      top: 0;
       left: 0;
       display: block;
       margin: 0;
-      padding: 0;
-      filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.18));
-      object-fit: contain;
     }
 
     .menu {
@@ -930,22 +924,22 @@
       }
 
       .brand {
-        width: 208px;
-        height: 78px;
+        width: 187px; height: 70px;
         overflow: hidden;
         margin-left: -4px;
         flex-shrink: 0;
       }
 
       .brand img {
-        position: absolute;
-        width: 208px;
-        height: 208px;
-        max-width: none;
-        max-height: none;
-        top: -58px;
-        left: 0;
-      }
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      top: 0;
+      left: 0;
+      display: block;
+      margin: 0;
+    }
 
       .btn-quote {
         display: none;
@@ -1023,7 +1017,7 @@
   <header class="site-header">
     <div class="header-wrap">
       <a class="brand" href="index.html#home" aria-label="Felice Home">
-        <img src="image&video/new%20logo%20%20in%20white.png" alt="Felice logo" />
+        <img src="image&video/products/final%20logo.png" alt="Felice logo" />
       </a>
 
       <ul class="menu" id="menu">
@@ -1085,7 +1079,7 @@
       <div class="hero-gallery-column">
         <!-- Main Product Display -->
         <div class="main-display-box" id="mainDisplay">
-          <img src="image&video/new product stick1.png" alt="Bamboo Stick Cotton Buds 200 Packet" id="mainProductImg" />
+          <img src="image&video/products/bamboo stick product.png" alt="Bamboo Stick Cotton Buds 200 Packet" id="mainProductImg" />
         </div>
 
         <span class="packaging-selector-title">Select Packaging Size</span>
@@ -1094,17 +1088,22 @@
         <div class="thumbnails-row">
           <!-- Option 1 -->
           <div class="thumb-card active" data-index="0">
-            <img src="image&video/new product stick1.png" alt="200 Buds Packet" />
+            <img src="image&video/products/bamboo stick product.png" alt="200 Buds Packet" />
             <span>200 Buds (Packet)</span>
           </div>
           <!-- Option 2 -->
           <div class="thumb-card" data-index="1">
-            <img src="image&video/inner stick 1 .png" alt="100 Buds Box" />
-            <span>100 Buds (Box)</span>
+            <img src="image&video/products/bamboo stick product 2 .png" alt="200 Buds Canister" />
+            <span>200 Buds (Canister)</span>
           </div>
           <!-- Option 3 -->
           <div class="thumb-card" data-index="2">
-            <img src="image&video/stick small packet 1 .png" alt="Small Packet" />
+            <img src="image&video/products/bamboo 4 .png" alt="100 Buds Slide Box" />
+            <span>100 Buds (Box)</span>
+          </div>
+          <!-- Option 4 -->
+          <div class="thumb-card" data-index="3">
+            <img src="image&video/products/bambbo 3.png" alt="100 Buds Packet" />
             <span>100 Buds (Packet)</span>
           </div>
         </div>
@@ -1185,9 +1184,9 @@
   <footer class="footer">
     <div class="footer-wrap">
       <div>
-        <div class="footer-logo-wrap" style="margin-bottom: 6px; width: 240px; height: 95px; overflow: hidden; position: relative;">
-          <img src="image&video/new%20logo%20%20in%20white.png" alt="Felice new logo"
-            style="position: absolute; width: 240px; height: 240px; top: -58px; left: 0; display: block; filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.15));" />
+        <div class="footer-logo-wrap" style="margin-bottom: 6px; width: 240px; height: 95px; overflow: hidden; position: relative; display: flex; align-items: center;">
+          <img src="image&amp;video/products/final%20logo.png" alt="Felice new logo"
+            style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.15));" />
         </div>
         <p style="margin-bottom: 14px; line-height: 1.6; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
           PASSION FOR CONSISTENT QUALITY AND CUSTOMER SATISFACTION-Building long-term relationships based on trust &amp; transparency
@@ -1289,21 +1288,28 @@
     // Packaging options database
     const packagingData = [
       {
-        image: "image&video/new product stick1.png",
+        image: "image&video/products/bamboo stick product.png",
         desc: "Specifications for the selected 200 Buds Zip Pouch packaging option. Our pouches are double-sealed to keep out moisture and bacteria.",
         qty: "200 Buds",
         packType: "Hygienic Zip-Lock Pouch",
         fullDesc: "The 200 buds zipper pouch is our best-selling daily packaging. The pouch is designed with a premium airtight zip lock that ensures the buds remain completely clean and sterile after opening. Sturdy bamboo stems are reinforced to prevent bending, while the double cotton tips are rolled firmly to eliminate loose lint."
       },
       {
-        image: "image&video/inner stick 1 .png",
+        image: "image&video/products/bamboo stick product 2 .png",
+        desc: "Specifications for the selected 200 Buds Cylindrical Canister packaging option. Convenient desktop display canister with transparent lid.",
+        qty: "200 Buds",
+        packType: "Cylindrical Display Canister",
+        fullDesc: "Our 200 buds display canister features a sleek transparent lid and a sturdy circular cup design, perfect for bathroom counters or dressing tables. Sturdy bamboo stems sit perfectly upright, allowing easy extraction while keeping the remaining buds protected from contamination."
+      },
+      {
+        image: "image&video/products/bamboo 4 .png",
         desc: "Specifications for the selected 100 Buds Box packaging option. This premium cardboard packaging features an easy-to-use slide cover.",
         qty: "100 Buds",
         packType: "Premium Slide Cardboard Box",
         fullDesc: "Our 100 buds slide-box packaging is crafted from 100% recycled biodegradable cardboard, creating a zero-plastic luxury look. Ideal for vanity tables, hotel guestrooms, and daily clean routines. The interior container slides smoothly while maintaining tight closure to protect the buds."
       },
       {
-        image: "image&video/stick small packet 1 .png",
+        image: "image&video/products/bambbo 3.png",
         desc: "Specifications for the selected 100 Buds Pouch option. A compact, lightweight packet designed for value and quick accessibility.",
         qty: "100 Buds",
         packType: "Value Packs (Heat-Sealed Pouch)",

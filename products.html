@@ -121,26 +121,21 @@
       align-items: center;
       justify-content: flex-start;
       position: relative;
-      width: 306px;
-      height: 106px;
+      width: 275px; height: 95px;
       overflow: hidden;
       margin: 0 0 0 -8px;
       padding: 0;
     }
 
     .brand img {
-      position: absolute;
-      width: 306px;
-      height: 306px;
-      max-width: none;
-      max-height: none;
-      top: -85px;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      top: 0;
       left: 0;
       display: block;
       margin: 0;
-      padding: 0;
-      filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.18));
-      object-fit: contain;
     }
 
     .menu {
@@ -409,10 +404,10 @@
 
     .horizontal-product-card {
       display: grid;
-      grid-template-columns: 1fr 1.15fr;
+      grid-template-columns: 1.3fr 1fr;
       align-items: center;
-      gap: 48px;
-      padding: 48px;
+      gap: 40px;
+      padding: 40px;
       border-radius: 40px;
       background: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(246, 238, 224, 0.92));
       border: 1.5px solid rgba(139, 197, 63, 0.25);
@@ -585,7 +580,7 @@
     /* Alternating layout on desktop */
     @media (min-width: 1025px) {
       .horizontal-product-card:nth-child(even) {
-        grid-template-columns: 1.15fr 1fr;
+        grid-template-columns: 1fr 1.3fr;
       }
       .horizontal-product-card:nth-child(even) .card-content-stage {
         grid-column: 2;
@@ -593,6 +588,14 @@
       .horizontal-product-card:nth-child(even) .card-visual-stage {
         grid-column: 1;
         grid-row: 1;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+        transition: background 0.4s ease, border-color 0.4s ease;
       }
     }
 
@@ -1144,8 +1147,7 @@
       }
 
       .brand {
-        width: 208px;
-        height: 78px;
+        width: 187px; height: 70px;
         overflow: hidden;
         margin-left: -4px;
         flex-shrink: 0;
@@ -1230,7 +1232,7 @@
   <header class="site-header">
     <div class="header-wrap">
       <a class="brand" href="index.html#home" aria-label="Felice Home">
-        <img src="image&video/new%20logo%20%20in%20white.png" alt="Felice logo" />
+        <img src="image&video/products/final%20logo.png" alt="Felice logo" />
       </a>
 
       <ul class="menu" id="menu">
@@ -1270,8 +1272,9 @@
     <!-- Product Showcase Section -->
     <section class="product-showcase">
       <div class="showcase-header">
-        <h2>Premium <span>Product Collection</span></h2>
-        <p>Discover our expertly crafted personal care essentials designed for everyday wellness and sustainable living.</p>
+        <h2>Our <span>Product Collection</span></h2>
+        <p>Discover our expertly crafted personal care essentials designed for everyday wellness and sustainable living.
+        </p>
       </div>
 
       <div class="horizontal-cards-container scroll-reveal reveal-scale">
@@ -1280,7 +1283,8 @@
           <div class="card-content-stage">
             <div class="card-number-badge">01</div>
             <h3 class="product-title">Paper Stick Cotton Buds</h3>
-            <p class="product-desc">100% biodegradable everyday essentials with pure organic cotton tips and eco-friendly paper stems. Available in different packings of 100 and 200 sticks.</p>
+            <p class="product-desc">100% biodegradable everyday essentials with pure organic cotton tips and
+              eco-friendly paper stems. Available in different packings of 100 and 200 sticks.</p>
             <div class="product-features" style="margin-bottom: 20px;">
               <span class="feature-tag">Pure Cotton</span>
               <span class="feature-tag">Eco-Friendly</span>
@@ -1289,17 +1293,18 @@
             </div>
             <a href="product-paper-buds.html" class="view-details-btn">
               View Specification
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </a>
           </div>
-          
+
           <div class="card-visual-stage">
             <div class="visual-glow-circle"></div>
             <div class="product-image-container">
-              <img src="image&amp;video/product stick  1.png" alt="Paper Stick Cotton Buds" />
+              <img src="image&amp;video/products/paper%20stick%20product.png" alt="Paper Stick Cotton Buds" />
             </div>
           </div>
         </div>
@@ -1309,7 +1314,8 @@
           <div class="card-content-stage">
             <div class="card-number-badge">02</div>
             <h3 class="product-title">Bamboo Stick Cotton Buds</h3>
-            <p class="product-desc">Naturally sturdy bamboo stems with premium organic cotton and zero-plastic footprint for conscious care. Available in different packings of 100 and 200 sticks.</p>
+            <p class="product-desc">Naturally sturdy bamboo stems with premium organic cotton and zero-plastic footprint
+              for conscious care. Available in different packings of 100 and 200 sticks.</p>
             <div class="product-features" style="margin-bottom: 20px;">
               <span class="feature-tag">Bamboo Core</span>
               <span class="feature-tag">Zero Plastic</span>
@@ -1318,17 +1324,18 @@
             </div>
             <a href="product-bamboo-buds.html" class="view-details-btn">
               View Specification
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </a>
           </div>
-          
+
           <div class="card-visual-stage">
             <div class="visual-glow-circle"></div>
             <div class="product-image-container">
-              <img src="image&amp;video/prodcut stick 2.png" alt="Bamboo Stick Cotton Buds" />
+              <img src="image&amp;video/products/bamboo%20stick%20product.png" alt="Bamboo Stick Cotton Buds" />
             </div>
           </div>
         </div>
@@ -1338,7 +1345,8 @@
           <div class="card-content-stage">
             <div class="card-number-badge">03</div>
             <h3 class="product-title">Organic Toothbrush</h3>
-            <p class="product-desc">Premium ergonomic design with soft, BPA-free bristles for effective oral care and gum health.</p>
+            <p class="product-desc">Premium ergonomic design with soft, BPA-free bristles for effective oral care and
+              gum health.</p>
             <div class="product-features" style="margin-bottom: 20px;">
               <span class="feature-tag">Soft Bristles</span>
               <span class="feature-tag">Ergonomic</span>
@@ -1347,17 +1355,18 @@
             </div>
             <a href="product-toothbrush.html" class="view-details-btn">
               View Specification
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </a>
           </div>
-          
+
           <div class="card-visual-stage">
             <div class="visual-glow-circle"></div>
             <div class="product-image-container">
-              <img src="image&amp;video/product brush.png" alt="Organic Toothbrush" />
+              <img src="image&amp;video/products/brush%201.png" alt="Organic Toothbrush" />
             </div>
           </div>
         </div>
@@ -1367,7 +1376,8 @@
           <div class="card-content-stage">
             <div class="card-number-badge">04</div>
             <h3 class="product-title">Organic Cotton Balls</h3>
-            <p class="product-desc">Feather-soft, sterilized pure cotton spheres for delicate facial cleansing and pediatric skincare.</p>
+            <p class="product-desc">Feather-soft, sterilized pure cotton spheres for delicate facial cleansing and
+              pediatric skincare.</p>
             <div class="product-features" style="margin-bottom: 20px;">
               <span class="feature-tag">100% Pure</span>
               <span class="feature-tag">Sterilized</span>
@@ -1376,17 +1386,18 @@
             </div>
             <a href="product-cotton-balls.html" class="view-details-btn">
               View Specification
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </a>
           </div>
-          
+
           <div class="card-visual-stage">
             <div class="visual-glow-circle"></div>
             <div class="product-image-container">
-              <img src="image&amp;video/product cotton balls.png" alt="Organic Cotton Balls" />
+              <img src="image&amp;video/products/cotton%20balls.png" alt="Organic Cotton Balls" />
             </div>
           </div>
         </div>
@@ -1419,9 +1430,9 @@
   <footer class="footer">
     <div class="footer-wrap">
       <div>
-        <div class="footer-logo-wrap" style="margin-bottom: 6px; width: 240px; height: 95px; overflow: hidden; position: relative;">
-          <img src="image&video/new%20logo%20%20in%20white.png" alt="Felice new logo"
-            style="position: absolute; width: 240px; height: 240px; top: -58px; left: 0; display: block; filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.15));" />
+        <div class="footer-logo-wrap" style="margin-bottom: 6px; width: 240px; height: 95px; overflow: hidden; position: relative; display: flex; align-items: center;">
+          <img src="image&amp;video/products/final%20logo.png" alt="Felice new logo"
+            style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.15));" />
         </div>
         <p style="margin-bottom: 14px; line-height: 1.6; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
           PASSION FOR CONSISTENT QUALITY AND CUSTOMER SATISFACTION-Building long-term relationships based on trust &amp; transparency
@@ -1469,19 +1480,13 @@
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
             </svg>
           </a>
-          <a href="#" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-              <rect x="2" y="9" width="4" height="12"></rect>
-              <circle cx="4" cy="4" r="2"></circle>
-            </svg>
-          </a>
+
         </div>
       </div>
 
       <div>
         <h4 style="font-size: 1.15rem; margin-bottom: 16px; position: relative; padding-bottom: 8px; color: #ffffff;">
-          Services
+          Products
           <span style="position: absolute; left: 0; bottom: 0; width: 30px; height: 2px; background: var(--felice-green);"></span>
         </h4>
         <ul class="footer-menu">
