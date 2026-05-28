@@ -249,9 +249,9 @@
       margin-left: -50vw;
       margin-right: -50vw;
       margin-bottom: 96px;
-      height: clamp(480px, 58vw, 780px);
-      max-height: 780px;
-      min-height: 480px;
+      height: clamp(500px, 60vw, 820px);
+      max-height: 820px;
+      min-height: 500px;
       overflow: hidden;
       border-bottom: 3px solid var(--felice-gold);
       animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -270,6 +270,7 @@
       transform: scale(1.04);
       transition: opacity 0.75s ease, transform 1.4s ease;
       pointer-events: none;
+      background: linear-gradient(180deg, #f8fbf2 0%, #eef4e4 100%);
     }
 
     .hero-slide.active {
@@ -296,7 +297,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(11, 23, 17, 0.48) 0%, rgba(11, 23, 17, 0.26) 34%, rgba(11, 23, 17, 0) 62%);
+      background: linear-gradient(90deg, rgba(11, 23, 17, 0.24) 0%, rgba(11, 23, 17, 0.1) 30%, rgba(11, 23, 17, 0) 58%);
       z-index: 1;
     }
 
@@ -404,7 +405,7 @@
 
     .horizontal-product-card {
       display: grid;
-      grid-template-columns: 1.3fr 1fr;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
       align-items: center;
       gap: 40px;
       padding: 40px;
@@ -415,6 +416,10 @@
       overflow: hidden;
       position: relative;
       transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+
+    .horizontal-product-card > * {
+      min-width: 0;
     }
 
     .horizontal-product-card:hover {
@@ -462,6 +467,7 @@
       line-height: 1.65;
       color: var(--text-soft);
       margin-bottom: 20px;
+      overflow-wrap: anywhere;
     }
 
     .card-content-stage .product-features {
@@ -592,8 +598,9 @@
 
     .carousel-slides {
       position: relative;
-      width: 360px;
-      height: 360px;
+      width: min(100%, 360px);
+      aspect-ratio: 1 / 1;
+      height: auto;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1130,14 +1137,22 @@
       .product-image-container img {
         max-height: 240px;
       }
+
+      .carousel-slides {
+        width: min(100%, 320px);
+      }
     }
 
     @media (max-width: 760px) {
       .hero-slideshow {
-        height: clamp(340px, 58vw, 540px);
-        max-height: 540px;
-        min-height: 340px;
+        height: clamp(360px, 68vw, 580px);
+        max-height: 580px;
+        min-height: 360px;
         margin-bottom: 80px;
+      }
+
+      .hero-slide-main {
+        object-fit: contain;
       }
 
       .hero-overlay {
@@ -1165,12 +1180,17 @@
       }
 
       .card-visual-stage {
-        height: 220px;
+        height: 260px;
         padding: 12px;
       }
 
       .product-image-container img {
-        max-height: 180px;
+        max-height: 220px;
+      }
+
+      .carousel-slides {
+        width: 100%;
+        max-width: 100%;
       }
 
       .card-content-stage .product-title {
@@ -1203,27 +1223,28 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        min-height: 68px;
+        min-height: 74px;
         width: 100%;
-        padding: 0 10px;
+        padding: 0 12px;
         box-sizing: border-box;
       }
 
       .brand {
-        width: 187px; height: 70px;
-        overflow: hidden;
-        margin-left: -4px;
+        width: 156px;
+        height: auto;
+        overflow: visible;
+        margin-left: 0;
         flex-shrink: 0;
       }
 
       .brand img {
-        position: absolute;
-        width: 208px;
-        height: 208px;
-        max-width: none;
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
         max-height: none;
-        top: -58px;
-        left: 0;
+        top: auto;
+        left: auto;
       }
 
       .header-right {
@@ -1244,7 +1265,7 @@
       .menu {
         position: absolute;
         right: 10px;
-        top: 64px;
+        top: 72px;
         width: min(260px, calc(100vw - 20px));
         flex-direction: column;
         align-items: stretch;
@@ -1498,6 +1519,40 @@
             </div>
           </div>
         </div>
+
+        <!-- Product 5: Wet Wipes -->
+        <div class="horizontal-product-card">
+          <div class="card-content-stage">
+            <div class="card-number-badge">05</div>
+            <h3 class="product-title">Premium Wet Wipes</h3>
+            <p class="product-desc">Ultra-soft, biodegradable, and pH-balanced wet wipes enriched with Aloe Vera and Vitamin E. Ideal for everyday freshness, baby care, and makeup removal.</p>
+            <div class="product-features" style="margin-bottom: 20px;">
+              <span class="feature-tag">Aloe Vera</span>
+              <span class="feature-tag">pH Balanced</span>
+              <span class="feature-tag">Alcohol Free</span>
+              <span class="feature-tag">Biodegradable</span>
+            </div>
+            <a href="product-wet-wipes.html" class="view-details-btn">
+              View Specification
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <div class="card-visual-stage">
+            <div class="visual-glow-circle"></div>
+            <div class="product-carousel">
+              <div class="carousel-slides">
+                <div class="carousel-slide active">
+                  <img src="image&amp;video/wet wipes.jpeg" alt="Premium Wet Wipes Packaging" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1591,6 +1646,7 @@
           <li><a href="products.html">Bamboo Stick Cotton Buds</a></li>
           <li><a href="products.html">Organic Toothbrush</a></li>
           <li><a href="products.html">Organic Cotton Balls</a></li>
+          <li><a href="products.html">Premium Wet Wipes</a></li>
         </ul>
       </div>
 

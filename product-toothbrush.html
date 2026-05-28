@@ -94,15 +94,15 @@
     }
 
     .brand img {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      top: 0;
-      left: 0;
-      display: block;
-      margin: 0;
-    }
+        position: relative;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        top: auto;
+        left: auto;
+        display: block;
+        margin: 0;
+      }
 
     .menu {
       justify-self: center;
@@ -918,28 +918,29 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        min-height: 68px;
+        min-height: 74px;
         width: 100%;
-        padding: 0 10px;
+        padding: 0 12px;
       }
 
       .brand {
-        width: 187px; height: 70px;
-        overflow: hidden;
-        margin-left: -4px;
+        width: 156px;
+        height: auto;
+        overflow: visible;
+        margin-left: 0;
         flex-shrink: 0;
       }
 
       .brand img {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      top: 0;
-      left: 0;
-      display: block;
-      margin: 0;
-    }
+        position: relative;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        top: auto;
+        left: auto;
+        display: block;
+        margin: 0;
+      }
 
       .btn-quote {
         display: none;
@@ -954,7 +955,7 @@
       .menu {
         position: absolute;
         right: 10px;
-        top: 64px;
+        top: 72px;
         width: min(260px, calc(100vw - 20px));
         flex-direction: column;
         align-items: stretch;
@@ -981,11 +982,22 @@
       }
 
       .product-hero {
-        padding: 30px 20px;
+        padding: 24px 16px;
+      }
+      .product-headline {
+        font-size: clamp(1.8rem, 8vw, 2.3rem);
+        line-height: 1.1;
+      }
+      .product-intro {
+        font-size: 0.95rem;
+      }
+      .hero-features-list {
+        grid-template-columns: 1fr;
+        gap: 10px;
       }
       .main-display-box {
-        max-width: 280px;
-        height: auto;
+        max-width: min(100%, 320px);
+        aspect-ratio: 1 / 1;
       }
       .commitments-grid {
         grid-template-columns: 1fr;
@@ -1004,9 +1016,11 @@
       }
       .thumbnails-row {
         flex-wrap: wrap;
+        gap: 12px;
       }
       .thumb-card {
-        flex: 0 0 calc(50% - 8px);
+        flex: 0 0 calc(50% - 6px);
+        max-width: none;
       }
     }
   </style>
@@ -1217,6 +1231,7 @@
           <li><a href="product-bamboo-buds.html">Bamboo Stick Cotton Buds</a></li>
           <li><a href="product-cotton-balls.html">Organic Cotton Balls</a></li>
           <li><a href="product-toothbrush.html">Organic Toothbrush</a></li>
+          <li><a href="product-wet-wipes.html">Premium Wet Wipes</a></li>
         </ul>
       </div>
 
@@ -1303,3 +1318,5 @@
 </body>
 
 </html>
+
+

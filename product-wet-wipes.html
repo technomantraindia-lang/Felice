@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paper Stick Cotton Buds | Felice | Premium Cotton Care</title>
+  <title>Premium Wet Wipes | Felice | Premium Cotton Care</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -375,12 +375,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #ffffff; /* White background to blend with white product images */
+      background: #ffffff;
       border-radius: var(--radius-md);
-      border: 1px solid rgba(29, 29, 27, 0.08); /* clean subtle border */
+      border: 1px solid rgba(29, 29, 27, 0.08);
       position: relative;
       overflow: hidden;
-      padding: 10px; /* small padding so the image doesn't touch the borders */
+      padding: 10px;
       box-shadow: var(--shadow-soft);
     }
 
@@ -406,210 +406,6 @@
         transform: translateY(-8px);
       }
     }
-
-    /* Interactive Selector Thumbnails */
-    .packaging-selector-title {
-      font-size: 0.9rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-soft);
-      margin-top: 10px;
-    }
-
-    .thumbnails-row {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .thumb-card {
-      flex: 1;
-      max-width: 120px;
-      aspect-ratio: 1;
-      border: 2px solid rgba(29, 29, 27, 0.08);
-      border-radius: 12px;
-      background: var(--white);
-      padding: 10px;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-    }
-
-    .thumb-card img {
-      max-width: 80%;
-      max-height: 60%;
-      object-fit: contain;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.05));
-      transition: transform 0.3s ease;
-    }
-
-    .thumb-card span {
-      font-size: 0.72rem;
-      font-weight: 800;
-      color: var(--text-soft);
-      text-align: center;
-    }
-
-    .thumb-card:hover {
-      border-color: var(--felice-green);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(139,197,63,0.1);
-    }
-
-    .thumb-card:hover img {
-      transform: scale(1.08);
-    }
-
-    .thumb-card.active {
-      border-color: var(--felice-green-deep);
-      background: rgba(139, 197, 63, 0.06);
-      box-shadow: 0 8px 20px rgba(139,197,63,0.14);
-    }
-
-    .thumb-card.active span {
-      color: var(--felice-green-deep);
-    }
-
-    /* Product Packaging Detail Card */
-    .packaging-detail-card {
-      background: var(--white);
-      border: 1px solid rgba(29, 29, 27, 0.08);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      width: 100%;
-      box-shadow: var(--shadow-soft);
-      margin-bottom: 60px;
-    }
-
-    .spec-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-top: 15px;
-    }
-
-    .spec-item {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(29, 29, 27, 0.06);
-    }
-
-    .spec-item.full-width {
-      grid-column: span 4;
-      border-bottom: none;
-    }
-
-    .spec-label {
-      font-size: 0.76rem;
-      font-weight: 800;
-      color: var(--text-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .spec-value {
-      font-size: 0.98rem;
-      font-weight: 700;
-      color: var(--text-ink);
-    }
-
-    /* commitments / manufacturing section */
-    .hygiene-section {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 244, 235, 0.9));
-      border: 1px solid rgba(139, 197, 63, 0.2);
-      border-radius: var(--radius-xl);
-      padding: 60px;
-      box-shadow: var(--shadow-card);
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .section-header {
-      max-width: 800px;
-      margin: 0 auto 40px;
-    }
-
-    .section-header h3 {
-      font-family: "DM Serif Display", serif;
-      font-size: clamp(1.8rem, 2.8vw, 2.3rem);
-      color: var(--text-heading);
-      margin-bottom: 12px;
-      font-weight: 400;
-    }
-
-    .section-header h3 span {
-      color: var(--felice-green-deep);
-    }
-
-    .section-header p {
-      font-size: 1.05rem;
-      color: var(--text-soft);
-      line-height: 1.6;
-    }
-
-    .commitments-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .commit-card {
-      background: var(--white);
-      border: 1px solid rgba(29, 29, 27, 0.06);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
-      transition: all 0.3s ease;
-    }
-
-    .commit-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(139,197,63,0.08);
-      border-color: rgba(139, 197, 63, 0.3);
-    }
-
-    .commit-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(139, 197, 63, 0.08);
-      color: var(--felice-green-deep);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .commit-card:hover .commit-icon {
-      background: var(--felice-green-deep);
-      color: var(--white);
-    }
-
-    .commit-card h4 {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--text-heading);
-    }
-
-    .commit-card p {
-      font-size: 0.85rem;
-      line-height: 1.5;
-      color: var(--text-soft);
-    }
-
 
     /* Care You Can Trust Section */
     .care-trust-section {
@@ -740,21 +536,6 @@
       color: var(--text-soft);
     }
 
-    .care-trust-footer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-      margin-top: 26px;
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--felice-green-deep);
-    }
-
-    .care-trust-footer svg {
-      color: var(--felice-green);
-    }
-
     @media (max-width: 1024px) {
       .care-trust-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -764,11 +545,6 @@
     @media (max-width: 640px) {
       .care-trust-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .care-trust-top-bar {
-        border-radius: var(--radius-md);
-        padding: 14px 16px;
       }
     }
 
@@ -888,25 +664,11 @@
     }
 
     /* Responsive adjustments */
-    @media (max-width: 1200px) {
-      .commitments-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
-    }
-
     @media (max-width: 1024px) {
       .product-hero {
         grid-template-columns: 1fr;
         padding: 40px;
         gap: 40px;
-      }
-      .spec-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-      }
-      .spec-item.full-width {
-        grid-column: span 2;
       }
       .footer-wrap {
         grid-template-columns: 1fr 1fr;
@@ -999,28 +761,8 @@
         max-width: min(100%, 320px);
         aspect-ratio: 1 / 1;
       }
-      .commitments-grid {
-        grid-template-columns: 1fr;
-      }
       .footer-wrap {
         grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .spec-grid {
-        grid-template-columns: 1fr;
-      }
-      .spec-item.full-width {
-        grid-column: span 1;
-      }
-      .thumbnails-row {
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-      .thumb-card {
-        flex: 0 0 calc(50% - 6px);
-        max-width: none;
       }
     }
   </style>
@@ -1056,26 +798,26 @@
       <span>&gt;</span>
       <a href="products.html">Products</a>
       <span>&gt;</span>
-      <span>Paper Stick Cotton Buds</span>
+      <span>Wet Wipes</span>
     </nav>
 
     <!-- Product Hero Section -->
     <section class="product-hero">
       <div class="hero-info-column">
-        <div class="product-badge">100% Biodegradable</div>
-        <h1 class="product-headline">Paper Stick <br><span>Cotton Buds</span></h1>
+        <div class="product-badge">100% Biodegradable &amp; Alcohol Free</div>
+        <h1 class="product-headline">Premium <br><span>Wet Wipes</span></h1>
         <p class="product-intro">
-          Felice Paper Stick Cotton Buds represent the pinnacle of hygienic daily care. Crafted with <strong>100% pure organic cotton tips</strong> and sturdy, biodegradable paper stems, they offer double-ended comfort while protecting our environment from plastic waste.
+          Felice Premium Wet Wipes are carefully designed to offer safe, skin-friendly, and highly effective daily care. Enriched with natural Aloe Vera extract and Vitamin E, these wipes gently hydrate and cleanse the skin, leaving it feeling fresh, soft, and healthy.
         </p>
         <p class="product-intro">
-          Our products are manufactured in a completely sterile facility with zero human contact, assuring the highest levels of safety for baby care, cosmetic touchups, and daily cleaning.
+          Formulated without alcohol, parabens, chlorine, or artificial silicones, our wet wipes are dermatologically tested, pH-balanced, and hypoallergenic. They are perfectly safe for baby skincare, makeup removal, and all general personal hygiene applications.
         </p>
 
         <ul class="hero-features-list">
-          <li>100% Pure Organic Cotton</li>
-          <li>Eco-friendly Paper Stems</li>
-          <li>Sterile Touch-Free Packing</li>
-          <li>Perfect for Sensitive Skin</li>
+          <li>100% Biodegradable Fabric</li>
+          <li>Enriched with Aloe Vera &amp; Vitamin E</li>
+          <li>Free from Alcohol, Parabens &amp; Chlorine</li>
+          <li>Dermatologically Tested &amp; pH Balanced</li>
         </ul>
 
         <div class="product-actions">
@@ -1093,28 +835,7 @@
       <div class="hero-gallery-column">
         <!-- Main Product Display -->
         <div class="main-display-box" id="mainDisplay">
-          <img src="image&video/products/paper stick product.png" alt="Paper Stick Cotton Buds 200 Packet" id="mainProductImg" />
-        </div>
-
-        <span class="packaging-selector-title">Select Packaging Size</span>
-        
-        <!-- Interactive Selectors -->
-        <div class="thumbnails-row">
-          <!-- Option 1 -->
-          <div class="thumb-card active" data-index="0">
-            <img src="image&video/products/paper stick product.png" alt="200 Buds Packet" />
-            <span>200 Buds (Packet)</span>
-          </div>
-          <!-- Option 2 -->
-          <div class="thumb-card" data-index="1">
-            <img src="image&video/products/paper stick 1.png" alt="100 Buds Box" />
-            <span>100 Buds (Box)</span>
-          </div>
-          <!-- Option 3 -->
-          <div class="thumb-card" data-index="2">
-            <img src="image&video/products/your brand .png" alt="Your Brand Custom Box" />
-            <span>Private Label Box</span>
-          </div>
+          <img src="image&video/wet wipes.jpeg" alt="Premium Wet Wipes Pack" id="mainProductImg" />
         </div>
       </div>
     </section>
@@ -1132,7 +853,7 @@
           </svg>
         </div>
 
-        <p class="care-trust-intro">Felice Cotton Buds are made with love and responsibility, because your well-being and our planet matter.</p>
+        <p class="care-trust-intro">Felice Wet Wipes are made with love and responsibility, because your well-being and our planet matter.</p>
 
         <div class="care-trust-grid">
           <article class="care-trust-card">
@@ -1142,8 +863,8 @@
                 <path d="M12 2v3M12 19v3M5 5l2 2M17 17l2 2M2 12h3M19 12h3M5 19l2-2M17 7l2-2" />
               </svg>
             </div>
-            <h4>Pure Cotton</h4>
-            <p>100% natural cotton for a gentle touch.</p>
+            <h4>Pure Cleansing</h4>
+            <p>100% natural fiber for a gentle clean.</p>
           </article>
           <article class="care-trust-card">
             <div class="care-trust-card-icon">
@@ -1152,7 +873,7 @@
               </svg>
             </div>
             <h4>Eco-Friendly</h4>
-            <p>Paper stems that care for the planet.</p>
+            <p>Biodegradable fabric that protects the earth.</p>
           </article>
           <article class="care-trust-card">
             <div class="care-trust-card-icon">
@@ -1162,7 +883,7 @@
               </svg>
             </div>
             <h4>Hygienic &amp; Safe</h4>
-            <p>Sealed packaging ensures cleanliness.</p>
+            <p>Sealed packaging ensures germ-free use.</p>
           </article>
           <article class="care-trust-card">
             <div class="care-trust-card-icon">
@@ -1170,8 +891,8 @@
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
               </svg>
             </div>
-            <h4>Gentle Care</h4>
-            <p>Perfect for delicate cleaning needs.</p>
+            <h4>Gentle Touch</h4>
+            <p>Perfect for baby and sensitive skin care.</p>
           </article>
           <article class="care-trust-card">
             <div class="care-trust-card-icon">
@@ -1180,8 +901,8 @@
                 <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
               </svg>
             </div>
-            <h4>Sustainable Choice</h4>
-            <p>Small steps today for a better tomorrow.</p>
+            <h4>Zero Plastics</h4>
+            <p>Plastic-free materials for a cleaner life.</p>
           </article>
         </div>
       </div>
@@ -1204,7 +925,7 @@
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round" style="color: var(--felice-green);">
             <path
-              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
           <a href="tel:+919016661725" style="color: rgba(237, 237, 235, 0.9); text-decoration: none;">+91 9016661725</a>
         </p>
@@ -1282,69 +1003,6 @@
 
     menu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => menu.classList.remove("open"));
-    });
-
-    // Packaging Switcher Logic
-    const mainDisplay = document.getElementById("mainDisplay");
-    const mainProductImg = document.getElementById("mainProductImg");
-    const thumbnails = document.querySelectorAll(".thumb-card");
-    const selectedPackagingDesc = document.getElementById("selectedPackagingDesc");
-    
-    // Specification fields to update
-    const specQty = document.getElementById("specQty");
-    const specPackType = document.getElementById("specPackType");
-    const specFullDesc = document.getElementById("specFullDesc");
-
-    // Packaging options database
-    const packagingData = [
-      {
-        image: "image&video/products/paper stick product.png",
-        desc: "Specifications for the selected 200 Buds Zip Pouch packaging option. Our pouches are double-sealed to keep out moisture and bacteria.",
-        qty: "200 Buds",
-        packType: "Hygienic Zip-Lock Pouch",
-        fullDesc: "The 200 buds zipper pouch is our best-selling daily packaging. The pouch is designed with a premium airtight zip lock that ensures the buds remain completely clean and sterile after opening. Sturdy paper stems are reinforced to prevent bending, while the double cotton tips are rolled firmly to eliminate loose lint."
-      },
-      {
-        image: "image&video/products/paper stick 1.png",
-        desc: "Specifications for the selected 100 Buds Box packaging option. This premium cardboard packaging features an easy-to-use slide cover.",
-        qty: "100 Buds",
-        packType: "Premium Slide Cardboard Box",
-        fullDesc: "Our 100 buds slide-box packaging is crafted from 100% recycled biodegradable cardboard, creating a zero-plastic luxury look. Ideal for vanity tables, hotel guestrooms, and daily clean routines. The interior container slides smoothly while maintaining tight closure to protect the buds."
-      },
-      {
-        image: "image&video/products/your brand .png",
-        desc: "Specifications for custom private label packaging. Tailored to your brand requirements, with customizable designs and dimensions.",
-        qty: "Custom Qty",
-        packType: "Private Label Custom Box",
-        fullDesc: "We support customized private label branding for various global market standards. Choose your own packaging layout, box size, print design, and quantity. Designed to showcase your brand with our premium quality manufacturing."
-      }
-    ];
-
-    thumbnails.forEach(card => {
-      card.addEventListener("click", () => {
-        const index = parseInt(card.getAttribute("data-index"), 10);
-        const data = packagingData[index];
-
-        // Active card toggle
-        thumbnails.forEach(t => t.classList.remove("active"));
-        card.classList.add("active");
-
-        // Swap main image with fade animation
-        mainDisplay.classList.add("fade-out");
-        
-        setTimeout(() => {
-          mainProductImg.src = data.image;
-          mainProductImg.alt = card.querySelector("img").alt;
-          
-          // Update spec table & descriptions
-          if (selectedPackagingDesc) selectedPackagingDesc.textContent = data.desc;
-          if (specQty) specQty.textContent = data.qty;
-          if (specPackType) specPackType.textContent = data.packType;
-          if (specFullDesc) specFullDesc.textContent = data.fullDesc;
-
-          mainDisplay.classList.remove("fade-out");
-        }, 300);
-      });
     });
   </script>
 </body>
