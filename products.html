@@ -1151,7 +1151,8 @@
       }
 
       .hero-slide-main {
-        object-fit: contain;
+        object-fit: cover;
+        object-position: 72% center;
       }
 
       .hero-overlay {
@@ -1314,7 +1315,7 @@
   <!-- Header -->
   <header class="site-header">
     <div class="header-wrap">
-      <a class="brand" href="index.html#home" aria-label="Felice Home">
+      <a class="brand" href="index.html" aria-label="Felice Home">
         <img src="image&video/products/final%20logo.png" alt="Felice logo" />
       </a>
 
@@ -1581,10 +1582,12 @@
   <footer class="footer">
     <div class="footer-wrap">
       <div>
-        <div class="footer-logo-wrap" style="margin-bottom: 6px; width: 240px; height: 95px; overflow: hidden; position: relative; display: flex; align-items: center;">
-          <img src="image&amp;video/products/final%20logo.png" alt="Felice new logo"
-            style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.15));" />
-        </div>
+        <a href="index.html" aria-label="Felice Home" style="display: inline-block; text-decoration: none;">
+          <div class="footer-logo-wrap" style="margin-bottom: 6px; width: 240px; height: 95px; overflow: hidden; position: relative; display: flex; align-items: center;">
+            <img src="image&amp;video/products/final%20logo.png" alt="Felice new logo"
+              style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(139, 197, 63, 0.15));" />
+          </div>
+        </a>
         <p style="margin-bottom: 14px; line-height: 1.6; font-size: 0.9rem; color: rgba(237, 237, 235, 0.85);">
           PASSION FOR CONSISTENT QUALITY AND CUSTOMER SATISFACTION-Building long-term relationships based on trust &amp; transparency
         </p>
