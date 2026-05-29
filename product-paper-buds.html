@@ -610,7 +610,6 @@
       color: var(--text-soft);
     }
 
-
     /* Care You Can Trust Section */
     .care-trust-section {
       margin: 48px 0 56px;
@@ -1097,7 +1096,7 @@
         </div>
 
         <span class="packaging-selector-title">Select Packaging Size</span>
-        
+
         <!-- Interactive Selectors -->
         <div class="thumbnails-row">
           <!-- Option 1 -->
@@ -1289,7 +1288,7 @@
     const mainProductImg = document.getElementById("mainProductImg");
     const thumbnails = document.querySelectorAll(".thumb-card");
     const selectedPackagingDesc = document.getElementById("selectedPackagingDesc");
-    
+
     // Specification fields to update
     const specQty = document.getElementById("specQty");
     const specPackType = document.getElementById("specPackType");
@@ -1331,11 +1330,11 @@
 
         // Swap main image with fade animation
         mainDisplay.classList.add("fade-out");
-        
+
         setTimeout(() => {
           mainProductImg.src = data.image;
           mainProductImg.alt = card.querySelector("img").alt;
-          
+
           // Update spec table & descriptions
           if (selectedPackagingDesc) selectedPackagingDesc.textContent = data.desc;
           if (specQty) specQty.textContent = data.qty;
@@ -1350,5 +1349,4 @@
 </body>
 
 </html>
-
 
